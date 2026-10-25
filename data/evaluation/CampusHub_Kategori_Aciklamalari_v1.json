@@ -1,0 +1,11 @@
+{
+  "hypothesis_template": "Bu etkinlik {} ile ilgilidir.",
+  "labels": {
+    "TECHNOLOGY": "yazılım, yapay zekâ, bilgisayar ve teknolojik uygulamalar",
+    "SPORT": "spor, fiziksel egzersiz ve sportif yarışmalar",
+    "ART": "müzik, resim, tiyatro, sinema ve sanatsal üretim",
+    "CAREER": "meslek seçimi, staj, iş başvurusu, özgeçmiş ve işe alım süreçleri",
+    "SOCIAL": "sosyalleşme, tanışma, topluluk buluşmaları ve gönüllülük",
+    "OTHER": "sağlık, güvenlik, akademik bilgilendirme ve günlük yaşam konuları"
+  }
+}

@@ -1,21 +1,49 @@
+
 import logging
+import os
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
+from fastapi.openapi.utils import get_openapi
 from fastapi.responses import JSONResponse
-from app.exceptions import ModelUnavailableError
+
 from app.api.classify_routes import create_classify_router
+from app.exceptions import ModelUnavailableError
+from app.models.classifier import MDeBERTaClassifier
 from app.services.fake_classifier import FakeClassifier
 from app.services.inference_service import InferenceService
-from fastapi.openapi.utils import get_openapi
+
+
 logger = logging.getLogger(__name__)
+
+
+# Varsayilan: FakeClassifier
+# CLASSIFIER_BACKEND=real ise gercek AI modeli kullanilir.
+classifier = (
+    MDeBERTaClassifier()
+    if os.getenv("CLASSIFIER_BACKEND", "fake").lower() == "real"
+    else FakeClassifier()
+)
+
+service = InferenceService(classifier)
+
+
+# Gercek modeli uygulama baslarken bir kez yukle.
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    if isinstance(classifier, MDeBERTaClassifier):
+        classifier.load()
+
+    yield
+
+
 app = FastAPI(
     title="CampusHub AI Service",
     version="1.0.0",
-    description="FakeClassifier ile çalışan deneme API'si.",
+    description="CampusHub etkinlik siniflandirma API'si.",
+    lifespan=lifespan,
 )
-
-classifier = FakeClassifier()
-service = InferenceService(classifier)
 
 app.include_router(create_classify_router(service))
 
@@ -32,6 +60,7 @@ async def validation_error_handler(
             "message": "Request body must contain a non-empty string field: text",
         },
     )
+
 
 @app.exception_handler(ModelUnavailableError)
 async def model_unavailable_handler(
@@ -64,6 +93,7 @@ async def unexpected_error_handler(
             "message": "An unexpected error occurred",
         },
     )
+
 
 def custom_openapi():
     if app.openapi_schema is not None:

@@ -1,0 +1,4 @@
+model,correct,total,accuracy_percent,loading_seconds,average_inference_ms,p95_inference_ms,peak_ram_mb
+minilm,22,42,52.38,1.597,26.36,27.91,817.12
+mdeberta,33,42,78.57,1.554,621.51,723.4,750.42
+mdeberta_2mil7,31,42,73.81,2.093,607.38,710.52,871.88
