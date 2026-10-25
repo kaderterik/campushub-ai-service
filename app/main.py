@@ -18,7 +18,8 @@ service = InferenceService(classifier)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Model uygulama ayağa kalkarken bir kez yüklenir; yüklenene kadar /health 503 döner.
+    # Model uygulama ayağa kalkarken bir kez, bloklayarak yüklenir; yükleme bitene kadar
+    # sunucu istek kabul etmez. Model sonradan hazır değilse /health 503 döner.
     classifier.load()
     yield
 

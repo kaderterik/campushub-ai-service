@@ -14,7 +14,7 @@ def create_health_router(classifier: Classifier) -> APIRouter:
         "/health",
         responses={
             200: {"description": "Model is loaded and service is ready"},
-            503: {"description": "Model is still starting"},
+            503: {"description": "Model is not ready"},
         },
     )
     def health() -> JSONResponse:

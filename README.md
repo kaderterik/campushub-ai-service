@@ -79,24 +79,65 @@ durumuna göre bildirir (T06, T26).
 | Durum | HTTP kodu | Yanıt |
 |---|---|---|
 | Model yüklendi | 200 | `{"service": "ai-service", "status": "UP", "version": "1.0.0"}` |
-| Model henüz hazır değil | 503 | `{"service": "ai-service", "status": "DOWN", "error": "MODEL_STARTING", "version": "1.0.0"}` |
+| Model hazır değil (`is_ready()` false) | 503 | `{"service": "ai-service", "status": "DOWN", "error": "MODEL_STARTING", "version": "1.0.0"}` |
 
 ### T26 tasarım kararı
 
 - Model, ilk istekte (lazy) değil, uygulama başlarken FastAPI `lifespan`
-  içinde bir kez yüklenir. Böylece ilk kullanıcı isteği model yükleme
-  süresini beklemez ve yükleme hataları istek anında değil, startup
-  sırasında ortaya çıkar.
-- Model yüklenip hazır olana kadar /health HTTP 503 ve
-  `MODEL_STARTING` döner. Docker healthcheck, Kubernetes readiness probe
-  veya load balancer bu sürede servise trafik yönlendirmez; model
-  hazır olduğunda yanıt HTTP 200'e döner.
+  içinde bir kez ve **bloklayarak** yüklenir. Yükleme bitene kadar
+  uvicorn port üzerinden istek kabul etmez; yani model yüklenirken
+  /health 503 dönmez, bağlantı hiç kurulamaz. Bu bilinçli bir tercihtir:
+  üretim ortamında model hazır olmadan servise trafik gelmemelidir.
+- Container başlangıcındaki bu yükleme süresi Docker tarafında
+  `HEALTHCHECK --start-period=30s` ile tolere edilir (bkz. `Dockerfile`).
+  Bu süre içindeki başarısız kontroller container'ı `unhealthy` yapmaz;
+  model belleğe yüklenip /health HTTP 200 döndüğünde container `healthy`
+  durumuna geçer. Gerçek model (mDeBERTa) daha uzun sürede yükleniyorsa
+  `--start-period` değeri artırılmalıdır.
+- Model yüklemesi startup sırasında hata fırlatırsa uygulama ayağa
+  kalkmaz ve container sonlanır; hata startup logunda görünür.
+- Model hazır değilse veya runtime sırasında arızalanırsa
+  (`is_ready()` false) /health HTTP 503 döner; sınıflandırıcının
+  `ModelUnavailableError` fırlattığı istekler de HTTP 503
+  `MODEL_UNAVAILABLE` alır. Docker healthcheck, Kubernetes readiness
+  probe veya load balancer bu durumda servise trafik yönlendirmez.
 - Hazır olma durumu sınıflandırıcının `is_ready()` metodu ile okunur
   (`app/contracts.py` içindeki `Classifier` arayüzü: `load()`,
   `is_ready()`, `classify()`). Gerçek model sınıfı da bu arayüzü
   uygulayarak aynı davranışı otomatik olarak alır.
-- Model ayarları ortam değişkenlerinden gelir (bkz. `.env.example`):
-  `MODEL_ID`, `MODEL_REVISION` ve `MODEL_PATH`.
+
+### Ortam değişkenleri
+
+| Değişken | Durum | Açıklama |
+|---|---|---|
+| `HOST`, `PORT` | Aktif | uvicorn'un dinlediği adres ve port (varsayılan `0.0.0.0:8005`) |
+| `APP_ENV` | Tanımlı | Ortam adı (`development`, `production` vb.) |
+| `MODEL_ID` | **Henüz kullanılmıyor** | Gerçek modelin Hugging Face kimliği (`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`) |
+| `MODEL_REVISION` | **Henüz kullanılmıyor** | Model sürümü / branch / commit |
+| `MODEL_PATH` | **Henüz kullanılmıyor** | Modelin yerel dizini |
+
+> **Not:** `MODEL_ID`, `MODEL_REVISION` ve `MODEL_PATH` şu an
+> `.env.example` içinde tanımlıdır ancak kod bu değerleri **henüz
+> okumaz**, çünkü servis hâlâ `FakeClassifier` ile çalışır. Kişi 1
+> (model geliştirici) gerçek mDeBERTa modelini `Classifier` arayüzüne
+> bağladığında bu üç değişken kod tarafından okunacaktır. `torch` ve
+> `transformers` bağımlılıkları bu entegrasyon için `requirements.txt`
+> içine şimdiden eklenmiştir.
+>
+> `docker run --env-file` tırnak işaretlerini silmediği için
+> `.env.example` değerleri tırnaksız yazılmalıdır.
+
+## Docker
+
+```bash
+docker build -t campushub-ai-service .
+docker run -d --name campushub-ai -p 8005:8005 --env-file .env.example campushub-ai-service
+docker inspect --format '{{.State.Health.Status}}' campushub-ai   # starting -> healthy
+curl -i http://127.0.0.1:8005/health
+```
+
+Healthcheck: `curl -f http://localhost:${PORT:-8005}/health`, ayarlar
+`--interval=10s --timeout=3s --start-period=30s --retries=3`.
 
 ## Hata Yönetimi
 
