@@ -1,0 +1,95 @@
+{
+  "signature": {
+    "data_sha256": "a423b7359d8b35c5dc1851d5484d487dbf2d1d5a81f693f1163122fcbbb5899e",
+    "model": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+    "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+    "categories": {
+      "TECHNOLOGY": "teknoloji ve yazılım",
+      "SPORT": "spor",
+      "ART": "sanat, müzik ve kültür",
+      "CAREER": "kariyer ve iş hayatı",
+      "SOCIAL": "sosyal buluşma ve gönüllülük",
+      "OTHER": "üniversite idari işlemleri, genel bilgilendirme ve öğrenci duyuruları"
+    },
+    "hypothesis_template": "Bu metin {} ile ilgilidir.",
+    "multi_label": true,
+    "threshold": 0.7,
+    "policy": "five topical labels + OTHER fallback"
+  },
+  "results": {
+    "policy": "five topical labels + OTHER fallback",
+    "threshold": 0.7,
+    "sample_count": 84,
+    "micro": {
+      "precision": 0.6495,
+      "recall": 0.6774,
+      "f1": 0.6632,
+      "tp": 63,
+      "fp": 34,
+      "fn": 30
+    },
+    "macro_f1": 0.6776,
+    "exact_match": 0.5595,
+    "exact_count": 47,
+    "partial_count": 14,
+    "no_correct_category_count": 23,
+    "at_least_one_correct_count": 61,
+    "at_least_one_correct_rate": 0.7262,
+    "per_category": {
+      "TECHNOLOGY": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 15,
+        "fp": 10,
+        "fn": 0
+      },
+      "SPORT": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1
+      },
+      "ART": {
+        "precision": 0.8571,
+        "recall": 0.9231,
+        "f1": 0.8889,
+        "tp": 12,
+        "fp": 2,
+        "fn": 1
+      },
+      "CAREER": {
+        "precision": 0.8333,
+        "recall": 0.3947,
+        "f1": 0.5357,
+        "tp": 15,
+        "fp": 3,
+        "fn": 23
+      },
+      "SOCIAL": {
+        "precision": 0.4286,
+        "recall": 0.5,
+        "f1": 0.4615,
+        "tp": 3,
+        "fp": 4,
+        "fn": 3
+      },
+      "OTHER": {
+        "precision": 0.3913,
+        "recall": 0.8182,
+        "f1": 0.5294,
+        "tp": 9,
+        "fp": 14,
+        "fn": 2
+      }
+    },
+    "provisional_internal_targets": {
+      "micro_f1_min": 0.6,
+      "exact_match_min": 0.45,
+      "met": true
+    },
+    "note": "Internal proposed targets, not mandatory course requirements. Do not tune on holdout results."
+  }
+}
