@@ -42,13 +42,40 @@ POST /ai/classify
 {"text": "Python atölyesi"}
 ```
 
-Yanıt:
+Yanıt (HTTP 200):
 ```json
-{"category": "TECHNOLOGY", "confidence": 0.91}
+{
+  "predictions": [
+    {"category": "TECHNOLOGY", "confidence": 0.91},
+    {"category": "CAREER", "confidence": 0.84}
+  ]
+}
 ```
 
-FakeClassifier her geçerli isteğe sabit deneme sonucu döndürür.
+FakeClassifier, gönderilen metnin konusundan bağımsız olarak her geçerli
+isteğe yukarıdaki iki kategorili sabit deneme sonucunu döndürür.
 Bu sonuç gerçek model tahmini değildir.
+
+Kullanılabilen altı kategori: `TECHNOLOGY`, `SPORT`, `ART`, `CAREER`,
+`SOCIAL` ve `OTHER`. Bir metin birden fazla konuya ait olabilir.
+Her öğe kendi `confidence` değerini taşır; değerler 0–1 aralığındadır
+ve toplamlarının 1 olması gerekmez. Liste boş olamaz ve kategoriler tekrarlanamaz.
+`OTHER`, başka konu kategorisine uymayan içerikler için yalnızca tek başına döner.
+
+Tek kategorili yanıt da aynı liste yapısını kullanır (sözleşme örneği):
+```json
+{
+  "predictions": [
+    {"category": "OTHER", "confidence": 0.76}
+  ]
+}
+```
+
+Bu tek kategorili örnek mevcut FakeClassifier'ın sabit çıktısı değildir.
+
+Grup 3 sözleşmesi: [docs/ai-classify-contract.md](docs/ai-classify-contract.md).
+Bu yanıt biçimi önceki category/confidence nesnesinden farklıdır;
+Grup 3 tüketicisi ve K1 sınıflandırıcısı birlikte uyarlanmalıdır.
 
 Geçersiz isteklerde HTTP 400 ve error/message alanları döner.
 
@@ -73,7 +100,7 @@ uygulamaya bağlanması henüz tamamlanmamıştır.
 
 ## Hata Yönetimi
 
-Tüm hata yanıtları `error` ve `message` alanlarını içerir.
+Sınıflandırma işlemindeki doğrulama, model ve beklenmeyen sunucu hata yanıtları `error` ve `message` alanlarını içerir.
 
 | HTTP kodu | error | Açıklama |
 |---|---|---|
