@@ -1,22 +1,36 @@
 import logging
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from app.exceptions import ModelUnavailableError
 from app.api.classify_routes import create_classify_router
+from app.api.health_routes import create_health_router
 from app.services.fake_classifier import FakeClassifier
 from app.services.inference_service import InferenceService
 from fastapi.openapi.utils import get_openapi
 logger = logging.getLogger(__name__)
-app = FastAPI(
-    title="CampusHub AI Service",
-    version="1.0.0",
-    description="FakeClassifier ile çalışan deneme API'si.",
-)
 
 classifier = FakeClassifier()
 service = InferenceService(classifier)
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Model uygulama ayağa kalkarken bir kez yüklenir; yüklenene kadar /health 503 döner.
+    classifier.load()
+    yield
+
+
+app = FastAPI(
+    title="CampusHub AI Service",
+    version="1.0.0",
+    description="FakeClassifier ile çalışan deneme API'si.",
+    lifespan=lifespan,
+)
+
+app.include_router(create_health_router(classifier))
 app.include_router(create_classify_router(service))
 
 

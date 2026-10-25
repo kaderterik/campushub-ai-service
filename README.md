@@ -68,8 +68,35 @@ python -m pytest -q
 
 ## Durum
 
-Gerçek model bağlantısı ve K3'ün hazırlayacağı /health router'ının
-uygulamaya bağlanması henüz tamamlanmamıştır.
+/health router'ı uygulamaya bağlanmıştır. Gerçek model bağlantısı
+henüz tamamlanmamıştır; şimdilik FakeClassifier kullanılmaktadır.
+
+## Health & Model Lifecycle
+
+GET /health, servisin trafik almaya hazır olup olmadığını modelin
+durumuna göre bildirir (T06, T26).
+
+| Durum | HTTP kodu | Yanıt |
+|---|---|---|
+| Model yüklendi | 200 | `{"service": "ai-service", "status": "UP", "version": "1.0.0"}` |
+| Model henüz hazır değil | 503 | `{"service": "ai-service", "status": "DOWN", "error": "MODEL_STARTING", "version": "1.0.0"}` |
+
+### T26 tasarım kararı
+
+- Model, ilk istekte (lazy) değil, uygulama başlarken FastAPI `lifespan`
+  içinde bir kez yüklenir. Böylece ilk kullanıcı isteği model yükleme
+  süresini beklemez ve yükleme hataları istek anında değil, startup
+  sırasında ortaya çıkar.
+- Model yüklenip hazır olana kadar /health HTTP 503 ve
+  `MODEL_STARTING` döner. Docker healthcheck, Kubernetes readiness probe
+  veya load balancer bu sürede servise trafik yönlendirmez; model
+  hazır olduğunda yanıt HTTP 200'e döner.
+- Hazır olma durumu sınıflandırıcının `is_ready()` metodu ile okunur
+  (`app/contracts.py` içindeki `Classifier` arayüzü: `load()`,
+  `is_ready()`, `classify()`). Gerçek model sınıfı da bu arayüzü
+  uygulayarak aynı davranışı otomatik olarak alır.
+- Model ayarları ortam değişkenlerinden gelir (bkz. `.env.example`):
+  `MODEL_ID`, `MODEL_REVISION` ve `MODEL_PATH`.
 
 ## Hata Yönetimi
 
