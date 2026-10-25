@@ -195,3 +195,17 @@ Sınıflandırma işlemindeki doğrulama, model ve beklenmeyen sunucu hata yanı
 Beklenmeyen hataların teknik ayrıntıları istemciye gönderilmez, sunucu loguna yazılır.
 
 Modelin kullanılamadığı durumlar `app.exceptions.ModelUnavailableError` ile bildirilebilir.
+
+## OpenAPI Sözleşmesi
+
+API tanımı [docs/ai-classify.openapi.yaml](docs/ai-classify.openapi.yaml)
+dosyasında sürümlenir.
+
+Swagger arayüzü: http://127.0.0.1:8005/docs
+
+Çalışan servisin OpenAPI JSON adresi:
+http://127.0.0.1:8005/openapi.json
+
+API şemaları değiştiğinde YAML dosyası yeniden üretilmelidir.
+Grup 3 bu sözleşmedeki istek, predictions listesi ve hata
+yanıtlarını esas almalıdır.
