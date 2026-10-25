@@ -42,20 +42,40 @@ POST /ai/classify
 {"text": "Python atölyesi"}
 ```
 
-Yanıt:
+Yanıt (HTTP 200):
 ```json
-{"predictions": [{"category": "TECHNOLOGY", "confidence": 0.91}, {"category": "CAREER", "confidence": 0.84}]}
+{
+  "predictions": [
+    {"category": "TECHNOLOGY", "confidence": 0.91},
+    {"category": "CAREER", "confidence": 0.84}
+  ]
+}
 ```
 
-FakeClassifier her geçerli isteğe aynı iki kategorili deneme sonucunu döndürür.
-Tek kategori de predictions listesinde tek öğe olarak döner. Her öğe kendi
-confidence değerini taşır; skorların toplamının 1 olması gerekmez.
-OTHER yalnızca tek başına döner; aynı kategori tekrarlanamaz.
+FakeClassifier, gönderilen metnin konusundan bağımsız olarak her geçerli
+isteğe yukarıdaki iki kategorili sabit deneme sonucunu döndürür.
+Bu sonuç gerçek model tahmini değildir.
+
+Kullanılabilen altı kategori: `TECHNOLOGY`, `SPORT`, `ART`, `CAREER`,
+`SOCIAL` ve `OTHER`. Bir metin birden fazla konuya ait olabilir.
+Her öğe kendi `confidence` değerini taşır; değerler 0–1 aralığındadır
+ve toplamlarının 1 olması gerekmez. Liste boş olamaz ve kategoriler tekrarlanamaz.
+`OTHER`, başka konu kategorisine uymayan içerikler için yalnızca tek başına döner.
+
+Tek kategorili yanıt da aynı liste yapısını kullanır (sözleşme örneği):
+```json
+{
+  "predictions": [
+    {"category": "OTHER", "confidence": 0.76}
+  ]
+}
+```
+
+Bu tek kategorili örnek mevcut FakeClassifier'ın sabit çıktısı değildir.
 
 Grup 3 sözleşmesi: [docs/ai-classify-contract.md](docs/ai-classify-contract.md).
 Bu yanıt biçimi önceki category/confidence nesnesinden farklıdır;
 Grup 3 tüketicisi ve K1 sınıflandırıcısı birlikte uyarlanmalıdır.
-Bu sonuç gerçek model tahmini değildir.
 
 Geçersiz isteklerde HTTP 400 ve error/message alanları döner.
 
