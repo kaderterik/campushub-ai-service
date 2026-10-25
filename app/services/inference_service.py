@@ -1,5 +1,5 @@
 from app.contracts import Classifier
-from app.schemas.classification import ClassificationResponse
+from app.schemas.classification import CategoryPrediction, ClassificationResponse
 
 
 class InferenceService:
@@ -7,9 +7,11 @@ class InferenceService:
         self.classifier = classifier
 
     def classify(self, text: str) -> ClassificationResponse:
-        result = self.classifier.classify(text)
+        results = self.classifier.classify(text)
 
         return ClassificationResponse(
-            category=result.category,
-            confidence=result.confidence,
+            predictions=[
+                CategoryPrediction(category=result.category, confidence=result.confidence)
+                for result in results
+            ],
         )

@@ -44,10 +44,17 @@ POST /ai/classify
 
 Yanıt:
 ```json
-{"category": "TECHNOLOGY", "confidence": 0.91}
+{"predictions": [{"category": "TECHNOLOGY", "confidence": 0.91}, {"category": "CAREER", "confidence": 0.84}]}
 ```
 
-FakeClassifier her geçerli isteğe sabit deneme sonucu döndürür.
+FakeClassifier her geçerli isteğe aynı iki kategorili deneme sonucunu döndürür.
+Tek kategori de predictions listesinde tek öğe olarak döner. Her öğe kendi
+confidence değerini taşır; skorların toplamının 1 olması gerekmez.
+OTHER yalnızca tek başına döner; aynı kategori tekrarlanamaz.
+
+Grup 3 sözleşmesi: [docs/ai-classify-contract.md](docs/ai-classify-contract.md).
+Bu yanıt biçimi önceki category/confidence nesnesinden farklıdır;
+Grup 3 tüketicisi ve K1 sınıflandırıcısı birlikte uyarlanmalıdır.
 Bu sonuç gerçek model tahmini değildir.
 
 Geçersiz isteklerde HTTP 400 ve error/message alanları döner.
@@ -73,7 +80,7 @@ uygulamaya bağlanması henüz tamamlanmamıştır.
 
 ## Hata Yönetimi
 
-Tüm hata yanıtları `error` ve `message` alanlarını içerir.
+Sınıflandırma işlemindeki doğrulama, model ve beklenmeyen sunucu hata yanıtları `error` ve `message` alanlarını içerir.
 
 | HTTP kodu | error | Açıklama |
 |---|---|---|
