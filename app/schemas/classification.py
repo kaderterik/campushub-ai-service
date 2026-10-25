@@ -1,6 +1,6 @@
-from typing import Literal
+from pydantic import BaseModel, Field, StrictStr, field_validator, model_validator
 
-from pydantic import BaseModel, Field, StrictStr, field_validator
+from app.contracts import Category
 
 
 class ClassificationRequest(BaseModel):
@@ -17,16 +17,22 @@ class ClassificationRequest(BaseModel):
         return value
 
 
+class CategoryPrediction(BaseModel):
+    category: Category
+    confidence: float = Field(ge=0, le=1, allow_inf_nan=False)
+
+
 class ClassificationResponse(BaseModel):
-    category: Literal[
-        "TECHNOLOGY",
-        "SPORT",
-        "ART",
-        "CAREER",
-        "SOCIAL",
-        "OTHER",
-    ]
-    confidence: float = Field(ge=0, le=1)
+    predictions: list[CategoryPrediction] = Field(min_length=1, max_length=5)
+
+    @model_validator(mode="after")
+    def validate_predictions(self) -> "ClassificationResponse":
+        categories = [prediction.category for prediction in self.predictions]
+        if len(categories) != len(set(categories)):
+            raise ValueError("Each category must appear only once")
+        if "OTHER" in categories and len(categories) != 1:
+            raise ValueError("OTHER must be returned on its own")
+        return self
 
 class ErrorResponse(BaseModel):
     error: str
