@@ -1,0 +1,265 @@
+{
+  "policy": "five topical labels + OTHER fallback",
+  "results": [
+    {
+      "threshold": 0.5,
+      "micro": {
+        "precision": 0.5114,
+        "recall": 0.7258,
+        "f1": 0.6,
+        "tp": 270,
+        "fp": 258,
+        "fn": 102
+      },
+      "macro_f1": 0.5864,
+      "exact_match": 0.362,
+      "exact_count": 122,
+      "total": 337,
+      "per_category": {
+        "TECHNOLOGY": {
+          "precision": 0.395,
+          "recall": 0.7833,
+          "f1": 0.5251,
+          "tp": 47,
+          "fp": 72,
+          "fn": 13
+        },
+        "SPORT": {
+          "precision": 0.7843,
+          "recall": 1.0,
+          "f1": 0.8791,
+          "tp": 40,
+          "fp": 11,
+          "fn": 0
+        },
+        "ART": {
+          "precision": 0.5,
+          "recall": 0.8868,
+          "f1": 0.6395,
+          "tp": 47,
+          "fp": 47,
+          "fn": 6
+        },
+        "CAREER": {
+          "precision": 0.6273,
+          "recall": 0.6558,
+          "f1": 0.6413,
+          "tp": 101,
+          "fp": 60,
+          "fn": 53
+        },
+        "SOCIAL": {
+          "precision": 0.3,
+          "recall": 0.6818,
+          "f1": 0.4167,
+          "tp": 15,
+          "fp": 35,
+          "fn": 7
+        },
+        "OTHER": {
+          "precision": 0.3774,
+          "recall": 0.4651,
+          "f1": 0.4167,
+          "tp": 20,
+          "fp": 33,
+          "fn": 23
+        }
+      }
+    },
+    {
+      "threshold": 0.7,
+      "micro": {
+        "precision": 0.6124,
+        "recall": 0.6882,
+        "f1": 0.6481,
+        "tp": 256,
+        "fp": 162,
+        "fn": 116
+      },
+      "macro_f1": 0.6445,
+      "exact_match": 0.5223,
+      "exact_count": 176,
+      "total": 337,
+      "per_category": {
+        "TECHNOLOGY": {
+          "precision": 0.5395,
+          "recall": 0.6833,
+          "f1": 0.6029,
+          "tp": 41,
+          "fp": 35,
+          "fn": 19
+        },
+        "SPORT": {
+          "precision": 0.8696,
+          "recall": 1.0,
+          "f1": 0.9302,
+          "tp": 40,
+          "fp": 6,
+          "fn": 0
+        },
+        "ART": {
+          "precision": 0.6552,
+          "recall": 0.717,
+          "f1": 0.6847,
+          "tp": 38,
+          "fp": 20,
+          "fn": 15
+        },
+        "CAREER": {
+          "precision": 0.8257,
+          "recall": 0.5844,
+          "f1": 0.6844,
+          "tp": 90,
+          "fp": 19,
+          "fn": 64
+        },
+        "SOCIAL": {
+          "precision": 0.3659,
+          "recall": 0.6818,
+          "f1": 0.4762,
+          "tp": 15,
+          "fp": 26,
+          "fn": 7
+        },
+        "OTHER": {
+          "precision": 0.3636,
+          "recall": 0.7442,
+          "f1": 0.4885,
+          "tp": 32,
+          "fp": 56,
+          "fn": 11
+        }
+      }
+    },
+    {
+      "threshold": 0.9,
+      "micro": {
+        "precision": 0.5497,
+        "recall": 0.5349,
+        "f1": 0.5422,
+        "tp": 199,
+        "fp": 163,
+        "fn": 173
+      },
+      "macro_f1": 0.5386,
+      "exact_match": 0.4837,
+      "exact_count": 163,
+      "total": 337,
+      "per_category": {
+        "TECHNOLOGY": {
+          "precision": 0.7381,
+          "recall": 0.5167,
+          "f1": 0.6078,
+          "tp": 31,
+          "fp": 11,
+          "fn": 29
+        },
+        "SPORT": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1": 0.9412,
+          "tp": 40,
+          "fp": 5,
+          "fn": 0
+        },
+        "ART": {
+          "precision": 0.7143,
+          "recall": 0.0943,
+          "f1": 0.1667,
+          "tp": 5,
+          "fp": 2,
+          "fn": 48
+        },
+        "CAREER": {
+          "precision": 0.9595,
+          "recall": 0.461,
+          "f1": 0.6228,
+          "tp": 71,
+          "fp": 3,
+          "fn": 83
+        },
+        "SOCIAL": {
+          "precision": 0.4643,
+          "recall": 0.5909,
+          "f1": 0.52,
+          "tp": 13,
+          "fp": 15,
+          "fn": 9
+        },
+        "OTHER": {
+          "precision": 0.2349,
+          "recall": 0.907,
+          "f1": 0.3732,
+          "tp": 39,
+          "fp": 127,
+          "fn": 4
+        }
+      }
+    },
+    {
+      "threshold": 0.95,
+      "micro": {
+        "precision": 0.5126,
+        "recall": 0.4919,
+        "f1": 0.5021,
+        "tp": 183,
+        "fp": 174,
+        "fn": 189
+      },
+      "macro_f1": 0.4915,
+      "exact_match": 0.454,
+      "exact_count": 153,
+      "total": 337,
+      "per_category": {
+        "TECHNOLOGY": {
+          "precision": 0.7429,
+          "recall": 0.4333,
+          "f1": 0.5474,
+          "tp": 26,
+          "fp": 9,
+          "fn": 34
+        },
+        "SPORT": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1": 0.9412,
+          "tp": 40,
+          "fp": 5,
+          "fn": 0
+        },
+        "ART": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 2,
+          "fn": 53
+        },
+        "CAREER": {
+          "precision": 0.9565,
+          "recall": 0.4286,
+          "f1": 0.5919,
+          "tp": 66,
+          "fp": 3,
+          "fn": 88
+        },
+        "SOCIAL": {
+          "precision": 0.5,
+          "recall": 0.5455,
+          "f1": 0.5217,
+          "tp": 12,
+          "fp": 12,
+          "fn": 10
+        },
+        "OTHER": {
+          "precision": 0.2143,
+          "recall": 0.907,
+          "f1": 0.3467,
+          "tp": 39,
+          "fp": 143,
+          "fn": 4
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+
+{
+  "hypothesis_template": "Bu etkinlik {} ile ilgilidir.",
+  "labels": {
+    "TECHNOLOGY": "teknoloji ve yazılım",
+    "SPORT": "spor",
+    "ART": "sanat, müzik ve kültür",
+    "CAREER": "kariyer ve iş hayatı",
+    "SOCIAL": "sosyal buluşma ve gönüllülük",
+    "OTHER": "sağlık, güvenlik ve genel bilgilendirme"
+  }
+}
+

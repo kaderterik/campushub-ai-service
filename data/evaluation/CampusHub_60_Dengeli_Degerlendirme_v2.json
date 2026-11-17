@@ -1,0 +1,362 @@
+[
+  {
+    "text": "Veritabanında yavaş çalışan sorguların nedenlerini anlamak için SQL indeksleri ve sorgu planları üzerinde uygulamalı çalışacağız.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Akıllı sera: sensör verileriyle otomatik sulama sistemi tasarlama",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Flutter ile kampüs içinde yön bulmaya yardımcı bir mobil uygulama geliştireceğiz. Konum ekranı ve örnek bir API bağlantısını kodlayacağız.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K1",
+    "split": "holdout"
+  },
+  {
+    "text": "Erişilebilir web sayfaları atölyesinde ekran okuyucu uyumluluğunu ve klavyeyle gezinmeyi örnek bir projede test edeceğiz.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Başlangıç seviyesi badminton antrenmanı",
+    "expected_category": "SPORT",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Kampüsün tırmanış duvarında güvenli tutuş, denge ve temel rota tekniklerini eğitmen eşliğinde uygulayacağız. Spor ayakkabıyla katılın.",
+    "expected_category": "SPORT",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Kampüs parkurunda dayanıklılık koşusu ve tempo çalışması yapılacak. Parkur sonunda kısa bir tanışma sohbeti de düzenlenecek.",
+    "expected_category": "SPORT",
+    "author_id": "K1",
+    "split": "holdout"
+  },
+  {
+    "text": "Kısa film gösterimi ve sinema dili üzerine söyleşi",
+    "expected_category": "ART",
+    "author_id": "K1",
+    "split": "holdout"
+  },
+  {
+    "text": "Ebru atölyesinde boya dağılımını ve desenleri kâğıda aktarmayı öğrenip kendi çalışmalarımızı oluşturacağız.",
+    "expected_category": "ART",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Bilgisayarda elektronik müzik üretimi atölyesinde MIDI, ritim kurgusu ve ses tasarımını deneyeceğiz. Etkinlik kodlama değil, müzikal üretim odaklıdır.",
+    "expected_category": "ART",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Teknik mülakatta algoritma soruları nasıl anlatılır?",
+    "expected_category": "CAREER",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Yurt dışında yüksek lisans başvurularında motivasyon mektubu, referans ve burs seçeneklerini ele alacağımız kariyer bilgilendirme oturumu.",
+    "expected_category": "CAREER",
+    "author_id": "K1",
+    "split": "holdout"
+  },
+  {
+    "text": "Bir yazılım şirketinin mühendisleri, işe alımda hangi yetkinliklere baktıklarını ve mülakat süreçlerini anlatacak. Bu oturumda uygulama kodlaması yapılmayacak.",
+    "expected_category": "CAREER",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Ürün yöneticisi olmak isteyen öğrenciler için mesleğin sorumlulukları, kariyer yolları ve günlük çalışma hayatı üzerine söyleşi.",
+    "expected_category": "CAREER",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Dil değişim masası: farklı ülkelerden öğrencilerle tanışma",
+    "expected_category": "SOCIAL",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Kampüs bahçesinde farklı bölümlerden öğrencilerin evden getirdikleri yemekleri paylaşacağı bir kaynaşma pikniği düzenlenecek.",
+    "expected_category": "SOCIAL",
+    "author_id": "K1",
+    "split": "holdout"
+  },
+  {
+    "text": "Film kulübümüz bu kez film çözümlemesi yerine yeni üyelerin tanışacağı bir buluşma yapacak. Birlikte film seçip sohbet edeceğiz.",
+    "expected_category": "SOCIAL",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Laboratuvar güvenliği ve kimyasal uyarı işaretleri hakkında zorunlu bilgilendirme oturumu düzenlenecek.",
+    "expected_category": "OTHER",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Kampüs sağlık merkezinde tansiyon ölçümü ve koruyucu sağlık alışkanlıkları hakkında danışma standı kurulacak.",
+    "expected_category": "OTHER",
+    "author_id": "K1",
+    "split": "development"
+  },
+  {
+    "text": "Merkez kütüphanede akademik kaynak tarama ve kütüphane hizmetlerinden yararlanma üzerine uygulamalı bilgilendirme atölyesi düzenlenecek.",
+    "expected_category": "OTHER",
+    "author_id": "K1",
+    "split": "holdout"
+  },
+  {
+    "text": "Yapay zekâ bir metni nasıl sınıflandırır? Küçük bir hazır modeli çalıştırıp farklı girdilerde ürettiği sonuçları inceleyeceğiz.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Birlikte oyun yapalım: karakter hareketleri ve çarpışma kodlama",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K2",
+    "split": "holdout"
+  },
+  {
+    "text": "Siber güvenlik buluşmasında yalnızca eğitim için hazırlanmış deneme ortamındaki açıkları inceleyeceğiz. Katılımcılar örnek istekleri analiz ederek güvenli kod yazma yöntemlerini uygulayacak.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Masa tenisi çiftler ligi için eşini bul",
+    "expected_category": "SPORT",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bisiklet topluluğuyla sürüş tekniği çalışıyoruz. Frenleme, güvenli dönüş ve denge egzersizlerinin ardından kısa bir parkur tamamlayacağız. Kask gereklidir.",
+    "expected_category": "SPORT",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Üniversite basketbol takımının seçmeleri salonda yapılacak. Katılımcılar temel hareketleri ve kısa maç performanslarını gösterecek; spor kıyafetiyle gelin.",
+    "expected_category": "SPORT",
+    "author_id": "K2",
+    "split": "holdout"
+  },
+  {
+    "text": "Sınav haftasına hareket molası: açık alanda esneme ve pilates",
+    "expected_category": "SPORT",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Akustik müzik dinletisi",
+    "expected_category": "ART",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Seramik atölyesi: kilden ilk fincanımızı şekillendiriyoruz",
+    "expected_category": "ART",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Telefonla fotoğraf çekiminde ışık ve kadrajı konuşacağız. Ardından kampüste çekim yapıp fotoğrafları görsel anlatım açısından birlikte değerlendireceğiz.",
+    "expected_category": "ART",
+    "author_id": "K2",
+    "split": "holdout"
+  },
+  {
+    "text": "Kariyer fuarında şirket temsilcileriyle tanış",
+    "expected_category": "CAREER",
+    "author_id": "K2",
+    "split": "holdout"
+  },
+  {
+    "text": "LinkedIn profilini iş başvurularına hazırlama oturumu",
+    "expected_category": "CAREER",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tasarım alanında çalışan mezunumuz portföy görüşmelerini anlatacak. Katılımcılar örnek işlerini nasıl sunabileceklerine dair geri bildirim alacak; çizim eğitimi verilmeyecek.",
+    "expected_category": "CAREER",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Barınaktaki hayvanlar için gönüllü destek günü. Bağışlanan malzemeleri birlikte düzenleyip görevli ekibin yönlendirmesiyle destek olacağız.",
+    "expected_category": "SOCIAL",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Mezunlarla sohbet: kampüs anıları ve öğrenci hayatı. Bu buluşmada işe alım veya CV değerlendirmesi yapılmayacak; amaç farklı dönemlerden öğrencileri bir araya getirmek.",
+    "expected_category": "SOCIAL",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kutu oyunlarıyla tanışma akşamı",
+    "expected_category": "SOCIAL",
+    "author_id": "K2",
+    "split": "holdout"
+  },
+  {
+    "text": "Kampüs çevresindeki çöpleri toplamak için gönüllülerle buluşuyoruz. Eldiven ve poşet dağıtımından sonra gruplara ayrılıp belirlenen alanları temizleyeceğiz.",
+    "expected_category": "SOCIAL",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kampüste deprem ve tahliye tatbikatı",
+    "expected_category": "OTHER",
+    "author_id": "K2",
+    "split": "holdout"
+  },
+  {
+    "text": "İlk yardım uygulama atölyesi. Sağlık ekibi eşliğinde temel yaşam desteği ve acil durumlarda yardım çağırma adımlarını eğitim maketleri üzerinde çalışacağız.",
+    "expected_category": "OTHER",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Sağlıklı uyku ve sınav dönemi semineri. Bir uzman, uyku düzeni ve günlük alışkanlıklar üzerine bilgi verecek; ardından katılımcıların sorularını yanıtlayacak.",
+    "expected_category": "OTHER",
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Micro:bit sensörlerinden gelen verileri Python ile okuyup canlı grafik oluşturacağımız uygulamalı bir atölye yapılacak.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K3",
+    "split": "holdout"
+  },
+  {
+    "text": "Üniversite öğrencileri Git ve GitHub kullanarak ekip halinde kod geliştirmeyi, pull request açmayı ve değişiklikleri birleştirmeyi deneyecek.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Deprem uyarı sistemi için sensör verilerini işleyen küçük bir gömülü yazılım prototipi geliştireceğiz.",
+    "expected_category": "TECHNOLOGY",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Bölümler arası voleybol turnuvasının eleme karşılaşmaları spor salonunda yapılacak.",
+    "expected_category": "SPORT",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Oryantiring yarışında harita ve pusulayla kampüsteki kontrol noktalarını bulmak için parkuru tamamlayacağız.",
+    "expected_category": "SPORT",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Yüzme kulübü antrenmanında temel kulaç, dönüş ve nefes alma teknikleri uygulamalı çalışılacak.",
+    "expected_category": "SPORT",
+    "author_id": "K3",
+    "split": "holdout"
+  },
+  {
+    "text": "Yaratıcı yazarlık atölyesinde kısa öykü oluşturma ve karakter geliştirme teknikleri üzerine çalışmalar yapılacak.",
+    "expected_category": "ART",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Tiyatro topluluğu doğaçlama gösterisinde seyirciden gelen önerilerle kısa sahneler canlandıracak.",
+    "expected_category": "ART",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Tablet üzerinde dijital illüstrasyon atölyesinde renk paleti ve kompozisyon teknikleriyle çizimler yapılacak.",
+    "expected_category": "ART",
+    "author_id": "K3",
+    "split": "holdout"
+  },
+  {
+    "text": "Kampüs korosu Türk halk müziği eserlerinden oluşan bir konser verecek.",
+    "expected_category": "ART",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Mezun bir veri analisti iş hayatına geçişini, ilk işe giriş deneyimini ve meslekte ilerleme yollarını anlatacak.",
+    "expected_category": "CAREER",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Staj başvuruları için özgeçmiş ve ön yazı hazırlama çalışması yapılacak; katılımcılar belgelerine geri bildirim alacak.",
+    "expected_category": "CAREER",
+    "author_id": "K3",
+    "split": "holdout"
+  },
+  {
+    "text": "Şirketlerin insan kaynakları temsilcileri, mülakat değerlendirme ölçütlerini ve yeni mezunlardan bekledikleri becerileri açıklayacak.",
+    "expected_category": "CAREER",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Kampüse yeni gelen Erasmus öğrencileriyle tanışmak için ortak kahvaltı ve sohbet buluşması düzenlenecek.",
+    "expected_category": "SOCIAL",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Gönüllüler ihtiyaç sahibi öğrencilere ulaştırılacak kırtasiye paketlerini birlikte hazırlayıp dayanışma günü düzenleyecek.",
+    "expected_category": "SOCIAL",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Robotik kulübünün yeni üyeleriyle kaynaşma akşamında projeler yerine kulüp deneyimlerini konuşup masa oyunları oynayacağız.",
+    "expected_category": "SOCIAL",
+    "author_id": "K3",
+    "split": "holdout"
+  },
+  {
+    "text": "Öğrenci işleri birimi, ders kaydı sırasında sık yapılan hatalar ve akademik takvim hakkında bilgilendirme oturumu düzenleyecek.",
+    "expected_category": "OTHER",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Uzman psikolojik danışman, sınav kaygısı ve stresle başa çıkma konusunda bir seminer verecek.",
+    "expected_category": "OTHER",
+    "author_id": "K3",
+    "split": "development"
+  },
+  {
+    "text": "Kişisel bütçe planlama atölyesinde aylık giderleri takip etmeyi ve tasarruf yöntemlerini konuşacağız.",
+    "expected_category": "OTHER",
+    "author_id": "K3",
+    "split": "holdout"
+  },
+  {
+    "text": "Kampüs sürdürülebilirlik seminerinde su tüketimini azaltma ve enerji tasarrufu alışkanlıklarını bir çevre uzmanından dinleyeceğiz.",
+    "expected_category": "OTHER",
+    "author_id": "K3",
+    "split": "development"
+  }
+]

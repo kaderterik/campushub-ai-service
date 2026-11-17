@@ -1,6 +1,13 @@
+
 # CampusHub AI Service
 
-FastAPI ile hazırlanmış deneme sınıflandırma servisi.
+FastAPI ile hazırlanmış, üniversite etkinlik açıklamalarını sınıflandıran AI mikroservisi.
+
+Servis iki sınıflandırıcıyı destekler:
+- **FakeClassifier:** API geliştirme ve testleri için sabit sonuç döndürür.
+- **MDeBERTaClassifier:** Gerçek çok dilli zero-shot AI modeli ile sınıflandırma yapar.
+
+Varsayılan sınıflandırıcı FakeClassifier'dır.
 
 ## Kurulum — Windows (PowerShell)
 
@@ -19,38 +26,131 @@ python -m pip install -r requirements.txt
 
 ## Çalıştırma — Windows (PowerShell)
 
+Varsayılan FakeClassifier ile:
+
 ```powershell
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8005
 ```
 
+Gerçek AI modeli ile:
+
+```powershell
+$env:CLASSIFIER_BACKEND = "real"
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --port 8005
+```
+
 ## Çalıştırma — macOS/Linux
 
-Sanal ortam aktifken:
+Sanal ortam aktifken FakeClassifier ile:
 
 ```bash
 python -m uvicorn app.main:app --reload --port 8005
 ```
 
-Swagger: http://127.0.0.1:8005/docs
+Gerçek AI modeli ile:
+
+```bash
+CLASSIFIER_BACKEND=real python -m uvicorn app.main:app --port 8005
+```
+
+Swagger arayüzü: http://127.0.0.1:8005/docs
+
+## Gerçek AI Modeli
+
+Kullanılan model:
+
+`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`
+
+Model Hugging Face üzerinden yüklenir ve sabit model revision'ı kullanılır.
+
+Özellikler:
+- CPU üzerinde çalışır.
+- Model, uygulama başlangıcında bir kez yüklenir.
+- Tekrar `load()` çağrılması modeli yeniden yüklemez.
+- Türkçe etkinlik açıklamalarını sınıflandırabilir.
+- Multi-label sınıflandırma desteklenir.
+- Karar eşiği 0.70'tir.
+
+Model ilk kez çalıştırıldığında, önbellekte yoksa Hugging Face üzerinden indirilir. İlk indirme için internet bağlantısı gereklidir.
+
+Gerçek modeli etkinleştirmek için `CLASSIFIER_BACKEND=real` ortam değişkeni kullanılmalıdır. Bu ayar yapılmazsa FakeClassifier çalışır.
+
+### Sınıflandırma Kuralları
+
+Desteklenen kategoriler:
+
+- TECHNOLOGY
+- SPORT
+- ART
+- CAREER
+- SOCIAL
+- OTHER
+
+Beş konu kategorisinin her biri bağımsız olarak değerlendirilir.
+
+0.70 veya üzerinde skor alan konu kategorileri sonuç listesine eklenir.
+
+Hiçbir konu kategorisi 0.70 eşiğini geçmezse yalnızca OTHER döndürülür.
+
+OTHER, diğer kategorilerle birlikte döndürülmez.
+
+Model skorları 0 ile 1 arasındadır; toplamlarının 1 olması gerekmez. Bu skorlar kalibre edilmiş doğruluk olasılıkları olarak yorumlanmamalıdır.
 
 ## API
 
-POST /ai/classify
+### POST /ai/classify
 
 İstek:
+
 ```json
-{"text": "Python atölyesi"}
+{
+  "text": "Python atölyesi"
+}
 ```
 
-Yanıt:
+Yanıt örneği (HTTP 200):
+
 ```json
-{"category": "TECHNOLOGY", "confidence": 0.91}
+{
+  "predictions": [
+    {
+      "category": "TECHNOLOGY",
+      "confidence": 0.91
+    },
+    {
+      "category": "CAREER",
+      "confidence": 0.84
+    }
+  ]
+}
 ```
 
-FakeClassifier her geçerli isteğe sabit deneme sonucu döndürür.
-Bu sonuç gerçek model tahmini değildir.
+Bu örnek, FakeClassifier'ın döndürdüğü sabit deneme sonucudur. Gerçek model tahmini değildir.
 
-Geçersiz isteklerde HTTP 400 ve error/message alanları döner.
+Her tahmin kendi `category` ve `confidence` alanlarını taşır.
+
+Liste boş olamaz ve kategoriler tekrarlanamaz.
+
+Tek kategorili yanıt da aynı liste yapısını kullanır (sözleşme örneği):
+
+```json
+{
+  "predictions": [
+    {
+      "category": "OTHER",
+      "confidence": 0.76
+    }
+  ]
+}
+```
+
+Bu tek kategorili örnek, FakeClassifier'ın sabit çıktısı değildir.
+
+Grup 3 sözleşmesi: [docs/ai-classify-contract.md](docs/ai-classify-contract.md).
+
+Bu yanıt biçimi önceki tek `category/confidence` nesnesinden farklıdır. Grup 3 tüketicisinin de bu sözleşmeyi kullanması gerekir.
+
+Geçersiz isteklerde HTTP 400 ve `error/message` alanları döner.
 
 ## Testler — Windows (PowerShell)
 
@@ -66,10 +166,18 @@ Sanal ortam aktifken:
 python -m pytest -q
 ```
 
+Projedeki `pytest.ini` dosyası sayesinde normal test keşfi yalnızca `tests/` klasöründen yapılır.
+
+Böylece `experiments/test_*.py` dosyaları standart API testleri sırasında otomatik çalıştırılmaz.
+
+Gerçek modelin otomatik birim testlerinde model pipeline'ı taklit edilerek (mock) model indirmeden yükleme ve sınıflandırma kuralları kontrol edilebilir.
+
 ## Durum
 
-/health router'ı uygulamaya bağlanmıştır. Gerçek model bağlantısı
-henüz tamamlanmamıştır; şimdilik FakeClassifier kullanılmaktadır.
+- Gerçek AI modeli (mDeBERTa) FastAPI servisine entegre edilmiştir.
+- FakeClassifier varsayılan olarak korunmuştur; `CLASSIFIER_BACKEND=real` ile gerçek model kullanılır.
+- Gerçek model için CPU inference doğrulanmıştır.
+- `/health` router'ı uygulamaya bağlanmıştır; hem FakeClassifier hem MDeBERTaClassifier `load()` / `is_ready()` arayüzünü uygular.
 
 ## Health & Model Lifecycle
 
@@ -84,45 +192,41 @@ durumuna göre bildirir (T06, T26).
 ### T26 tasarım kararı
 
 - Model, ilk istekte (lazy) değil, uygulama başlarken FastAPI `lifespan`
-  içinde bir kez ve **bloklayarak** yüklenir. Yükleme bitene kadar
-  uvicorn port üzerinden istek kabul etmez; yani model yüklenirken
-  /health 503 dönmez, bağlantı hiç kurulamaz. Bu bilinçli bir tercihtir:
-  üretim ortamında model hazır olmadan servise trafik gelmemelidir.
+  içinde bir kez ve **bloklayarak** yüklenir (`classifier.load()`).
+  Yükleme bitene kadar uvicorn port üzerinden istek kabul etmez; yani
+  model yüklenirken /health 503 dönmez, bağlantı hiç kurulamaz. Bu
+  bilinçli bir tercihtir: üretim ortamında model hazır olmadan servise
+  trafik gelmemelidir.
 - Container başlangıcındaki bu yükleme süresi Docker tarafında
-  `HEALTHCHECK --start-period=30s` ile tolere edilir (bkz. `Dockerfile`).
-  Bu süre içindeki başarısız kontroller container'ı `unhealthy` yapmaz;
-  model belleğe yüklenip /health HTTP 200 döndüğünde container `healthy`
-  durumuna geçer. Gerçek model (mDeBERTa) daha uzun sürede yükleniyorsa
-  `--start-period` değeri artırılmalıdır.
-- Model yüklemesi startup sırasında hata fırlatırsa uygulama ayağa
-  kalkmaz ve container sonlanır; hata startup logunda görünür.
-- Model hazır değilse veya runtime sırasında arızalanırsa
-  (`is_ready()` false) /health HTTP 503 döner; sınıflandırıcının
-  `ModelUnavailableError` fırlattığı istekler de HTTP 503
-  `MODEL_UNAVAILABLE` alır. Docker healthcheck, Kubernetes readiness
-  probe veya load balancer bu durumda servise trafik yönlendirmez.
+  `HEALTHCHECK --start-period=300s` ile tolere edilir (bkz. `Dockerfile`).
+  Gerçek model önbellekte yoksa ilk açılışta Hugging Face'ten indirildiği
+  için bu süre FakeClassifier'a göre çok daha uzundur. Bu süre içindeki
+  başarısız kontroller container'ı `unhealthy` yapmaz; model yüklenip
+  /health HTTP 200 döndüğünde container `healthy` durumuna geçer.
+- Model yüklemesi startup sırasında hata fırlatırsa
+  (`ModelUnavailableError`) uygulama ayağa kalkmaz ve container sonlanır;
+  hata startup logunda görünür.
+- Model hazır değilse (`is_ready()` false) /health HTTP 503 döner;
+  sınıflandırıcının `ModelUnavailableError` fırlattığı istekler (ör.
+  runtime inference hatası) HTTP 503 `MODEL_UNAVAILABLE` alır. Docker
+  healthcheck, Kubernetes readiness probe veya load balancer bu durumda
+  servise trafik yönlendirmez.
 - Hazır olma durumu sınıflandırıcının `is_ready()` metodu ile okunur
   (`app/contracts.py` içindeki `Classifier` arayüzü: `load()`,
-  `is_ready()`, `classify()`). Gerçek model sınıfı da bu arayüzü
-  uygulayarak aynı davranışı otomatik olarak alır.
+  `is_ready()`, `classify() -> list[ClassificationResult]`).
 
 ### Ortam değişkenleri
 
-| Değişken | Durum | Açıklama |
+| Değişken | Varsayılan | Açıklama |
 |---|---|---|
-| `HOST`, `PORT` | Aktif | uvicorn'un dinlediği adres ve port (varsayılan `0.0.0.0:8005`) |
-| `APP_ENV` | Tanımlı | Ortam adı (`development`, `production` vb.) |
-| `MODEL_ID` | **Henüz kullanılmıyor** | Gerçek modelin Hugging Face kimliği (`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`) |
-| `MODEL_REVISION` | **Henüz kullanılmıyor** | Model sürümü / branch / commit |
-| `MODEL_PATH` | **Henüz kullanılmıyor** | Modelin yerel dizini |
+| `CLASSIFIER_BACKEND` | `fake` | `real` verilirse gerçek mDeBERTa modeli, aksi halde FakeClassifier kullanılır |
+| `HOST`, `PORT` | `0.0.0.0`, `8005` | uvicorn'un dinlediği adres ve port (Docker imajında) |
+| `APP_ENV` | `development` | Ortam adı (`development`, `production` vb.) |
 
-> **Not:** `MODEL_ID`, `MODEL_REVISION` ve `MODEL_PATH` şu an
-> `.env.example` içinde tanımlıdır ancak kod bu değerleri **henüz
-> okumaz**, çünkü servis hâlâ `FakeClassifier` ile çalışır. Kişi 1
-> (model geliştirici) gerçek mDeBERTa modelini `Classifier` arayüzüne
-> bağladığında bu üç değişken kod tarafından okunacaktır. `torch` ve
-> `transformers` bağımlılıkları bu entegrasyon için `requirements.txt`
-> içine şimdiden eklenmiştir.
+> **Not:** Model kimliği (`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`) ve
+> sabitlenmiş revision, değerlendirme sonuçlarıyla birebir uyum için
+> `app/models/classifier.py` içinde sabit (`MODEL_ID`, `MODEL_REVISION`)
+> olarak tanımlıdır; ortam değişkeninden okunmaz.
 >
 > `docker run --env-file` tırnak işaretlerini silmediği için
 > `.env.example` değerleri tırnaksız yazılmalıdır.
@@ -131,17 +235,23 @@ durumuna göre bildirir (T06, T26).
 
 ```bash
 docker build -t campushub-ai-service .
+
+# Varsayılan: FakeClassifier
 docker run -d --name campushub-ai -p 8005:8005 --env-file .env.example campushub-ai-service
+
+# Gerçek AI modeli (demo için bu kullanılmalı)
+docker run -d --name campushub-ai -p 8005:8005 --env-file .env.example -e CLASSIFIER_BACKEND=real campushub-ai-service
+
 docker inspect --format '{{.State.Health.Status}}' campushub-ai   # starting -> healthy
 curl -i http://127.0.0.1:8005/health
 ```
 
 Healthcheck: `curl -f http://localhost:${PORT:-8005}/health`, ayarlar
-`--interval=10s --timeout=3s --start-period=30s --retries=3`.
+`--interval=10s --timeout=3s --start-period=300s --retries=3`.
 
 ## Hata Yönetimi
 
-Tüm hata yanıtları `error` ve `message` alanlarını içerir.
+Sınıflandırma işlemindeki doğrulama, model ve beklenmeyen sunucu hata yanıtları `error` ve `message` alanlarını içerir.
 
 | HTTP kodu | error | Açıklama |
 |---|---|---|
@@ -149,8 +259,20 @@ Tüm hata yanıtları `error` ve `message` alanlarını içerir.
 | 503 | MODEL_UNAVAILABLE | Sınıflandırıcı ModelUnavailableError ürettiğinde |
 | 500 | INTERNAL_SERVER_ERROR | Beklenmeyen sunucu hatası |
 
-Beklenmeyen hataların teknik ayrıntıları istemciye gönderilmez,
-sunucu loguna yazılır.
+Beklenmeyen hataların teknik ayrıntıları istemciye gönderilmez, sunucu loguna yazılır.
 
-Gerçek model entegrasyonunda modelin kullanılamadığı durumlar
-app.exceptions.ModelUnavailableError ile bildirilmelidir.
+Modelin kullanılamadığı durumlar `app.exceptions.ModelUnavailableError` ile bildirilebilir.
+
+## OpenAPI Sözleşmesi
+
+API tanımı [docs/ai-classify.openapi.yaml](docs/ai-classify.openapi.yaml)
+dosyasında sürümlenir.
+
+Swagger arayüzü: http://127.0.0.1:8005/docs
+
+Çalışan servisin OpenAPI JSON adresi:
+http://127.0.0.1:8005/openapi.json
+
+API şemaları değiştiğinde YAML dosyası yeniden üretilmelidir.
+Grup 3 bu sözleşmedeki istek, predictions listesi ve hata
+yanıtlarını esas almalıdır.

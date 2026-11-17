@@ -11,8 +11,8 @@ class FakeClassifier:
     def is_ready(self) -> bool:
         return self._ready
 
-    def classify(self, text: str) -> ClassificationResult:
-        return ClassificationResult(
-            category="TECHNOLOGY",
-            confidence=0.91,
-        )
+    def classify(self, text: str) -> list[ClassificationResult]:
+        return [
+            ClassificationResult(category="TECHNOLOGY", confidence=0.91),
+            ClassificationResult(category="CAREER", confidence=0.84),
+        ]

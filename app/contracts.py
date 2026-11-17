@@ -1,10 +1,14 @@
 from dataclasses import dataclass
 from typing import Protocol
+from typing import Literal
+
+
+Category = Literal["TECHNOLOGY", "SPORT", "ART", "CAREER", "SOCIAL", "OTHER"]
 
 
 @dataclass(frozen=True)
 class ClassificationResult:
-    category: str
+    category: Category
     confidence: float
 
 
@@ -15,5 +19,5 @@ class Classifier(Protocol):
     def is_ready(self) -> bool:
         ...
 
-    def classify(self, text: str) -> ClassificationResult:
+    def classify(self, text: str) -> list[ClassificationResult]:
         ...

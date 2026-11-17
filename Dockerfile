@@ -27,7 +27,7 @@ USER appuser
 EXPOSE 8005
 
 # Model lifespan içinde bloklayarak yüklenir; start-period bu süreyi tolere eder.
-HEALTHCHECK --interval=10s --timeout=3s --start-period=30s --retries=3 \
+HEALTHCHECK --interval=10s --timeout=3s --start-period=300s --retries=3 \
     CMD curl -f http://localhost:${PORT:-8005}/health || exit 1
 
 CMD ["sh", "-c", "uvicorn app.main:app --host ${HOST} --port ${PORT}"]

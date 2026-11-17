@@ -1,0 +1,137 @@
+openapi: 3.1.0
+info:
+  title: CampusHub AI Service
+  description: CampusHub etkinlik siniflandirma API'si.
+  version: 1.0.0
+paths:
+  /ai/classify:
+    post:
+      tags:
+      - Classification
+      summary: Classify
+      operationId: classify_ai_classify_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClassificationRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClassificationResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Model unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Unexpected server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    CategoryPrediction:
+      properties:
+        category:
+          type: string
+          enum:
+          - TECHNOLOGY
+          - SPORT
+          - ART
+          - CAREER
+          - SOCIAL
+          - OTHER
+          title: Category
+        confidence:
+          type: number
+          maximum: 1.0
+          minimum: 0.0
+          title: Confidence
+      type: object
+      required:
+      - category
+      - confidence
+      title: CategoryPrediction
+    ClassificationRequest:
+      properties:
+        text:
+          type: string
+          title: Text
+      type: object
+      required:
+      - text
+      title: ClassificationRequest
+    ClassificationResponse:
+      properties:
+        predictions:
+          items:
+            $ref: '#/components/schemas/CategoryPrediction'
+          type: array
+          maxItems: 5
+          minItems: 1
+          title: Predictions
+      type: object
+      required:
+      - predictions
+      title: ClassificationResponse
+    ErrorResponse:
+      properties:
+        error:
+          type: string
+          title: Error
+        message:
+          type: string
+          title: Message
+      type: object
+      required:
+      - error
+      - message
+      title: ErrorResponse
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError

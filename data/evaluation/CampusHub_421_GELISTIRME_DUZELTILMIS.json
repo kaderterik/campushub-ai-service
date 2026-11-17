@@ -1,0 +1,2733 @@
+[
+  {
+    "text": "28.09.2026 Tarihli Öğretim Elemanı İlanımıza Ait Ön Değerlendirme Sonuçları",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "14.10.2026 Tarihli İptal İlanımız",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Medimpus : Tıp Video Eğitimi Veri Tabanı",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "03.08.2026 Tarihli Sözleşmeli (4/B) Personel Alım İlanı Yedek Kazanan Adayların Sonuçları",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Aylık Mali Tablolar (2)",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "2026 Sözleşme Dönemi Erasmus Personel Eğitim Alma ve Ders Verme Hareketliliği",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Aylık Mali Tablolar",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "02.10.2026 Tarihli Öğretim Üyesi İlanımız",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Clarivate Ekim Webinar Programı",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "anbean Pazarlama Okulu\nanbean Pazarlama Okulu'na gel, yarınına yön ver!!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CCI Sales Career Sprint\nSaha satış kariyerini şimdiden inşa etmek istiyorsan!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TEB Teftiş İşe Alım Günü\nİşe Alım Fırsatını Yakalamak İçin Teftiş İşe Alım Günü'ne Başvur!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Python ile Programlamaya Giriş\nPython'ı sıfırdan öğren, projelerle geliş, kariyerine yön ver!",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Doğuşlu Bir Gün\nDoğuş Otomotiv liderleri ile tanış, kariyer yolunu keşfet!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kariyerime İlk Adım Programı\nHemen Başvur!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "SOCAR Türkiye Next Gen Academy\nOnline Kariyer Okulu",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Water AI Hackathon\nTakımını Kur, Geleceğin Su Çözümlerini Tasarla",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "En Hızlısından Kariyer\nKariyerine yön ver, fırsatları keşfet, geleceğini şekillendir!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Inspiring W-Stories: W-Share\nKariyerinde Fark Yaratmış Kadın Yöneticilerin Hikayeleri",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Talent Summit Ankara\nGel, tanış, keşfet. Geleceğine yön ver!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "What's New, What's Next - The Future of HR\nİK Alanında Bilmek İsteyeceğin Her Şey Burada!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "anbean Erişilebilir Kariyer Buluşması\nEngelleri Aşan Kariyer",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Audit Day\nDenetimin Liderleri ile Buluşmaya Hazır Ol!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "What's New What's Next - The Future of Sales\nSatışın Geleceğini Sektördeki Profesyonellerden Öğren!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Stajyer&MT Hikayeleri\nHayalindeki Şirketi Genç Yeteneklerden Dinle!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Vodafone Long Term Internship Program 2026\nSpoiler: Geleceğin Vodafone’da!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "QNB UP CLUB\nİlerlemede Sınır Tanımayanlar Kulübü",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "BSH WE Power (Women in Engineering & Sales) 2026\nAre You Ready to Power Equality with WE Power?",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Proje & Etkinlik Stajyeri\nanbean Proje ve Etkinlik Stajyeri Arıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "23 Programı\n23'lü Ol",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Next Talent 2026\nJoin us to take your career journey to the next level!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Customer Success Manager – B2B SaaS\nHirex Customer Success Manager Arıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Event & Project Specialist\nanbean Event & Project Specialist arıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Event Operations Intern\nCoderspace Event Operations Intern Arıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Social Media and Content Intern\nCoderspace Social Media and Content Intern Arıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Coderspace Tech Recruiter Intern\nCoderspace Tech Recruiter Intern Arıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Samsung Innovation Campus - Yapay Zekâ (AI) Eğitimi\nSamsung Innovation Campus - Yapay Zekâ (AI) Eğitimi",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tam Da Sigortacı Olma Zamanı Deneyim Programı\nGet ready for a story that will make a difference in your career!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TalentAccess Staj Programı\nTalentAccess Staj Programımız Engel Tanımıyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Geleceğe Yatırım MT (Uzman Yardımcısı) Programı\nGeleceğe Yatırım MT (Uzman Yardımcısı) Programı",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kuveyt Türk Yetenek Programı\n\"Gerçekten\" Sağlam Bir Kariyer Seni Bekliyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kuveyt Türk Kaşif Öğrenci Programı\n\"Gerçekten\" Sağlam Bir Kariyer Seni Bekliyor!",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "\"DİKKAT EKSİKLİĞİ\" ve \"KAYIP VE YAS\" Konulu Mediko Eğitimleri",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Beslenme Bursu Sonuçları",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Güz Dönemi (Online) Yabancı Dil Kursları",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Beslenme Bursu Başvuruları Başladı",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Uluslararası Öğrencilerin İkamet İzni İşlemleri",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "AB Bursları 2026–2027 Başvuruları",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Katkı Payı/Öğrenim Ücreti Ödemeleri (Gazze'li Öğrenciler)",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İran'da Öğrenim Gören T.C. Vatandaşlarının Özel Öğrenci Başvuruları (İran-İsrail Savaşı Nedeniyle)",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İran'da Öğrenim Gören T.C. Vatandaşlarının Yatay Geçiş Başvuruları (İran-İsrail Savaşı Nedeniyle)",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EnGenius Proje Yarışması\nEnGenius Olmaya Hazır mısın? Mühendislik ve teknoloji tutkunu gerçek bir proje deneyimine…",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Uzun Dönem Genel Stajyer İlanı\nUzun Dönem Genel Stajyer İlanında seni neler bekliyor? İş hayatına dair heyecanlı, öğretici ve…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "SKY Uzun Dönem Staj Programı\nSKY Uzun Dönem Staj Programı Harika bir staj deneyimine ve profesyonel bir kariyer deneyimine var…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kampüs Temsilcisi\nKeyo People Campus Kampüs Temsilcilerini Arıyor! Üniversitende yeni bağlantılar kurmak, kariyer…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Long-Term Intern – Electrical & Electronics Engineer\nAbout Us As a leader in the building materials sector, we are committed to delivering exceptional…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Pioneers In Progress Long Term Internship - Akaryakıt…\nAkaryakıt Dışı Gelirler iş kolunda tedarik zinciri operasyonlarına destek olmak. Haftalık ve aylık…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Pioneers In Progress Long Term Internship - Marketing\nIf you're eager to explore the world of marketing, learn new skills, and gain hands-on experience…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "HR Intern\nİnsanları, iş dünyasını ve verileri anlamaya meraklıysan; analitik düşünme becerini gerçek…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Step Up Inclusive (Engelli Bireylere Özel)\nMerhaba! Step Up Inclusive Programı'na dahil olmaya hazır mısın? Seni Step Up Inclusive ile…",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "H. Orhan Argüden Yönetişim Bursu\nH. Orhan Argüden Yönetişim Bursu 2026–2027 Dönemi Başvuruları Devam Ediyor! Argüden Yönetişim…",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Grafik Tasarım Stajyeri\nYouthall yüz binlerce üyesi olan, 1.000'den fazla şirkete hizmet veren hiyerarşiden uzak scale-up…",
+    "expected_categories": [
+      "CAREER",
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Orville Summer Yaz Stajı Programı\nMerhaba Sevgili Orville Summer'24 Adayı!Oyak Renault Orville staj programlarına gösterdiğin ilgi içi...",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Grow Global@LC Waikiki\nÖnünde Hayat Stajın LC Waikiki’de!4 kıtada 60 ülkede 54.000'den fazla çalışanıyla Türkiye'nin en büy...",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Logistics Career WAY Internship Program\nÖnünde Hayat Stajın LC Waikiki’de! 59 ülkede 54.000'den fazla çalışanıyla Türkiye'nin en büyük...",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "LC Waikiki Long Term Internship\nÖnünde Hayat Stajın LC Waikiki’de! 4 kıtada 60 ülkede 55.000'den fazla çalışanıyla Türkiye'nin e...",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Lead Yourself with LC Waikiki Coaching Programı\nOkula başladığın gün daha dün gibi aklındayken mezuniyetin için geri saymaya başladın bile, zaman ne...",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Finance & More Career Summit",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Central Career Summit #5",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "AI & Data Career Summit",
+    "expected_categories": [
+      "CAREER",
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Aegean Career Summit #2",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Insurance & More Career Summit",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Diversity & Inclusion Career Summit",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Doğuş Grubu Kariyer Günü",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Boğaziçi Business Strategy Summit (BSS) 2026",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Future Sales Leader Academy",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Mülakat Teknikleri ve Simülasyonlar",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Özgeçmiş ve Motivasyon Mektubu Hazırlama",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Profesyonel İletişim Becerileri",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Üretken Yapay Zekâ Araçları ile İş Verimliliği",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Health & Science Career Summit",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CISCO Siber Güvenliğe Giriş (Introduction to Cybersecurity)\nCisco Networking Academy içeriği kapsamında temel siber güvenlik farkındalığı ve güvenlik kavramlarını öğreten 20 saatlik ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Python ile Veri Analizi\nPython, SQL, veri analizi ve veri görselleştirme konularına odaklanan 48 saatlik ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CISCO Siber Güvenlik Temelleri (Cybersecurity Essentials)\nCisco Networking Academy içeriği kapsamında siber güvenlik temellerinde bilgi ve beceri kazandırmayı amaçlayan 70 saatlik ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Python ile Makine Öğrenmesi\nYapay zekâ temelleri, veri işleme, modelleme, tahminleme ve makine öğrenmesi algoritmalarına odaklanan 60 saatlik ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yapay Zekâ Araçlarıyla Sosyal Medya İçeriği Üretimi\nYapay zekâ araçlarını sosyal medya içerik üretiminde etkin kullanma becerisi kazandırmayı amaçlayan 16 saatlik ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Python ile Derin Öğrenme Tabanlı Görüntü ve Doğal Dil İşleme\nDerin öğrenme, yapay sinir ağları, doğal dil işleme ve bilgisayarlı görü yöntemlerini Python üzerinden ele alan ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Üretken Yapay Zekâ Okuryazarlığı\nÜretken yapay zekâ araçlarını tanıma, etkili prompt yazma, üretilen içeriği doğrulama, veri güvenliği ve yapay zekâ etiğini kapsayan ücretsiz İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Siber Güvenlik 2 (Ağ Güvenliği ve Sızma Testleri)\nSızma testi temelleri, gelişmiş ağ konuları, zafiyet tespiti, ağ tabanlı saldırılar ve paket analizine odaklanan ücretsiz Enstitü İstanbul İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CISCO Siber Güvenlik Analisti (CyberOps Associate)\nCisco Networking Academy içeriği kapsamında siber güvenlik analistliği için gerekli temel ve uygulamalı becerileri geliştirmeyi amaçlayan ücretsiz İSMEK eğitimi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Qumpara Veri Giriş Stajyeri 2026\nQumpara’nın İstanbul’daki Veri Giriş Stajyeri ilanı, üniversite 3. ve 4. sınıf öğrencilerine veri girişi ve günlük operasyon süreçlerinde staj deneyimi sunar; son başvuru 22 Ekim 2026’dır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Türk İşaret Dili Eğitimine Giriş – 23 Ekim 2026\nBadi Next'in 23 Ekim 2026 saat 20.00'de düzenleyeceği ücretsiz çevrim içi Türk İşaret Dili Eğitimine Giriş, temel alfabe, pratik ifadeler ve günlük iletişime yönelik iki saatlik canlı bir eğitimdir. Son kayıt 22 Ekim saat 23.59.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Digital Democracy: Youth Voices Online! – Bulgaristan Erasmus+ Gençlik Değişimi 2026\nKOZ-DER’in aktif çağrıları arasında yer alan Digital Democracy: Youth Voices Online!, Bulgaristan’ın Pazardzhik şehrinde gençlerin dijital demokrasi, medya okuryazarlığı, eleştirel düşünme ve aktif vatandaşlık becerilerini geliştirmeyi amaçlayan Erasmus+ gençlik değişimidir. Bağımsız partner ilanında program 28 Ekim–6 Kasım 2026 ve 18–30 yaş aralığı için listelenmektedir.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Roots of Change: Rural Empowerment for Youth Employability – Erasmus+ Gençlik Değişimi 2026\nRoots of Change, kırsal bölgelerde yaşayan veya kırsal topluluklarla güçlü bağı bulunan gençlerin istihdam edilebilirlik, dijital yetkinlik, girişimcilik ve aktif katılım becerilerini geliştirmeyi amaçlayan Erasmus+ gençlik değişimidir. Proje 8–16 Ekim 2026 tarihlerinde Avis, Portekiz’de gerçekleştirilecektir.",
+    "expected_categories": [
+      "SOCIAL",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tiga Teknoloji Yıldızları Bursu 2026–2027\nTiga Vakfı Teknoloji Yıldızları Bursu 2026–2027, Ankara’daki belirli mühendislik ve bilişim lisans programlarında öğrenim gören, başarılı ve maddi desteğe ihtiyaç duyan öğrencilere aylık 6.000 TL destek sağlayan; ön eleme, detaylı inceleme ve birebir mülakat içeren burs programıdır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bridge4EU Values – Atatürk Üniversitesi Erasmus+ Gençlik Değişimi 2026\nAtatürk Üniversitesi öğrencilerine özel 10 kontenjanlı Erasmus+ KA152 gençlik değişimi. 14–21 Aralık 2026’da Romanya’da AB değerleri, demokrasi ve kültürlerarası öğrenme odaklı ücretsiz program.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bosna Hersek Mostar 5 Günlük Erasmus+ Semineri (All In)\nErasmus+ kapsamında 19-24 Ekim 2026 tarihlerinde Bosna Hersek Mostar'da düzenlenecek; demokrasi, gençlik çalışmaları ve aktif katılım odaklı 5 günlük uluslararası seminerdir.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Google Software Engineering BS/MS Intern 2027 – Bucharest\nGoogle’ın Bükreş ofisi için açtığı 2027 Software Engineering BS/MS Internship, EMEA bölgesindeki tam zamanlı lisans veya yüksek lisans programlarının sondan bir önceki ya da son sınıf öğrencilerine en az 13 haftalık yaz stajı sunar. Son başvuru 23 Ekim 2026’dır.",
+    "expected_categories": [
+      "CAREER",
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "IBM İle Kodluyoruz: AI4Future 11. Grup\nIBM ve Kodluyoruz iş birliğiyle yapay zeka dünyasına güçlü bir adım at! Temel ve ileri seviye seçenekleriyle GenAI, LLM, AI Agents ve RAG gibi geleceğin teknolojilerini keşfet. Sektör uzmanlarıyla tanışıp kariyerini hızlandırmak ve sertifikanı almak için hemen başvur!",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Macaristan Kállósemjén 50 Günlük ESC Gönüllülük Projesi\nSorgun Gençlik Derneği koordinasyonunda Macaristan'da 18-30 yaş arası gençlere yönelik çocuk kamplarında görev alma odaklı, tam hibeli 50 günlük ESC gönüllülük projesidir.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Genç Eko-Akademi Etki Dönemi 2026–2027\nLet’s Do It! Türkiye ve Çankaya Belediyesi iş birliğiyle Ankara'da düzenlenen Genç Eko-Akademi, 15–24 yaş arası 40 genci Kasım 2026–Mart 2027 arasında çevre, sıfır atık ve yeşil ekonomi alanlarında buluşturuyor. Son başvuru 23 Ekim.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İBB Genç Üniversiteli Eğitim Desteği 2026–2027\nİBB Genç Üniversiteli Eğitim Desteği 2026–2027 kapsamında İstanbul’da ikamet eden uygun yükseköğrenim öğrencilerine 20.000 TL eğitim desteği sağlanıyor. Başvurular 29 Eylül–23 Ekim 2026 tarihleri arasında resmî Genç Üniversiteli portalından alınıyor.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "AfterFAANG × İstanbul Bilgi Üniversitesi Yapay Zekâ Zirvesi 2026\nAfterFAANG ve İstanbul Bilgi Üniversitesi iş birliğiyle düzenlenen ücretsiz uygulamalı yapay zekâ günü; katılımcılar 12 farklı atölyede yapay zekâ araçlarını gerçek işler üzerinde deneyimler.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Head & Shoulders Kampüs Elçiliği Programı (P&G)\nP&G Türkiye tarafından İstanbul ve Ankara'daki 1. ve 2. sınıf öğrencilerine yönelik düzenlenen, P&G mentörlüğü, ofis oryantasyonu ve marka temsilciliği sunan 1 akademik yıllık ücretsiz liderlik programıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "22. Genç AKADEMİ Temsilcilik Programı 2026\n22. Genç AKADEMİ Temsilcilik Programı 2026, Bilkent Üniversitesi Operational Research Kulübü’nün Ankara’da düzenleyeceği ulusal öğrenci sempozyumunun Türkiye genelindeki kampüs tanıtımını yürütecek üniversite temsilcilerini seçen gönüllü programdır; son başvuru 24 Ekim 2026’dır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Avrupa Dayanışma Programı (ESC) 2026 – Ücretsiz Türkçe Destekli Online Kurs\nESC gönüllülüğü ve proje başvurularını öğreten, Türkçe materyalleri de bulunan ücretsiz çevrim içi kurs.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "HedeflerBir Social Hack Bootcamp 2026\n18–25 yaş arası üniversite öğrencileri için altı haftalık ücretsiz çevrim içi sosyal inovasyon ve mentorluk programı. Son başvuru: 25 Ekim 2026.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Growth Circuit 2026\nODTÜ TEKNOKENT’in erken aşama, henüz şirketleşmemiş teknoloji girişimlerine yönelik hibrit hızlandırma programı. Son başvuru: 25 Ekim 2026, 23.59.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ANSİAD Bi’DüşünSen Bulursun 14. Ödüllü İş Fikri Yarışması 2026\nANSİAD ve Habitat Derneği iş birliğiyle düzenlenen Bi’DüşünSen Bulursun! 14. Ödüllü İş Fikri Yarışması, Batı Akdeniz üniversite ve araştırma ekosistemindeki erken aşama girişimleri “Yapay Zekâ ile Sürdürülebilir Geleceği Tasarla” temasıyla buluşturur; 10 girişim eğitim/mentorluk sürecine, finalde 3 girişim toplam 100 gram altın ödülüne hak kazanır.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TAP Vakfı 11. Dönem 1 Aralık Gençlik Fonu 2026\nTAP Vakfı, 18–30 yaş gençlik gruplarının eşitlik, güvenli ilişkiler ve sağlık farkındalığı projelerine proje başına en fazla 25.000 TL ayni destek sağlıyor. Son başvuru 25 Ekim 2026.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kılavuz Kariyer 3. Dönem 2026 – Ücretsiz Dijital Kariyer Programı\nKocaeli Büyükşehir Belediyesi tarafından 16–29 yaşındaki Kocaeli’de yaşayan veya okuyan gençler için düzenlenen üç aylık ücretsiz dijital kariyer ve iş simülasyonu programı. Son başvuru 25 Ekim 2026.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CEF İle Finans Eğitimi\nCEF ile Finans Eğitimi 2026, Akbank Gençlik Akademisi ve Sabancı Üniversitesi Center of Excellence in Finance iş birliğiyle 18–25 yaş arası üniversite öğrencilerine bankacılıktan davranışsal finansa uzanan altı haftalık çevrim içi finans eğitimi sunar. Son başvuru 25 Ekim 2026’dır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Seiml-Hof Obing – Almanya ESC Gönüllülük Takımı 2026\nSeiml-Hof’un Almanya’nın Obing kentindeki ESC gönüllülük takımı; 18–30 yaş arası Türkiye’den adaylara açık, konaklama, yemek, cep harçlığı, sigorta ve seyahat desteği sağlanan çevre ve sürdürülebilirlik odaklı projedir.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Why Municipal Youth Participation? – Avrupa Konseyi Semineri 2026\nAvrupa Konseyi ve Democracy Reloading ortaklığında düzenlenen seminer, yerel ve bölgesel düzeyde gençlik katılım politikaları geliştiren kamu ve sivil toplum aktörlerini 16–21 Kasım 2026 tarihlerinde Budapeşte’de bir araya getirecek.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Mental Health in Youth Work – Finlandiya Eğitim Kursu 2026\nFinlandiya Ulusal Ajansı EDUFI tarafından düzenlenen eğitim kursu, gençlerle doğrudan çalışan youth worker’ların gençlerin ruh sağlığı, iyi oluş ve dayanıklılığını destekleme becerilerini geliştirmeyi amaçlıyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "El Ver Paylaşalım Şehir Dışı Üniversite İçin Yaşam Bursu\nEl Ver Paylaşalım Yardımlaşma Derneği, ailesinden uzakta üniversite okuyan ve maddi desteğe ihtiyaç duyan öğrencilere Eylül–Haziran arasında 10 ay ödenen karşılıksız yaşam bursu sunar. Bursiyerler başvuru ve mülakat süreciyle seçilir. Resmî sayfada 2026–2027 döneminin kesin son başvuru tarihi veya yeni başvuru formunun açık olduğu doğrulanamadığından program sürekli açık değildir.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Badi Next Nöropazarlama Eğitimi – 26 Ekim 2026\nSeda Genç’in anlatımıyla tüketici davranışları, algı, marka iletişimi ve satın alma kararlarının ele alınacağı 26 Ekim saat 20.00’deki ücretsiz online nöropazarlama eğitimi.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "HackWise 2026 — Cyberwise × ODTÜ\nHackWise 2026, Cyberwise tarafından ODTÜ’de düzenlenen; üniversite öğrencilerine uygulamalı siber güvenlik eğitimleri ve CTF, son gün ise herkese açık siber güvenlik konferansı sunan üç günlük ücretsiz etkinliktir.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "KTÜ Erasmus+ 2026 KA131 Öğrenci Staj Hareketliliği – 1. Başvuru\nKaradeniz Teknik Üniversitesi öğrencilerine yönelik Erasmus+ KA131 2026 Projesi 1. staj hareketliliği başvurusu 26 Ekim 2026 saat 13.00'te kapanıyor. Staja başlangıç 1 Haziran–30 Kasım 2027 arasında mümkün; geçerli İngilizce sınav belgesi isteniyor.",
+    "expected_categories": [
+      "CAREER",
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EUREKA CELTIC-NEXT 2026 Sonbahar Uluslararası Ar-Ge Çağrısı\nEUREKA CELTIC-NEXT 2026 sonbahar çağrısı telekomünikasyon, yazılım, yapay zekâ ve siber güvenlikte uluslararası, pazara yönelik Ar-Ge projelerini destekler. Son uluslararası başvuru 26 Ekim 2026 saat 23.59 CET.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yapay Zekâ Eğitimi\nNe eğitimde ne istihdamda olan (NEET) genç kadınların teknoloji dünyasında güçlü bir yer edinmesi için tasarlanan 42 saatlik bu hibrit eğitimle, yapay zeka alanında yeni yetkinlikler kazanarak kariyer potansiyelinizi artırın!",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Techcareer.net Yapay Zeka ile Web Sitesi Yap: Tasarla, Düzenle, Yayınla! 2026\nTechcareer.net tarafından düzenlenen ücretsiz ve sertifikalı canlı Zoom eğitimi; kodlama veya tasarım deneyimi gerektirmeden yapay zekâ araçlarıyla tek sayfalık bir web sitesini fikir aşamasından yayına hazırlamaya kadar uygulamalı olarak ele alır.",
+    "expected_categories": [
+      "CAREER",
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Dürümle Grafik Tasarım Stajyeri 2026\nDürümle, İstanbul merkez ofisindeki Pazarlama Departmanında görev almak üzere 3. veya 4. sınıf öğrencilerine yönelik uzun dönem Grafik Tasarım Stajyeri arıyor.",
+    "expected_categories": [
+      "CAREER",
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ARC Prize 2026 – ARC-AGI-3\nARC Prize 2026 – ARC-AGI-3, daha önce görülmemiş etkileşimli ortamlarda keşif, modelleme, hedef belirleme, planlama ve genelleme yapabilen yapay zekâ ajanları geliştirmeyi amaçlayan Kaggle kod yarışmasıdır. 26 Ekim giriş, 2 Kasım final gönderim son tarihidir ve toplam ödül havuzu 850.000 USD’dir.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Açık Bilimin Potansiyelini Birlikte Ortaya Çıkarmak\nClarivate tarafından 27 Ekim 2026 tarihinde düzenlenecek ücretsiz Türkçe çevrim içi webinar, açık bilim yaklaşımı ve araştırma ekosistemindeki uygulamalarına odaklanır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "GitLab Transcend Life After Code Hackathon 2026\nGitLab Transcend Life After Code Hackathon 2026, GitLab Duo Agent Platform ile DevSecOps süreçlerini otomatikleştiren projelerin yarıştığı, 27 Ekim'de sona eren çevrim içi ve ücretsiz hackathondur.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Sayra&Çınar Vakfı Eğitim Bursu 2026–2027\nSayra&Çınar Vakfı, Türkiye’de devlet okullarında öğrenim gören ve maddi desteğe ihtiyaç duyan 25 yaş ve altındaki lise ve üniversite öğrencilerine 2026–2027 döneminde geri ödemesiz eğitim bursu sağlıyor.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TÜBİTAK 2211 Yurt İçi Doktora Burs Programları – 2026/2\nTÜBİTAK BİDEB 2211 Yurt İçi Doktora Burs Programları ailesinin 2026/2 başvuru döneminde güncel açık program listesinde 2211-A Genel Yurt İçi Doktora Bursu ve 2211-E Doğrudan Yurt İçi Doktora Bursu yer almaktadır; başvurular 5–27 Ekim 2026 arasında alınır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Akbank Derin Öğrenmeye Giriş Eğitimi\nAkbank ve Global AI Hub iş birliğiyle sunulan Derin Öğrenmeye Giriş Eğitimi, derin öğrenme alanında temel bilgi ve beceriler kazanmayı hedefleyen katılımcılara yönelik bir eğitim programıdır. Program kapsamında kendi hızında ilerleyebileceğin eğitim içerikleri: webinarlar, mentor desteği ve katılım",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İHAMER Lisansüstü Burs Programı 2026–2027\nİHAMER’in 2026–2027 Lisansüstü Burs Programı; imam hatip modeli ve imam hatipliler üzerine tezli yüksek lisans veya doktora çalışması yürüten araştırmacılara 10 ay boyunca aylık burs desteği sunar. Başvurular 27 Ekim 2026’ya kadar açıktır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TÜBİTAK 2223-C Çok Katılımlı Uluslararası Etkinlik Düzenleme Desteği – 2026/3\nTÜBİTAK 2223-C Çok Katılımlı Uluslararası Etkinlik Düzenleme Desteği 2026/3, daha önce farklı ülkelerde düzenlenmiş uluslararası bilimsel toplantıların Türkiye'de gerçekleştirilmesini destekler. BİDEB tarafından yürütülen program, bilimsel organizasyonlarda uluslararası iş birliğini güçlendirmeyi amaçlar.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EGET Yaşayan SAFAİ Lisans Bursu 2026–2027\nEGET Yaşayan SAFAİ Lisans Bursu 2026–2027, belirli devlet üniversitesi Güzel Sanatlar, Ziraat ve Gerontoloji lisans programlarındaki T.C. vatandaşı öğrencilere 9 ay boyunca aylık 4.500 TL geri ödemesiz destek sağlar; başvurular 12–27 Ekim 2026 arasındadır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Jean Monnet Burs Programı 2027–2028\nJean Monnet Burs Programı 2027–2028, Türkiye'den yaklaşık 170 bursiyere AB müktesebatı alanlarında AB üyesi ülkelerde lisansüstü eğitim veya araştırma desteği sunmayı planlıyor. Başvurular 27 Ekim 2026'ya kadar kabul ediliyor.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "3alet Hackathon 2026 – JigJoy\nJigJoy tarafından düzenlenen 3alet Hackathon 2026, 30–31 Ekim tarihlerinde Novi Sad ve çevrim içi katılımla gerçekleşen ücretsiz yapay zekâ geliştirme yarışmasıdır. Kayıt sonu 27 Ekim 2026.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TİM-TEB Girişim Evi 2026 II. Dönem Start Up Programı\nTİM-TEB Girişim Evi, 2026 ikinci dönem Start Up Programı için teknoloji odaklı girişimleri İstanbul, Ankara, İzmir, Bursa, Denizli, Gaziantep ve Mersin’deki programlara kabul etmek üzere başvuru alıyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Cambados, İspanya Uzun Dönem ESC Gönüllülük 2026–2027\nEuropean Youth Portal’da açık olan uzun dönem ESC projesi, Türkiye’den 18–30 yaş gençleri İspanya’nın Cambados kentinde 52 haftalık bireysel gönüllülük deneyimine davet ediyor. Portalda başvuru son tarihi bulunmuyor.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TKV Hale & Nail Oraman Yüksek Lisans Bursu 2026–2027\nKırsal kalkınma ile ilişkili konularda tez hazırlayan yüksek lisans öğrencilerine 9 ay boyunca aylık 11.000 TL karşılıksız burs desteği sunar. Son başvuru 28 Ekim 2026 saat 17.00.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "BİAS Mühendislik Tasarım Stajyeri 2026\nBİAS Mühendislik, Gebze/Çayırova’daki Savunma Teknolojileri departmanında son sınıf mühendislik öğrencileri için haftada 3 tam gün katılımlı uzun dönem Tasarım Stajyeri arıyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İBB Teknoloji Atölyeleri Hafta İçi Eğitimleri\nİstanbul Büyükşehir Belediyesi Teknoloji Atölyeleri'nde hayal gücünüzü üretime dönüştürün! 15-29 yaş arası gençlere yönelik sıfırdan Python ve Unity eğitimleriyle yazılım dünyasına ücretsiz bir adım atın.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Green Stories: Inspiring Change Through Storytelling\nGreen Stories: Inspiring Change through Storytelling, 10–18 Eylül 2026 tarihlerinde Obzor, Bulgaristan’da gerçekleştirilecek Erasmus+ gençlik değişimidir. Program; çevre farkındalığı, yaratıcılık, hikâye anlatıcılığı ve dijital iletişim becerilerine odaklanır. Proje kapsamında konaklama ve yemek tamamen karşılanır; seyahat giderleri Erasmus+ kuralları çerçevesinde geri ödenir.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Anadolu Hayat Emeklilik İyi Gelecek Akademisi 2026\nAnadolu Hayat Emeklilik İyi Gelecek Akademisi; üniversite 2. ve 3. sınıf öğrencilerinin emeklilik ve hayat sigortası sektörünü tanımasını, problem çözme, analitik düşünme, iletişim ve dijital yetkinliklerini geliştirmesini amaçlayan hibrit bir gelişim programıdır. Program 6 Ekim–5 Kasım 2026 arasında çevrim içi oturumlar ve İstanbul ofisinde yüz yüze vaka çalışmasıyla yürütülür.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TESYEV 2026–2027 Yükseköğrenim Bursu\nTürkiye Engelliler Spor Yardım ve Eğitim Vakfı (TESYEV), devlet üniversitelerinde örgün ön lisans, lisans veya lisansüstü öğrenim gören ve engel oranı en az %40 olan uygun öğrencilere karşılıksız burs desteği sağlamaktadır. 2026–2027 başvurularının ilgili üniversite burs birimine en geç 28 Ekim 2026 tarihinde teslim edilmesi gerekmektedir.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İTÜ Vakfı 2026–2027 Burs Başvurusu\nİTÜ Vakfı, 2026–2027 eğitim öğretim yılı burs başvurularının henüz başlamadığını resmî burs formunda duyurmaktadır. Yeni ve devam eden bursiyer başvuruları dijital ortamda alınacaktır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Jungheinrich Türkiye Satın Alma Uzun Dönem Stajyeri 2026\nJungheinrich Türkiye’nin satın alma operasyonlarına destek verecek uzun dönem stajyer ilanı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İsveç ESC Youth Center Leader Gönüllülük Projesi 2026–2027\nDrömstort Förening, Stockholm’daki gençlik merkezinde 1 Ekim 2026–1 Temmuz 2027 döneminde görev alacak iki ESC gönüllüsü aramaktadır. Türkiye’den 18–30 yaş arasındaki adaylar başvurabilir; resmî European Youth Portal ilanında belirli bir son başvuru tarihi bulunmamaktadır.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "BTM Startup Village – TURKCOMPOSITE 2026\nBilgiyi Ticarileştirme Merkezi, 21–23 Ekim 2026 tarihlerinde İstanbul Fuar Merkezi’nde düzenlenecek TURKCOMPOSITE kapsamında BTM Startup Village modelini hayata geçiriyor. Seçilen girişimlere ücretsiz stand hakkı ve Startup Sahnesi’nde sunum fırsatı sunulmaktadır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÇİZGİ Festivali – Amnesty Creative Fellows: Haklar İçin Sanat 2026\nUluslararası Af Örgütü Türkiye’nin Amnesty Creative Fellows: Haklar İçin Sanat Programı katılımcıları tarafından tasarlanan ÇİZGİ Festivali, 5–6 Eylül 2026 tarihlerinde çevrim içi olarak gerçekleştirilecek altı insan hakları atölyesinden oluşmaktadır. Katılım ücretsizdir.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CA Akademi Ücretsiz İtalya Aşçılık ve Pastacılık Öğrenci Seçme Programı 2026\nCA Cooking Arts Academy, Türkiye ve İtalya’da ücretsiz profesyonel aşçılık veya pastacılık eğitimi için öğrenci aday seçme programını açtı. Resmî seçim sayfasında seçmelerin 7 Kasım–7 Aralık 2026 arasında yapılacağı ve kontenjanların sınırlı olduğu belirtilmektedir.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "YGA Global Impact High School 2026\nYGA Global Impact High School Programı, Türkiye’de lise öğrencilerinin bilimsel ve vicdanlı liderlik yetkinliklerini geliştirmesine; toplumsal sorunlara teknoloji temelli çözümler üretmesine, saha deneyimi kazanmasına ve YGA mezunlarından mentorluk almasına imkân sağlayan ücretsiz bir gelişim ve gönüllülük programıdır. 2026 seçiminin ilk aşaması YGA Zirvesi başvurusudur.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Anadolu Isuzu Talent Pick-Up Plus 2026\nTalent Pick-Up Plus, mühendislik 3. ve 4. sınıf öğrencilerinin İşletmede Mesleki Eğitim kapsamında bir dönemlik zorunlu stajlarını Anadolu Isuzu’da tamamlayarak gerçek iş süreçlerinde deneyim kazanmasına yönelik staj programıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Anadolu Isuzu Karkas Üretim Proje Stajyeri 2026\nAnadolu Isuzu’nun otobüs ve midibüs karkas üretim süreçlerinde görev alacak mühendislik öğrencisi veya yeni mezunlara yönelik proje stajı; üretim, verimlilik, metot mühendisliği, otomasyon ve dijitalleşme çalışmalarına katılım sunar.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ANKASOFT NOVA Teknoloji Gelişim Programı 2026\nANKASOFT NOVA; mühendislik, yapay zekâ, veri bilimi ve matematik alanlarında öğrenim gören 4. sınıf öğrencilerine yönelik uzun dönemli bir teknoloji gelişim programıdır. Teknik eğitim, gerçek sektör projeleri, sertifika desteği, zorunlu staj ve kariyer fırsatları sunar. Son başvuru 14 Eylül 2026’dır.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İzQ Tech2Market Ticari Kuluçka Programı 2026–2027\nMVP’sini tamamlamış teknoloji girişimleri ile TRL 5–6 seviyesindeki derin teknoloji girişimlerini ticarileşme, müşteri doğrulama, satış, büyüme ve yatırım hazırlığı alanlarında destekleyen 5 aylık ücretsiz kuluçka programı.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yapay Zekâ ve İletişim Kampı 2026\nCumhurbaşkanlığı İletişim Başkanlığı tarafından iletişim fakültesi öğrencilerine yönelik hazırlanan, yapay zekâ ve iletişim ekseninde ilerleyen ücretsiz çevrim içi eğitim kampı. Program; yapay zekâya giriş, iletişim alanındaki uygulamalar, içerik üretimi ile yapay zekânın etkin, güvenli ve etik kullanımına odaklanır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Evidea Ticaret Departmanı Uzun Dönem Stajyeri 2026\nEvidea Genel Müdürlüğü Ticaret Departmanında ürün yönetimi, kategori raporlama, süreç takibi ve analiz çalışmalarına destek verecek uzun dönem stajyer arıyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Metazon E-Ticaret Yönetimi Uzun Dönem Stajyeri 2026\nMetazon’un e-ticaret operasyonları, ürün yönetimi, sosyal medya, içerik üretimi ve dijital marka yönetimi süreçlerinde görev alacak uzun dönem ve ücretli stajyer ilanı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İncehesap İş Geliştirme Stajyeri 2026\nİncehesap’ın iş geliştirme, pazar ve rakip analizi, yeni iş modelleri, veri toplama ve raporlama süreçlerinde görev alacak 3. ve 4. sınıf öğrencilerine yönelik staj fırsatı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "CES NEXT-GEN Uzun Dönem Staj Programı 2026\nCES Advanced Armour NEXT-GEN uzun dönem staj programı; 3. ve 4. sınıf öğrencilerine savunma, havacılık ve ileri kompozit sektörlerini yakından tanıma, uzman ekiplerle çalışma ve gerçek iş süreçlerine katkı sunma fırsatı verir. Şirketin resmî duyurusunda son başvuru günü 7 Eylül 2026 olarak açıklanmıştır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Generali Sigorta İnsan Kaynakları Stajyeri 2026\nGenerali Sigorta’nın insan kaynakları operasyonları, çalışan dokümantasyonu, özlük süreçleri, sigorta giriş-çıkışları ve eğitim takibine destek verecek hibrit staj fırsatı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TRAI Kampüs Elçiliği Programı\nKampüsünde yapay zeka devriminin öncüsü ol! TRAI Akademi Elçisi olarak teknoloji toplulukları kur, ilham verici etkinlikler düzenle ve akranlarına liderlik et. Kariyerine vizyoner bir adım atarken geleceğin teknolojilerine yön veren isimlerden biri sen ol!",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bridges of Democracy – Gürcistan Erasmus+ Gençlik Değişimi 2026\nBridges of Democracy, 20–29 Ekim 2026 tarihlerinde Ureki / Gürcistan’da gerçekleştirilecek Erasmus+ gençlik değişimidir. Altı ülkeden toplam 48 genci demokratik süreçlere katılım, gençlik diyaloğu, savunuculuk ve aktif vatandaşlık başlıklarında bir araya getirir. Aktif başvuru formu 18–30 yaş aralığını doğrulamaktadır; kamuya açık formda son başvuru tarihi belirtilmemiştir.",
+    "expected_categories": [
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "DigiSkill – Ücretsiz Çevrim İçi Sürdürülebilir Proje Yönetimi Eğitimi\nDigiSkill kapsamında düzenlenen 4 haftalık ücretsiz çevrim içi sürdürülebilir proje yönetimi kursunda çevresel, sosyal ve ekonomik etki, kaynak verimliliği ve BM Sürdürülebilir Kalkınma Amaçları işlenir. Son başvuru 29 Ekim 2026.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Akademisyen Yetiştirme Eğitim Programı (AYEP)\nGenç Akademisyenler Birliği tarafından lisans ve lisansüstü öğrencilerine yönelik ALES, YDS/YÖKDİL ve akademik danışmanlık içerikleriyle yürütülen online sertifikalı hazırlık programıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "BTK Akademi - Veri Bilimi ve Uygulamalı Makine Öğrenmesi Atölyesi (Manisa)\nBTK Akademi’nin Manisa’da düzenlediği 42 saatlik ileri seviye Veri Bilimi ve Uygulamalı Makine Öğrenmesi Atölyesi.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EUREKA EUROGIA2030 – 31. Uluslararası Ar-Ge Çağrısı 2026\nTÜBİTAK tarafından duyurulan EUREKA EUROGIA2030 31. Çağrı; düşük karbon teknolojileri, yeşil mobilite, akıllı şehirler ve sürdürülebilir biyo-kaynaklar için uluslararası Ar-Ge ortaklıklarını destekler. Son başvuru 29 Ekim 2026.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Cologne Graduate School of Ageing Research PhD Programı 2027\nCologne Graduate School of Ageing Research, 2027 başlangıçlı doktora projeleri için uluslararası başvuru alıyor. Başarılı adaylar en az üç yıllık istihdam sözleşmesiyle destekleniyor; ücretlendirme TV-L 13 %65 düzeyinde ve ilk yıl net gelir yaklaşık 2.060 € olarak açıklanıyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Alev Alatlı Lisansüstü Öğrenim ve Araştırma Bursları 2026–2027\nKapadokya Üniversitesi lisansüstü öğrencilerinin Alev Alatlı üzerine tez çalışmalarına yönelik 2026–2027 bursu; son başvuru 30 Ekim 18.00.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Türkiye Siber Vatan Programı 2027\nÜcretsiz Türkiye Siber Vatan Programı 2027, 81 ilde uygun üniversite öğrencilerine siber güvenlik ve yapay zekâ eğitimi, CTF ve yüz yüze uygulama fırsatı sunar. Kalkınma ajanslarının duyurduğu son başvuru 30 Ekim 2026’dır; programın SSS sayfasında 31 Ekim yazdığı için erken tarih esas alınmıştır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNLÜ & Co Kadın Teknoloji Girişimcileri Akademisi 2026-2027\nÜNLÜ & Co Kadın Teknoloji Girişimcileri Akademisi 2026–2027, ÜNLÜ & Co ve Türkiye Girişimcilik Vakfı iş birliğiyle kadın kurucu veya kurucu ortağı bulunan teknoloji girişimlerini yatırım hazırlığı, global büyüme, eğitim, mentorluk ve iş ağıyla destekleyen hibrit gelişim programıdır.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Temel Excel Eğitimi\nÖn lisans ve lisans öğrencilerine yönelik temel Excel eğitimi. Excel arayüzü, çalışma sayfaları, biçimlendirme, dinamik tablolar, koşullu biçimlendirme, grafikler, temel formüller ve kısayollar ele alınır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "YTU Startup House 100 StaryUP Bootcamp 2027 – Ön Başvuru\nYTU Startup House’un genç yeteneklere yönelik 100 StaryUP Bootcamp programı için 2027 dönemi ön başvuruları açık. Program; girişimcilik kültürü, fikirden prototipe geçiş, pazarlama ve iş planı geliştirme odaklı altı aylık yoğun bir gelişim süreci sunuyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ebebek Everest Yolculuğu Genç Yetenek Programı GM 2026\nebebek Everest Yolculuğu Genç Yetenek Programı GM 2026, üniversite öğrencilerine mağaza deneyiminden Genel Müdürlük kariyer fırsatlarına uzanan uzun soluklu ve maaşlı bir gelişim yolculuğu sunuyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "AstraZeneca AZ201 – Human Resources Intern 2026\nAstraZeneca Türkiye’nin AZ201 Human Resources Intern rolü; işe alım, aday takibi, HRBP desteği, iç İK projeleri, eğitim-gelişim, kapsayıcılık ve işveren markası süreçlerinde deneyim sunan İstanbul merkezli staj fırsatıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "NVIDIA Graduate Fellowship 2027–2028\nNVIDIA Graduate Fellowship, hızlandırılmış hesaplama ile ilişkili doktora araştırmalarını destekleyen, ödül başına 60.000 ABD dolarına kadar araştırma fonu ve NVIDIA araştırmacılarıyla çalışma imkânı sunan uluslararası fellowship programıdır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "DAAD Almanya Üniversite Yaz Kursları Bursu\nDAAD University Summer Courses bursu, Almanya dışındaki üniversitelerde lisans veya yüksek lisans öğrencisi olan adayların Almanya’da dört haftalık yoğun Almanca genel/teknik dil ve ülke bilgisi kurslarına katılımını destekler. Kurslar yüz yüze, haftada en az 25 ders saati ve yalnız Almanca yürütülür; başvurular 30 Ekim 2026 saat 23.59 CET’e kadar açıktır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "YetGen Basic Programı\nYetGen Basic, 21. yüzyıl yetkinliklerini geliştirmeye odaklanan 12 haftalık ücretsiz ve çevrim içi bir eğitim programıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "SAP Young Professionals Program Türkiye 2026\nSAP Digital Skills Center tarafından Türkiye’deki uygun yeni mezunlara yönelik yürütülen, SAP Associate Consultant kariyerine hazırlayan iki aylık ücretsiz çevrim içi eğitim ve sertifikasyon programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tiryaki Agro FutureTern Long-Term Internship 2026\nTiryaki Agro’nun 4. sınıf üniversite öğrencilerine finans, pazarlama, bilgi teknolojileri ve insan kaynakları alanlarında gerçek iş deneyimi ve mentorluk sunan uzun dönem staj programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "MÜ-GE 2026 – GES Projelerinde Mühendislik ve Uygulama\nEMO Ankara Şubesi, 16 Eylül 2026’da güneş enerjisi santrali projelerinde mühendislik ve uygulama süreçlerine odaklanan ücretsiz yüz yüze MÜ-GE eğitimi düzenleyecek.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "MÜ-GE 2026 – Üretimde Dijital Dönüşüm\nEMO Ankara Şubesi, 23 Eylül 2026’da üretim süreçlerinde dijital dönüşümü ele alan ücretsiz ve yüz yüze Mühendislik Geliştirme Eğitimi düzenleyecek.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "MAHLE Long-Term Internship – Master Öğrencileri 2026\nMAHLE Türkiye’nin Gebze’deki uzun dönem staj programı; son sınıf yüksek lisans öğrencilerine mühendislik, iş birimleri ve insan kaynakları alanlarında gerçek proje deneyimi sunuyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Honda Drive Your Dreams Uzun Dönem Staj 2026\nHonda Türkiye’nin 4. sınıf üniversite öğrencilerine yönelik uzun dönem staj programı; finans, bilgi teknolojileri, ürün planlama, teknik servis ve farklı iş birimlerinde deneyim fırsatı sunuyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "BİGG Cube Incubation 2026-2\nTeknopark İstanbul’un TÜBİTAK 1812 kapsamında teknoloji ve yenilik odaklı iş fikirlerine yatırım, mentorluk ve şirketleşme desteği sunduğu girişimcilik programı.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Roche People & Culture Intern 2026\nRoche Türkiye’nin işe alım, onboarding, çalışan verileri ve İnsan Kaynakları projelerinde en az 6 ay deneyim sunan part-time öğrenci stajı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Colgate Trade Marketing Uzun Dönem Stajı 2026\nColgate-Palmolive Türkiye’nin İstanbul’da kategori yönetimi, müşteri etkileşimi, satış verisi ve ticari pazarlama projelerinde 11 aylık staj fırsatı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Borusan Boru Uzun Dönem Staj Programı 2026\nBorusan Boru’nun Gemlik’te üretim, kalite, İSG ve çevre ekiplerinde mühendislik öğrencilerine gerçek iş süreçlerinde deneyim sunduğu uzun dönem staj programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Innomotics Commercial Professional Working Student 2026\nInnomotics’in İstanbul’da 3. sınıf öğrencilerine bütçe, tahminleme, raporlama, maliyet analizi ve business controlling deneyimi sunduğu part-time program.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "DHL Supply Chain Finance Intern 2026\nDHL Supply Chain Türkiye’nin İstanbul’da finans ve sözleşmeli lojistik operasyonlarını gerçek projeler üzerinden deneyimlemek isteyen öğrencilere yönelik uzun dönem stajı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "DOMiNO Ventures Long-Term Intern 2026\nDOMiNO Ventures’ın teknoloji yatırımları, girişim analizi, iş geliştirme, strateji ve finans süreçlerinde öğrencilere ücretli uzun dönem deneyim sunduğu staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bayer Trade Marketing Uzun Dönem Stajı 2026\nBayer Türkiye Consumer Health ekibinde shopper marketing, eczane kanalı aktivasyonları, ticari mükemmellik ve AI destekli pazarlama projelerinde uzun dönem staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "BorgWarner Manufacturing Engineering Intern 2026\nBorgWarner’ın İzmir’de mühendislik öğrencilerine üretim mühendisliği süreçleri ve teknik dokümantasyon üzerinde uluslararası ekiplerle çalışma deneyimi sunduğu staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "KoçZer Proje Stajyeri – Genel Başvuru 2026\nKoçZer’in lisans ve yüksek lisans öğrencilerine farklı iş fonksiyonlarında proje bazlı deneyim ve kurumsal iş süreçlerini tanıma fırsatı sunduğu staj başvurusu.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Sanipak Marketing Intern 2026\nSanipak’ın İstanbul’da marka stratejisi, ürün ve kampanya projeleri, tüketici araştırmaları ve dijital pazarlama süreçlerinde 3. ve 4. sınıf öğrencilerine sunduğu staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Enver Erdoğdu Vakfı Üniversite Bursu\nEnver Erdoğdu Vakfı, belirli üniversite ve bölümlerde öğrenim gören ihtiyaç sahibi ve başarılı lisans öğrencilerine burs desteği sunmaktadır. Güncel dönem başvurusu resmî kaynakta doğrulanmadan aktif fırsat olarak yayımlanmaz.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Goodyear Supply Chain Long-Term Intern 2026\nGoodyear Türkiye’nin müşteri hizmetleri, key account, e-business ve tedarik zinciri projelerinde part-time gerçek iş deneyimi sunduğu uzun dönem staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Peak Motion Designer Long-Term Intern 2026\nPeak’in mobil oyun performans pazarlama ekibinde 2D/3D motion graphics, reklam kreatifleri ve veri odaklı tasarım üzerinde çalışan uzun dönem stajı.",
+    "expected_categories": [
+      "ART",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Token Sales Project Assistant Long-Term Intern 2026\nToken Finansal Teknolojiler’in satış, iş ortağı segmentasyonu, CRM veri kalitesi ve raporlama süreçlerinde öğrencilere uzun dönem proje deneyimi sunduğu staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Hepsiburada GeleceğiniZburada Staj Programı 2027\nHepsiburada’nın 4. sınıf mühendislik öğrencilerine teknoloji, veri, pazarlama, finans, lojistik ve farklı ekiplerde uzun dönem deneyim sunduğu genç yetenek programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ForInvest Jumpstart Young Talent Program 2026\nForInvest’in 3. ve 4. sınıf öğrencilerine yazılım, ürün, veri, yapay zekâ ve fintech alanlarında gerçek projeler ve mentorluk sunduğu genç yetenek programı.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Novo Nordisk Marketing Intern 2026\nNovo Nordisk Türkiye’nin diyabet, obezite, iş geliştirme veya nadir hastalık ekiplerinde uçtan uca pazarlama süreçlerinde 6 aylık deneyim sunduğu staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Renault Trucks Long-Term Intern 2026\nRenault Trucks Türkiye’nin lojistik ve ürün geliştirme ekiplerinde, Volvo Group Türkiye’nin ise after-sales ekibinde 6 aylık uzun dönem staj fırsatı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Rapsodo Research Intern İzmir 2026\nRapsodo Türkiye R&D ekibinde teknoloji trendleri, AI gelişmeleri, geliştirici toplulukları ve sektör araştırmalarını analiz edip raporlayan araştırma stajı.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EGGER SID Staj Programı 2026\nEGGER Türkiye’nin Gebze fabrikasında üniversite öğrencilerine uluslararası üretim ortamını ve gerçek iş süreçlerini deneyimleme fırsatı sunduğu SID’26 staj programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TikTok Agency Operations Project Intern 2026\nTikTok LIVE MENAT ekibinde ajans operasyonları, işe alım etkinlikleri, eğitim materyalleri, veri analizi ve iş ortağı geliştirme süreçlerinde 3–6 aylık staj.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Howden Türkiye Early Career Program 2026\nHowden Türkiye’nin son sınıf öğrencileri ve yeni mezunlara farklı departmanlarda rotasyon, gerçek proje deneyimi ve liderlik gelişimi sunduğu erken kariyer programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ferrero Hazelnut Procurement Intern 2026\nFerrero’nun İstanbul fındık satın alma ekibinde SAP, tedarikçi teslimat performansı, satın alma verisi ve yönetim raporlaması üzerinde 6 aylık staj fırsatı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Sütaş Kampüs Elçi Programı 2026\nSütaş’ın 2. ve 3. sınıf üniversite öğrencilerine marka temsili, etkinlik tasarımı, sosyal medya içerik üretimi ve topluluk geliştirme deneyimi sunduğu program.",
+    "expected_categories": [
+      "CAREER",
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Coffy NEXT Operasyon Programı 2026\nCoffy’nin geleceğin mağaza müdürlerini yetiştirmek amacıyla barista, vardiya müdürü ve mağaza müdürü rollerini deneyimleten 6 aylık operasyon gelişim programı.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Doping Teknoloji Management Trainee 2026\nDoping Teknoloji CEO Ofisi’nde yeni mezunlara yapay zekâ araçları, teknoloji, pazarlama, finans ve stratejik projelerde üst yönetimle çalışma deneyimi sunan MT rolü.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Barsan Yönetici Yetiştirme Programı 2026\nBarsan Global Logistics’in yeni mezun ve erken kariyer profesyonellerini depo, kara, hava, deniz, gümrükleme, finans ve satış rotasyonlarıyla global yöneticiliğe hazırladığı program.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Stacks Bug Bounty – 250.000 USD’ye Kadar Ödül\nStacks ve Immunefi tarafından yürütülen aktif bug bounty programında Stacks blockchain ve akıllı sözleşme bileşenlerindeki geçerli güvenlik açıkları için kritik seviyede 250.000 ABD dolarına kadar ödül verilmektedir.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Algorand Global x402 Challenge 2026\nAlgorand Foundation tarafından düzenlenen Global x402 Challenge, geliştiricilerin Algorand Mainnet üzerinde AI ajanları ve kullanıcılar için ödeme alabilen x402 API endpointleri geliştirerek toplam 100.000 ABD doları ve 500.000 ALGO ödül havuzu için yarıştığı global bir programdır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "DevFest’26 Ankara – ODTÜ Teknoloji Buluşması\nGDG Ankara, GDG Cloud Ankara ve GDG on Campus ODTÜ organizasyonundaki ücretsiz DevFest; 31 Ekim'de ODTÜ'de yazılım, teknoloji ve networking buluşması.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TÜBİTAK 4001 Ulusal ve Uluslararası Yarışma/Etkinlik Katılım Desteği 2026\nTÜBİTAK 4001 programı, lise öğrencileri ile lise üzeri eğitim düzeyindeki öğrenci ve mezunların bilimsel ve teknolojik yarışma/etkinliklere katılımını destekleyen açık çağrıdır. 2026 üçüncü çağrı döneminde yurt içi katılım için 100.000 TL, yurt dışı katılım için 245.000 TL’ye kadar destek sağlanabilir; Türk Hava Yolları sponsorluğundaki uygun uçak biletleri bu üst limitlere dahil değildir.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yapay Zeka Uygulamaları Geliştirme Programı 2026\nYapay Zeka ve Teknoloji Akademisi'nin Yapay Zeka Uygulamaları Geliştirme Programı; 18–29 yaş arası üniversite öğrencileri ve mezunlara LLM, GenAI API, agent mimarileri, web geliştirme, proje ve girişimcilik odaklı ücretsiz, tamamen online bir öğrenme yolculuğu sunuyor.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Salih Karagöz Vakfı Karşılıksız Burs Başvurusu\nSalih Karagöz Vakfı 2026–2027 döneminde devlet üniversitelerindeki Mühendislik ve Mimarlık lisans öğrencilerine aylık 6.500 TL karşılıksız burs veriyor. Başvurular 31 Ekim’e kadar e-posta, posta veya elden yapılabilir.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yeşilay Lisansüstü Tez Araştırma Bursu 2026\nYeşilay Lisansüstü Tez Araştırma Bursu 2026 ikinci dönem çağrısı, bağımlılık alanındaki tez çalışmalarını destekler; yüksek lisans öğrencilerine en fazla 12 ay aylık 6.000 TL, doktora ve tıpta uzmanlık öğrencilerine en fazla 18 ay aylık 9.000 TL burs sağlar. Son başvuru 31 Ekim 2026’dır.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TDBB Yüksek Lisans ve Doktora Tezlerini Destekleme Programı 2026–2027\nTürkiye’de tez aşamasındaki lisansüstü öğrencilere yerel yönetimler, kent araştırmaları ve kültürel miras konularında akademik tez desteği.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "VGM Yükseköğrenim Bursu 2026–2027\nÖn lisans ve lisans öğrencilerine aylık 4.000 TL burs. Başvurular 22–31 Ekim 2026 arasında.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Şaban Cengiz Vakfı İhtiyaç Bursu\nŞaban Cengiz Vakfı tarafından Türkiye’de öğrenim gören T.C. vatandaşı öğrencilere verilen, 12 ay boyunca devam eden karşılıksız ihtiyaç bursu.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "16. Avrupa Birliği İnsan Hakları Kısa Film Yarışması 2026\nAvrupa Birliği Türkiye Delegasyonu’nun 16. İnsan Hakları Kısa Film Yarışması, amatör ve profesyonel katılımcıların insan hakları odağında hazırladığı 3–10 dakikalık kurgu, belgesel veya animasyon filmlerini kabul ediyor. Başvuru ücretsiz ve son tarih 1 Kasım 2026 saat 18:00.",
+    "expected_categories": [
+      "SOCIAL",
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "11. E-Safe Siber Güvenlik Zirvesi\n11. e‑Safe Siber Güvenlik Zirvesi, 4 Kasım 2026’da Ankara’da düzenlenecek; siber güvenlik profesyonelleri, kamu, akademi, öğrenciler ve genç yetenekleri kariyer panelleri, uzman oturumları, CTF, eğitimler, Work X, B2B ve bilgi yarışması başlıklarında buluşturacak.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "JPMorgan 2027 Commercial & Investment Banking – Markets Off-Cycle Internship – İstanbul\nJPMorgan Chase’in İstanbul’daki 2027 Commercial & Investment Banking – Markets Off-Cycle Internship programı, Temmuz 2026–Temmuz 2027 arasında mezun olan adaylara Global Markets ekiplerinde araştırma, piyasa takibi, trade fikri geliştirme, portföy inceleme ve müşteri çözümleri üzerinde deneyim sunar.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Doğuş Oto Atölyede Uzun Dönem Staj Programı 2026\nDoğuş Oto Atölyede Uzun Dönem Staj Programı 2026, Otomotiv Teknolojisi ön lisans son sınıf öğrencilerine Ankara ve İstanbul’daki Doğuş Oto operasyonlarında otomotiv sektörünü sahada deneyimleme fırsatı sunan staj programıdır. Son başvuru 1 Kasım 2026’dır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "YGA Zirvesi 2026\nYGA Zirvesi 2026, lise ve üniversite öğrencilerinin YGA’nın çift kanatlı yaklaşımını, proje ve girişimlerini tanıdığı; YGA Global Impact Programlarına uzanan seçme sürecinin ilk adımını oluşturan, 19 Aralık 2026’da Zorlu PSM’de ve canlı yayınla gerçekleşen ücretsiz zirvedir.",
+    "expected_categories": [
+      "CAREER",
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "T3 FPV Akademi Eğitmen Eğitimi Programı\nT3 Vakfı bünyesindeki T3 FPV Akademi tarafından düzenlenen ücretsiz Eğitmen Eğitimi Programı; FPV dron sistemlerinin temel prensipleri, simülasyon uygulamaları, dron montajı, teknik bakım ve gerçek uçuş pratiklerini kapsıyor. Eğitim ve değerlendirme süreçlerini başarıyla tamamlayan katılımcıların se",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Dijitalde Güvendeyim Eğitimi\nHabitat Derneği ve Visa iş birliğiyle yürütülen Dijitalde Güvendeyim Projesi kapsamında, dijital dolandırıcılık yöntemlerini tanımaya ve bunlara karşı korunma farkındalığı geliştirmeye yönelik ücretsiz çevrim içi eğitim.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Outreachy Açık Kaynak Staj Programı\nOutreachy Aralık 2026 dönemi için ilk başvurular 31 Ağustos 2026’da kapandı. İlk başvuru aşamasını geçmiş uygun adaylar, 2 Kasım 2026 saat 16.00 UTC’ye kadar son başvurularını tamamlayabilir.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "YouCam API Skin AI & eCommerce VTO Hackathon 2026\nPerfect Corp. tarafından düzenlenen YouCam API Skin AI & eCommerce VTO Hackathon 2026, en az bir YouCam API kullanarak çalışan web veya mobil prototip geliştirmeye yönelik ücretsiz çevrim içi yarışmadır. Son teslim 2 Kasım 2026.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TÜBİTAK Yapay Zeka ve Siber Güvenlik Kampı 2026\nTÜBİTAK Yapay Zeka ve Siber Güvenlik Kampı 2026, 1 Ocak 2009–31 Aralık 2011 arasında doğan lise grubundaki erkek öğrenciler için 9–11 Kasım 2026’da Mersin Yıldırım Beyazıt Gençlik Kampı’nda düzenlenecek ücretsiz tematik bilim kampıdır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Garanti BBVA × BÜYEM Kayseri Kadın Girişimci Akademisi 2026\nGaranti BBVA ve Boğaziçi Üniversitesi BÜYEM'in Kayseri'deki kadın girişimcilere ücretsiz, yüz yüze ve çevrim içi yönetim-girişimcilik eğitimi. Son başvuru 2 Kasım.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Erken Çocukluk Eğitiminde Drama: Kuramsal Temeller ve Uygulama İlkeleri\nILA Talks Okul Öncesi Eğiticilerinin Eğitimi serisinin 9 Eylül 2026 oturumu, erken çocukluk eğitiminde dramanın kuramsal temelleri ve uygulama ilkelerini ele alır.",
+    "expected_categories": [
+      "CAREER",
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EBSCO’da Bilimsel Literatürü Yapay Zekâyla Keşfet! (3 Kasım 2026)\nEBSCO’nun geniş elektronik kaynakları, yapay zekâ destekli arama özellikleri, atıf indeksleri ve kişiselleştirilmiş araştırma araçlarını tanıtan ücretsiz çevrim içi eğitimdir.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "AIAS-AUFF Fellowships 2027–2029\nAIAS-AUFF Fellowships 2027–2029, doktora sonrası 2–10 yıllık araştırma deneyimine sahip tüm milliyet ve disiplinlerden araştırmacılara Aarhus Institute of Advanced Studies’te 23 ay tam zamanlı araştırma, kıdeme göre maaş, Aarhus’a taşınma seyahati ve relocation desteği sunan en fazla 10 kişilik uluslararası fellowship çağrısıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Milli Teknoloji Kulüpler Birliği Kulüp Geliştirme Desteği\nTÜBİTAK Milli Teknoloji Kulüpler Birliği Kulüp Geliştirme Desteği, MTKB üyesi üniversite teknoloji ve teknoloji girişimciliği kulüplerinin etkinlik, tanıtım ve görünürlük faaliyetlerini destekler; tek kulüp başvurularında 150.000 TL, ortak etkinliklerde 250.000 TL’ye kadar bütçe önerilebilir.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "STEM Kızlara İyi Gelecek Projesi Eğitim Ve Mentorluk Programı\nSistersLab ve Takeda Türkiye iş birliğindeki STEM Kızlara İyi Gelecek Projesi'nin 14 Eylül–9 Kasım 2026 tarihli ikinci döneminde, 13–18 yaşındaki kız öğrencilere 35 ücretsiz çevrim içi eğitim ve en aktif 10 katılımcıya mentorluk fırsatı sunuluyor.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "GAİB – Lider ve Ekip Sinerjisiyle Birlikte Başarmak 2026\nGAİB tarafından Ümit Erdemın anlatımıyla düzenlenen ücretsiz online eğitim; liderlik ve ekip sinerjisi konusuna odaklanır. Eğitim Zoom üzerinden gerçekleştirilir ve katılım belgelidir.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TÜBİTAK 105 Aday Araştırmacı Alımı 2026\nTÜBİTAK 105 Aday Araştırmacı Alımı 2026, 2026–2027 eğitim yılında ilanda belirtilen lisans programlarının 3. veya 4. sınıfında öğrenim gören üniversite öğrencilerini Ankara ve Kocaeli’deki yedi TÜBİTAK araştırma biriminde kısmi süreli proje personeli olarak istihdam etmeyi amaçlayan 105 kişilik güncel çağrıdır. Son başvuru 4 Kasım 2026 saat 17.00’dır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "AI Destekli Web Uygulaması Geliştirme Atölyesi\nTech İstanbul tarafından 14 Ekim–4 Kasım 2026 arasında düzenlenen ücretsiz, 16 saatlik online atölyede Google AI Studio, Gemini API, Bolt.new, Replit ve Lovable ile AI destekli web uygulaması geliştirme ele alınır.",
+    "expected_categories": [
+      "TECHNOLOGY"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "FMCG Camp 2026\nanbean KAMPÜS'ün FMCG Camp 2026 etkinliği, 5 Kasım'da üniversite öğrencilerine açık online oturumları ve 6 Kasım'da seçilen 60 öğrenciyle Orjin Maslak'ta yapılacak yüz yüze günü; vaka çalışmaları, networking ve e-sertifikayla birleştiren ücretsiz hibrit kariyer kampıdır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Strengthening Mentoring in the European Solidarity Corps – Training of Trainers and Multipliers\nMentorları ve kuruluşları destekleyen eğitmenler, çoğaltıcılar ve gönüllülük mentorları için Mentoring Competence Framework odaklı uluslararası eğitim.",
+    "expected_categories": [
+      "CAREER",
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "The Summit İzmir 2026\nİzmir ve çevresindeki genç yetenekleri farklı sektörlerden şirketler ve profesyonellerle buluşturan ücretsiz fiziksel kariyer etkinliği.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EY Türkiye Climate Change and Sustainability Services (CCaSS) Long Term Intern 2026\nEY Türkiye’nin Climate Change & Sustainability Services (CCaSS) ekipleri için açtığı uzun dönem staj pozisyonu; sürdürülebilirlik, iklim değişikliği, raporlama, araştırma ve veri analizi çalışmalarında deneyim kazanma imkânı sunmaktadır.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Dream Games Product Specialist (New Grad)\nDream Games’in İstanbul’daki yeni mezun Product Specialist rolü; oyun ürün yol haritasına katkı, oyuncu verisi analizi, A/B testleri ve oyun mekaniği tasarımı sorumlulukları içerir.",
+    "expected_categories": [
+      "TECHNOLOGY",
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Insider Management Trainee for People & Culture (Fresh Grad)\nInsider’ın İstanbul’daki yeni mezun People & Culture Management Trainee programı; işe alım, iç iletişim, employer branding, people analytics, öğrenme-gelişim, global mobility ve yapay zekâ destekli İK süreçlerinde rotasyonel deneyim sunar.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Peak Illustrator (New Grad)\nPeak’in yeni mezun illüstratörlere yönelik tam zamanlı rolü; mobil oyun ürünleri için konsept ve görsel üretimi, ekipler arası iş birliği ve farklı sanat stillerinde gelişim olanağı sunar.",
+    "expected_categories": [
+      "CAREER",
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Agave Games Growth Specialist (New Grad)\nAgave Games’in İstanbul’daki yeni mezun Growth Specialist rolü; kullanıcı kazanımı, kampanya performansı, veri analizi ve mobil oyunların büyüme çalışmalarında Product ve Technology ekipleriyle çalışma imkânı sunar.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "EF Hult Prize 2027 – Öğrenci Girişimcilik Yarışması\nEF Hult Prize, üniversite öğrencilerinin Birleşmiş Milletler Sürdürülebilir Kalkınma Amaçlarından en az birine katkı sağlayan kâr amaçlı girişimler geliştirmesine yönelik küresel bir yarışmadır. Güncel kayıt formu aktif durumdadır; resmî kaynak kesin kapanış tarihi vermediği için deadline alanı boş bırakılmıştır.",
+    "expected_categories": [
+      "CAREER",
+      "SOCIAL"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "TÜBİTAK Bilim Söyleşileri – 2026-2027 Başvuruları\nTÜBİTAK Bilim Söyleşileri 2026–2027 programı, uzman bilim insanlarını öğrenciler ve bilimle ilgilenen vatandaşlarla bir araya getirmeyi amaçlayan bir Bilim ve Toplum Başkanlığı etkinliğidir. Okul ve kurumlar söyleşiye ev sahipliği için; uygun bilim insanları ise konuşmacı olmak üzere ayrı başvurular yapabilir.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Brand Week Istanbul 2026 – 100 Öğrenci Katılım Bursu\nBrand Week Istanbul, Türkiye’deki devlet üniversitelerinde okuyan 25 yaş altı 100 öğrenciye 4–6 Kasım 2026 etkinliğine ücretsiz katılım bursu sağlıyor.",
+    "expected_categories": [
+      "CAREER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Lester B. Pearson International Student Scholarship 2027\nUniversity of Toronto’nun uluslararası lise son sınıf öğrencileri için dört yıl boyunca öğrenim, kitap, zorunlu ücretler ve tam yurt desteğini kapsayan lisans bursu.",
+    "expected_categories": [
+      "OTHER"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Bowling Türkiye Şampiyonası\nTarih: 29–31 Ekim 2026. Yer: Akademi Bowling Salonu, Samsun.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Boks Türkiye Şampiyonası\nTarih: 4–8 Kasım 2026. Yer: Ordu Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Dart Türkiye Şampiyonası\nTarih: 13–14 Kasım 2026. Yer: Burdur Mehmet Akif Ersoy Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Futbol Eleme Grupları\nTarih: 16–20 Kasım 2026. Yer: Muhtelif.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Voleybol Eleme Grupları\nTarih: 23–27 Kasım 2026. Yer: Muhtelif.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Karate Türkiye Şampiyonası\nTarih: 25–26 Kasım 2026. Yer: Burdur Mehmet Akif Ersoy Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Taekwondo Türkiye Şampiyonası\nTarih: 27–29 Kasım 2026. Yer: Burdur Mehmet Akif Ersoy Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Basketbol Eleme Grupları\nTarih: 30 Kasım–4 Aralık 2026. Yer: Muhtelif.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Judo Türkiye Şampiyonası\nTarih: 1–2 Aralık 2026. Yer: Burdur Mehmet Akif Ersoy Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Kick Boks Türkiye Şampiyonası\nTarih: 4–6 Aralık 2026. Yer: Burdur Mehmet Akif Ersoy Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Salon Okçuluk Türkiye Şampiyonası\nTarih: 5–6 Aralık 2026. Yer: Ondokuz Mayıs Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Salon Futbolu Eleme Grupları\nTarih: 7–11 Aralık 2026. Yer: Muhtelif.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Wushu Türkiye Şampiyonası\nTarih: 9–10 Aralık 2026. Yer: Muhtelif.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "ÜNİLİG Ayak Tenisi Türkiye Şampiyonası\nTarih: 12–14 Aralık 2026. Yer: Avrasya Üniversitesi.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Hasip ile Nasip — Sinema\nYer: Bursa Kent Meydanı Avşar. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Alevli Günler — Tiyatro\nYer: Merinos Atatürk Kültür Merkezi Orhangazi Salonu. Şehir: Bursa. Tarih: 3 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Çok Güzel Hareketler 2 — Tiyatro\nYer: Merinos AKKM Osmangazi Salonu. Şehir: Bursa. Tarih: 8 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Gökhan Ünver Stand Up — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 20 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Profesyonel — Tiyatro\nYer: Merinos Atatürk Kongre ve Kültür Merkezi Osmangazi Salonu. Şehir: Bursa. Tarih: 20 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Özgür Turhan - Yepyenisi — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 21 Kasım, 9 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Doğu Ekspresinde Cinayet — Tiyatro\nYer: Merinos AKKM Orhangazi Salonu. Şehir: Bursa. Tarih: 28 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kirli Sepeti — Tiyatro\nYer: Merinos AKKM Orhangazi Salonu. Şehir: Bursa. Tarih: 6 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Düş Payı — Tiyatro\nYer: Merinos AKKM Osmangazi Salonu. Şehir: Bursa. Tarih: 9 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Amadeus - Veda Turnesi — Tiyatro\nYer: Merinos AKKM Osmangazi Salonu. Şehir: Bursa. Tarih: 11 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "İki Bekar — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 15 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bengi İdil Uras ile Beng Beng Show — Tiyatro\nYer: Podyum Sanat Mahal. Şehir: Bursa. Tarih: 17 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Baba — Tiyatro\nYer: Merinos AKKM - Orhangazi Salonu. Şehir: Bursa. Tarih: 12 Ocak 2027.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Vahşinin Kalbi — Sinema\nYer: As Outlet Venüs  Sinemaları. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Barcelona Guitar Trio ve Dans Gösterisi — Müzik\nYer: Merinos AKKM Osmangazi Salonu. Şehir: Bursa. Tarih: 31 Ekim.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "12 Numaralı Adam — Tiyatro\nYer: Podyum Sanat Mahal. Şehir: Bursa. Tarih: 14 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Seçmen Lazım — Tiyatro\nYer: Bursa Nilüfer Sahnesi. Şehir: Bursa. Tarih: 15 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Emrah Kaman Yüksek Gelirim 2 — Tiyatro\nYer: Podyum Sanat Mahal. Şehir: Bursa. Tarih: 18 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Konken Partisi — Tiyatro\nYer: Merinos AKKM Orhangazi Salonu. Şehir: Bursa. Tarih: 21 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Aşk Listesi — Tiyatro\nYer: Merinos AKKM - Orhangazi Salonu. Şehir: Bursa. Tarih: 27 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Çağan Şengül — Müzik\nYer: Hayal Kahvesi Bursa. Şehir: Bursa. Tarih: 28 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ahududu — Tiyatro\nYer: Merinos AKKM Orhangazi Salonu. Şehir: Bursa. Tarih: 4 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ayna Konseri — Müzik\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 6 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Sabotaj — Tiyatro\nYer: Mustafakemalpaşa Kültür Merkezi. Şehir: Bursa. Tarih: 19 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Şarkılar Eskiden Daha mı Güzeldi — Müzik\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 19 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Hadi Öldürsene Canikom — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 29 Ocak 2027.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Emiray: Macera Yolcusu — Sinema\nYer: Cinetech Korupark Sinema. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Street Fighter — Sinema\nYer: Cinetime ÖzdilekPark Bursa Nilüfer. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Diğer Anne — Sinema\nYer: Cinetech Korupark Sinema. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Pınar Fidan Stand Up — Tiyatro\nYer: Podyum Sanat Mahal. Şehir: Bursa. Tarih: 25 Ekim.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ogün Sanlısoy — Müzik\nYer: Hayal Kahvesi Bursa. Şehir: Bursa. Tarih: 14 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Haybeden Gerçeküstü Aşk — Tiyatro\nYer: Bursa Nilüfer Sahnesi. Şehir: Bursa. Tarih: 22 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ruh Öküzüm — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 29 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Anadolu Ateşi — Tiyatro\nYer: Merinos AKKM Osmangazi Salonu. Şehir: Bursa. Tarih: 1 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Şahane Pazar Sahnede — Tiyatro\nYer: Merinos AKKM Osmangazi Salonu. Şehir: Bursa. Tarih: 3 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ölü'n Bizi Ayırana Dek — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 30 Ekim, 25 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Erkek Aklı Oksimoron — Tiyatro\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 14 Kasım.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ali Rıza Tanyeli Kendime Düşünceler Stand Up — Tiyatro\nYer: Antik Performance. Şehir: Bursa. Tarih: 14 Kasım, 4 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Fazlı Polat - Şaka Şaka Stand-Up — Tiyatro\nYer: Podyum Sanat Mahal. Şehir: Bursa. Tarih: 11 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yeni Türkü Konseri — Müzik\nYer: BAOB Sahne, Bursa. Şehir: Bursa. Tarih: 20 Aralık.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "The Illusionist - Enver Ertaş — Tiyatro\nYer: Podyum Sanat Mahal. Şehir: Bursa. Tarih: 2 Ocak 2027.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Gupi ve Gülmeyen Kral — Sinema\nYer: Cinetime ÖzdilekPark Bursa Nilüfer. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Patiler: Büyük Macera — Sinema\nYer: Cinetime ÖzdilekPark Bursa Nilüfer. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kediler Firarda: Mısır Operasyonu — Sinema\nYer: Cinetech Korupark Sinema. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Milyonluk Hurdacı — Sinema\nYer: Cinetime ÖzdilekPark Bursa Nilüfer. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Clayface — Sinema\nYer: Cinetime ÖzdilekPark Bursa Nilüfer. Şehir: Bursa. Tarih: 25 – 29 Ekim arası.",
+    "expected_categories": [
+      "ART"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Bursaspor Basketbol Sezonluk Bilet Satışı 2026-2027\nYer: Tofaş Spor Salonu. Şehir: Bursa.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Nilüfer Belediyespor EKER Sezonluk Bilet Satışı 2026-2027\nYer: Cengiz Göllü Voleybol Salonu. Şehir: Bursa.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "FIBA 2027 Kadınlar Avrupa Şampiyonası Eleme Maçları Kasım Penceresi Türkiye - Karadağ — Basketbol\nKaynakta belirtilen yer: Turkcell Basketbol Gelişim Merkezi. Şehir: İstanbul.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tofaş 2026-2027 Sezon Kart — Basketbol\nKaynakta belirtilen yer: Tofaş Spor Salonu. Şehir: Bursa.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Biotekno Körfez Basket 26-27 Sezonu Kombine — Basketbol\nKaynakta belirtilen yer: Şehit Polis Recep Topaloğlu Spor Salonu. Şehir: Kocaeli.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "FinalSpor Basket 2026 - 2027 Sezonu Kombinesi — Basketbol\nKaynakta belirtilen yer: Tofaş Spor Salonu. Şehir: Bursa.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tofaş - Aliağa Petkimspor — Basketbol\nKaynakta belirtilen yer: Tofaş Spor Salonu. Şehir: Bursa.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Balıkesir Büyükşehir Belediyespor 26-27 Sezonu Kombine — Basketbol\nKaynakta belirtilen yer: Şehit Turgut Solak Spor Salonu. Şehir: Balıkesir.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Yukatel Denizli Basket 2026-2027 Kombine — Basketbol\nKaynakta belirtilen yer: PAU Arena Spor Salonu. Şehir: Denizli.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Karşıyaka - Fenerbahçe Tarfin — Basketbol\nKaynakta belirtilen yer: Mustafa Kemal Atatürk Karşıyaka Spor Salonu. Şehir: İzmir.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Tarihi Haliç'te Kano Deneyimi\nKaynakta belirtilen yer: Heyamola Rowing Club. Şehir: İstanbul.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Arsenal - Hull City Maç Paketi — Futbol\nKaynakta belirtilen yer: Hull City Maç Paketleri. Şehir: İstanbul.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Hull City - Brighton Maç Paketi — Futbol\nKaynakta belirtilen yer: Hull City Maç Paketleri. Şehir: İstanbul.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kadınlar Avrupa Hentbol Şampiyonası 2026 - 1. Gün\nKaynakta belirtilen yer: Antalya Spor Salonu. Şehir: Antalya.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Soma Spor Kulübü 2026-2027 Futbol Sezonu Kombinesi — Futbol\nKaynakta belirtilen yer: Nazım Yavuz Stadyumu. Şehir: Manisa.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Pizza Bulls Bordo Bandırma 2026 2027 Kombinesi — Basketbol\nKaynakta belirtilen yer: Bandırma 17 Eylül Üniversitesi Spor Salonu. Şehir: Balıkesir.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Karşıyaka Voleybol 2026-27 Sezon Kombinesi — Voleybol\nKaynakta belirtilen yer: Mustafa Kemal Atatürk Karşıyaka Spor Salonu. Şehir: İzmir.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Karşıyaka SK 2026-27 Futbol Sezon Kombinesi — Futbol\nKaynakta belirtilen yer: Alsancak Stadyumu. Şehir: İzmir.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Fatih Karagümrük Spor Kulübü 26-27 Sezonu Kombine — Futbol\nKaynakta belirtilen yer: Sarıyer Yusuf Ziya Öniş Stadyumu. Şehir: İstanbul.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Karşıyaka Basketbol 2026-27 Sezon Kombinesi — Basketbol\nKaynakta belirtilen yer: Mustafa Kemal Atatürk Karşıyaka Spor Salonu. Şehir: İzmir.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ayvalık Cunda 13 Saatlik Temel Yatçılık Eğitimi – 1 Kişi\nSpor branşı: Yelken.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ayvalık Cunda 3 Saatlik Wing Foil Başlangıç Eğitimi\nSpor branşı: Wing Foil.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Balıkesir Motokros Deneyimi\nSpor branşı: Motokros.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Ayvalık Cunda Konaklamalı Kite Sörf Başlangıç Eğitimi\nSpor branşı: Kite Sörf.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Kaz Dağları (Balıkesir) Yoga & Wellness Retreat\nSpor branşı: Yoga.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  },
+  {
+    "text": "Balıkesir Pickleball Turnuvası\nSpor branşı: Pickleball.",
+    "expected_categories": [
+      "SPORT"
+    ],
+    "author_id": "K2",
+    "split": "development"
+  }
+]
