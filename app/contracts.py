@@ -1,4 +1,3 @@
-
 from dataclasses import dataclass
 from typing import Protocol
 from typing import Literal
@@ -14,5 +13,11 @@ class ClassificationResult:
 
 
 class Classifier(Protocol):
+    def load(self) -> None:
+        ...
+
+    def is_ready(self) -> bool:
+        ...
+
     def classify(self, text: str) -> list[ClassificationResult]:
         ...

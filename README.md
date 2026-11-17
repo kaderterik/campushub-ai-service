@@ -172,15 +172,169 @@ Böylece `experiments/test_*.py` dosyaları standart API testleri sırasında ot
 
 Gerçek modelin otomatik birim testlerinde model pipeline'ı taklit edilerek (mock) model indirmeden yükleme ve sınıflandırma kuralları kontrol edilebilir.
 
+### Sistem testleri (T18)
+
+`tests/system/` altındaki testler servisi gerçek bir uvicorn süreci olarak
+(FakeClassifier ile) başlatır ve ona gerçek HTTP istekleri gönderir:
+
+- `/health` ve `/ai/classify` yanıtlarının sözleşmeye uyumu (liste, kategori seti, 0–1 skor, OTHER tek başına)
+- Geçersiz istekler ve bozuk JSON için 400, yanlış method için 405, bilinmeyen yol için 404
+- 30 eşzamanlı istek, uzun ve Türkçe karakterli metin
+- Başlangıç yaşam döngüsü: model yüklenirken bağlantı kurulamaz, yükleme bitince ilk yanıt 200 UP olur; yükleme başarısız olursa süreç kapanır
+- Grup 3 istemci taklidi: AI servisine bağlanılamazsa `unavailable`, bağlanıp yanıt alınamazsa `timeout` sonucu
+
+Normal `pytest` çalıştırmasına dahildir; ek bir ayar gerekmez.
+
+### Grup 3 Event Service taklidi
+
+`scripts/mock_event_service.py`, Event Service'in AI servisini nasıl çağıracağını gösterir.
+Servis çalışırken:
+
+```bash
+python scripts/mock_event_service.py --url http://127.0.0.1:8005 --timeout 5
+python scripts/mock_event_service.py --text "Bahar şenliği konseri"
+```
+
+AI servisi kapalıysa veya zaman aşımına uğrarsa betik çökmez; etkinliğin
+kategorisiz kaydedileceğini bildirir. Gerçek timeout değeri ve bu davranış
+Grup 3 ile kesinleştirilecektir (T19).
+
 ## Durum
 
-- Gerçek AI modeli FastAPI servisine entegre edilmiştir.
-- FakeClassifier varsayılan olarak korunmuştur.
-- `CLASSIFIER_BACKEND=real` ile gerçek model kullanılabilir.
+- Gerçek AI modeli (mDeBERTa) FastAPI servisine entegre edilmiştir.
+- FakeClassifier varsayılan olarak korunmuştur; `CLASSIFIER_BACKEND=real` ile gerçek model kullanılır.
 - Gerçek model için CPU inference doğrulanmıştır.
-- Mevcut 26 API testi başarıyla geçmiştir.
-- K3 tarafından geliştirilen `/health` router'ının uygulamaya entegrasyonu ayrıca tamamlanmalıdır.
-- Docker ortamında gerçek modelin kullanılması için `CLASSIFIER_BACKEND=real` ayarı ve gerekli model bağımlılıkları kontrol edilmelidir.
+- `/health` router'ı uygulamaya bağlanmıştır; hem FakeClassifier hem MDeBERTaClassifier `load()` / `is_ready()` arayüzünü uygular.
+
+## Health & Model Lifecycle
+
+GET /health, servisin trafik almaya hazır olup olmadığını modelin
+durumuna göre bildirir (T06, T26).
+
+| Durum | HTTP kodu | Yanıt |
+|---|---|---|
+| Model yüklendi | 200 | `{"service": "ai-service", "status": "UP", "version": "1.0.0"}` |
+| Model hazır değil (`is_ready()` false) | 503 | `{"service": "ai-service", "status": "DOWN", "error": "MODEL_STARTING", "version": "1.0.0"}` |
+
+### T26 tasarım kararı
+
+- Model, ilk istekte (lazy) değil, uygulama başlarken FastAPI `lifespan`
+  içinde bir kez ve **bloklayarak** yüklenir (`classifier.load()`).
+  Yükleme bitene kadar uvicorn port üzerinden istek kabul etmez; yani
+  model yüklenirken /health 503 dönmez, bağlantı hiç kurulamaz. Bu
+  bilinçli bir tercihtir: üretim ortamında model hazır olmadan servise
+  trafik gelmemelidir.
+- Container başlangıcındaki bu yükleme süresi Docker tarafında
+  `HEALTHCHECK --start-period=300s` ile tolere edilir (bkz. `Dockerfile`).
+  Gerçek model önbellekte yoksa ilk açılışta Hugging Face'ten indirildiği
+  için bu süre FakeClassifier'a göre çok daha uzundur. Bu süre içindeki
+  başarısız kontroller container'ı `unhealthy` yapmaz; model yüklenip
+  /health HTTP 200 döndüğünde container `healthy` durumuna geçer.
+- Model yüklemesi startup sırasında hata fırlatırsa
+  (`ModelUnavailableError`) uygulama ayağa kalkmaz ve container sonlanır;
+  hata startup logunda görünür.
+- Model hazır değilse (`is_ready()` false) /health HTTP 503 döner;
+  sınıflandırıcının `ModelUnavailableError` fırlattığı istekler (ör.
+  runtime inference hatası) HTTP 503 `MODEL_UNAVAILABLE` alır. Docker
+  healthcheck, Kubernetes readiness probe veya load balancer bu durumda
+  servise trafik yönlendirmez.
+- Hazır olma durumu sınıflandırıcının `is_ready()` metodu ile okunur
+  (`app/contracts.py` içindeki `Classifier` arayüzü: `load()`,
+  `is_ready()`, `classify() -> list[ClassificationResult]`).
+
+### Ortam değişkenleri
+
+| Değişken | Varsayılan | Açıklama |
+|---|---|---|
+| `CLASSIFIER_BACKEND` | `fake` | `real` verilirse gerçek mDeBERTa modeli, aksi halde FakeClassifier kullanılır |
+| `HOST`, `PORT` | `0.0.0.0`, `8005` | uvicorn'un dinlediği adres ve port (Docker imajında) |
+| `APP_ENV` | `development` | Ortam adı (`development`, `production` vb.) |
+
+> **Not:** Model kimliği (`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`) ve
+> sabitlenmiş revision, değerlendirme sonuçlarıyla birebir uyum için
+> `app/models/classifier.py` içinde sabit (`MODEL_ID`, `MODEL_REVISION`)
+> olarak tanımlıdır; ortam değişkeninden okunmaz.
+>
+> `docker run --env-file` tırnak işaretlerini silmediği için
+> `.env.example` değerleri tırnaksız yazılmalıdır.
+
+## Docker
+
+```bash
+docker build -t campushub-ai-service .
+
+# Varsayılan: FakeClassifier
+docker run -d --name campushub-ai -p 8005:8005 --env-file .env.example campushub-ai-service
+
+# Gerçek AI modeli (demo için bu kullanılmalı)
+docker run -d --name campushub-ai -p 8005:8005 --env-file .env.example -e CLASSIFIER_BACKEND=real campushub-ai-service
+
+docker inspect --format '{{.State.Health.Status}}' campushub-ai   # starting -> healthy
+curl -i http://127.0.0.1:8005/health
+```
+
+Healthcheck: `curl -f http://localhost:${PORT:-8005}/health`, ayarlar
+`--interval=10s --timeout=3s --start-period=300s --retries=3`.
+
+Gerçek model ilk açılışta indirildiği için yavaş bağlantıda 300 sn'lik
+start-period aşılabilir; bu durumda container bir süre `unhealthy` görünür ve
+model yüklenip /health 200 döndüğünde kendiliğinden `healthy` olur. Bunu
+önlemek için aşağıdaki kalıcı model önbelleğini kullanın.
+
+### Docker Compose ve kalıcı model önbelleği
+
+```bash
+docker compose up -d --build
+docker inspect --format '{{.State.Health.Status}}' campushub-ai
+curl -i http://127.0.0.1:8005/health
+docker compose down        # volume ve model silinmez
+```
+
+Volume daha önce `docker run` ile oluşturulduysa compose `volume "campushub-hf"
+already exists but was not created by Docker Compose` uyarısı verir; bu uyarı
+zararsızdır, mevcut volume ve içindeki model kullanılır.
+
+Compose varsayılan olarak gerçek modeli (`CLASSIFIER_BACKEND=real`) açar ve
+Hugging Face önbelleğini `campushub-hf` volume'unda tutar. Model yalnızca ilk
+açılışta indirilir; sonraki açılışlar saniyeler sürer.
+
+### Çevrimdışı çalıştırma (T17)
+
+Model `campushub-hf` volume'una bir kez indirildikten sonra servis internet
+olmadan açılabilir:
+
+```bash
+docker run -d --name campushub-ai-offline --network none \
+  -e CLASSIFIER_BACKEND=real -e HF_HUB_OFFLINE=1 \
+  -v campushub-hf:/home/appuser campushub-ai-service
+docker exec campushub-ai-offline curl -s http://localhost:8005/health
+```
+
+Model daha önce yerelde (venv ile) indirildiyse, tekrar indirmek yerine
+Windows/macOS önbelleğinden volume'a kopyalanabilir:
+
+```bash
+docker run --rm --user root \
+  -v ~/.cache/huggingface/hub:/src:ro -v campushub-hf:/home/appuser \
+  campushub-ai-service sh -c "rm -rf /home/appuser/.cache/huggingface && mkdir -p /home/appuser/.cache/huggingface && cp -r /src /home/appuser/.cache/huggingface/hub && chown -R appuser:appuser /home/appuser/.cache"
+```
+
+Windows cmd'de `~/.cache/...` yerine `%USERPROFILE%\.cache\huggingface\hub`
+yazılır. `docker cp` ile Windows klasörüne kopyalama önerilmez: Hugging Face
+önbelleğindeki symlink'ler Windows'ta oluşturulamaz ve model bulunamaz.
+
+T17 doğrulaması (17 Kasım 2026): imajda yalnızca `torch 2.14.1+cpu` var
+(`nvidia`/CUDA paketi yok); `--network none` ile container saniyeler içinde
+`healthy` oldu ve `/ai/classify` gerçek model skorlarını döndürdü.
+
+## Karar Günlüğü
+
+| Tarih | Karar |
+|---|---|
+| 2026-10 | T26: Model `lifespan` içinde bloklayarak yüklenir; yükleme süresi Docker `start-period` ile tolere edilir. |
+| 2026-11 | `transformers==4.57.6` sabit tutulur; 5.x model uyumluluğu doğrulanmadan alınmaz. |
+| 2026-11 | Model kimliği ve revision (`8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c`) `app/models/classifier.py` içinde sabittir; ortam değişkeninden okunmaz. |
+| 2026-11 | Docker'da torch CPU sürümü kullanılır; model önbelleği `campushub-hf` volume'unda kalıcıdır. |
 
 ## Hata Yönetimi
 

@@ -9,6 +9,7 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.responses import JSONResponse
 
 from app.api.classify_routes import create_classify_router
+from app.api.health_routes import create_health_router
 from app.exceptions import ModelUnavailableError
 from app.models.classifier import MDeBERTaClassifier
 from app.services.fake_classifier import FakeClassifier
@@ -19,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 
 # Varsayilan: FakeClassifier
-# CLASSIFIER_BACKEND=real ise gercek AI modeli kullanilir.
+# CLASSIFIER_BACKEND=real ise gercek AI modeli (mDeBERTa) kullanilir.
 classifier = (
     MDeBERTaClassifier()
     if os.getenv("CLASSIFIER_BACKEND", "fake").lower() == "real"
@@ -29,12 +30,11 @@ classifier = (
 service = InferenceService(classifier)
 
 
-# Gercek modeli uygulama baslarken bir kez yukle.
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    if isinstance(classifier, MDeBERTaClassifier):
-        classifier.load()
-
+    # Model uygulama ayaga kalkarken bir kez, bloklayarak yuklenir; yukleme bitene kadar
+    # sunucu istek kabul etmez. Model sonradan hazir degilse /health 503 doner.
+    classifier.load()
     yield
 
 
@@ -45,6 +45,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+app.include_router(create_health_router(classifier))
 app.include_router(create_classify_router(service))
 
 
