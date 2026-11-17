@@ -46,7 +46,12 @@ def classify_event(base_url: str, text: str, timeout: float = DEFAULT_TIMEOUT) -
     started = time.perf_counter()
     try:
         response = httpx.post(f"{base_url}/ai/classify", json={"text": text}, timeout=timeout)
+    except httpx.ConnectTimeout as exc:
+        # Bağlantı hiç kurulamadı (Windows'ta kapalı port da bu şekilde görünebilir):
+        # servis kapalı kabul edilir.
+        return ClassifyOutcome(status="unavailable", latency_ms=_elapsed(started), detail=type(exc).__name__)
     except httpx.TimeoutException as exc:
+        # Bağlantı kuruldu ama yanıt süresinde gelmedi.
         return ClassifyOutcome(status="timeout", latency_ms=_elapsed(started), detail=type(exc).__name__)
     except httpx.TransportError as exc:
         return ClassifyOutcome(status="unavailable", latency_ms=_elapsed(started), detail=type(exc).__name__)

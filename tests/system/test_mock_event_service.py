@@ -23,7 +23,7 @@ def test_client_gets_categories_from_running_service(running_service):
 def test_client_handles_service_down():
     closed_port = free_port()  # bu portta dinleyen kimse yok
 
-    outcome = classify_event(f"http://127.0.0.1:{closed_port}", "Konser duyurusu", timeout=2)
+    outcome = classify_event(f"http://127.0.0.1:{closed_port}", "Konser duyurusu", timeout=5)
 
     assert outcome.status == "unavailable"
     assert outcome.categories == []
@@ -59,3 +59,17 @@ def test_client_handles_timeout():
 
     assert outcome.status == "timeout"
     assert outcome.categories == []
+
+
+def test_connect_timeout_counts_as_unavailable(monkeypatch):
+    # Windows'ta kapalı porta bağlanmak ConnectTimeout olarak görünebilir.
+    import httpx
+
+    def raise_connect_timeout(*args, **kwargs):
+        raise httpx.ConnectTimeout("connect timed out")
+
+    monkeypatch.setattr(httpx, "post", raise_connect_timeout)
+
+    outcome = classify_event("http://127.0.0.1:9", "Konser duyurusu", timeout=1)
+
+    assert outcome.status == "unavailable"

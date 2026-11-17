@@ -181,7 +181,7 @@ Gerçek modelin otomatik birim testlerinde model pipeline'ı taklit edilerek (mo
 - Geçersiz istekler ve bozuk JSON için 400, yanlış method için 405, bilinmeyen yol için 404
 - 30 eşzamanlı istek, uzun ve Türkçe karakterli metin
 - Başlangıç yaşam döngüsü: model yüklenirken bağlantı kurulamaz, yükleme bitince ilk yanıt 200 UP olur; yükleme başarısız olursa süreç kapanır
-- Grup 3 istemci taklidi: AI servisi kapalıyken `unavailable`, yanıt vermezken `timeout` sonucu
+- Grup 3 istemci taklidi: AI servisine bağlanılamazsa `unavailable`, bağlanıp yanıt alınamazsa `timeout` sonucu
 
 Normal `pytest` çalıştırmasına dahildir; ek bir ayar gerekmez.
 
@@ -289,6 +289,10 @@ docker inspect --format '{{.State.Health.Status}}' campushub-ai
 curl -i http://127.0.0.1:8005/health
 docker compose down        # volume ve model silinmez
 ```
+
+Volume daha önce `docker run` ile oluşturulduysa compose `volume "campushub-hf"
+already exists but was not created by Docker Compose` uyarısı verir; bu uyarı
+zararsızdır, mevcut volume ve içindeki model kullanılır.
 
 Compose varsayılan olarak gerçek modeli (`CLASSIFIER_BACKEND=real`) açar ve
 Hugging Face önbelleğini `campushub-hf` volume'unda tutar. Model yalnızca ilk
