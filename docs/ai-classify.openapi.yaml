@@ -4,6 +4,20 @@ info:
   description: CampusHub etkinlik siniflandirma API'si.
   version: 1.0.0
 paths:
+  /health:
+    get:
+      tags:
+      - Health
+      summary: Health
+      operationId: health_health_get
+      responses:
+        '200':
+          description: Model is loaded and service is ready
+          content:
+            application/json:
+              schema: {}
+        '503':
+          description: Model is not ready
   /ai/classify:
     post:
       tags:

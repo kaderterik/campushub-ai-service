@@ -1,7 +1,7 @@
 # K1/K2 API Entegrasyonu ve İnceleme Durumu
 
 Bu belge, önceki inceleme notlarının güncellenmiş hâlidir.
-Geçmiş deney sonuçlarını değiştirmez.
+Geçmiş deney sonuçlarını değiştirmez. Güncelleme: 17 Kasım 2026.
 
 ## Tamamlanan API Çalışmaları
 
@@ -38,9 +38,12 @@ python -m uvicorn app.main:app --port 8005
 
 ## Doğrulama Kapsamı
 
-Son yerel çalıştırmada 32 otomatik test geçmiştir.
+17 Kasım 2026 tarihli PR #10 incelemesinde 56 otomatik test geçmiştir.
+Bu doğrulama API/model birim testleri, health testleri, gerçek uvicorn sürecine
+HTTP istekleri, 30 istekli eşzamanlılık denemesi ve başlangıç yaşam döngüsünü kapsar.
 
-Otomatik testlerde model pipeline'ı veya sınıflandırıcı taklit edilir.
+Otomatik model testlerinde pipeline taklit edilir; HTTP sistem testlerinde
+ayrı uvicorn süreci FakeClassifier ile başlatılır.
 Model ağırlıkları indirilmeden API bağlantısı, kategori seçim
 kuralları ve başlangıçtaki yükleme çağrısı doğrulanır.
 
@@ -67,14 +70,25 @@ Grup 3 ile şu kararlar karşılıklı kesinleştirilmelidir:
 
 Sözleşmenin hazırlanması, Grup 3 onayı anlamına gelmez.
 Ortak integration deposuna taşıma, depo ve erişim hazır olduğunda yapılacaktır.
+Bekleyen kararlar ve T20/T19 adımları [entegrasyon takibinde](group3-integration.md)
+listelenir; ortak depo ve Grup 3 kabulü tamamlandı olarak işaretlenmemiştir.
+
+## Health ve Docker Entegrasyonu
+
+PR #10 ana dala alınmıştır. `/health` router'ı uygulamaya bağlanmış;
+Classifier sözleşmesine `load()` ve `is_ready()` eklenmiştir.
+Model başlangıçta bloklayarak yüklenir. Dockerfile, Compose, kalıcı model
+önbelleği ve sistem testleri ana dalda mevcuttur.
+Docker/çevrimdışı çalışma için K3'ün doğrulama kaydı README'dedir;
+bu K2 belge güncellemesinde Docker yeniden çalıştırılarak doğrulanmamıştır.
 
 ## Ayrı Takip Edilen Çalışmalar
 
 - K1'in model karar belgesi ve değerlendirme raporları ayrıca takip edilir.
 - Eski tek etiketli deneyler, güncel çok etiketli API davranışıyla
   karıştırılmamalıdır.
-- K3'ün health, Docker ve Compose çalışmaları bu güncellemenin
-  kapsamı dışındadır.
+- K3'ün mevcut health, Docker ve Compose uygulaması bu belge güncellemesinde
+  değiştirilmemiştir. Gerçek Event Service ile T19 kontrolü beklemektedir.
 - Eski benchmark scriptlerinin Windows uyumluluğu bu belge
   güncellemesiyle düzeltilmiş sayılmaz.
 
