@@ -172,6 +172,33 @@ Böylece `experiments/test_*.py` dosyaları standart API testleri sırasında ot
 
 Gerçek modelin otomatik birim testlerinde model pipeline'ı taklit edilerek (mock) model indirmeden yükleme ve sınıflandırma kuralları kontrol edilebilir.
 
+### Sistem testleri (T18)
+
+`tests/system/` altındaki testler servisi gerçek bir uvicorn süreci olarak
+(FakeClassifier ile) başlatır ve ona gerçek HTTP istekleri gönderir:
+
+- `/health` ve `/ai/classify` yanıtlarının sözleşmeye uyumu (liste, kategori seti, 0–1 skor, OTHER tek başına)
+- Geçersiz istekler ve bozuk JSON için 400, yanlış method için 405, bilinmeyen yol için 404
+- 30 eşzamanlı istek, uzun ve Türkçe karakterli metin
+- Başlangıç yaşam döngüsü: model yüklenirken bağlantı kurulamaz, yükleme bitince ilk yanıt 200 UP olur; yükleme başarısız olursa süreç kapanır
+- Grup 3 istemci taklidi: AI servisi kapalıyken `unavailable`, yanıt vermezken `timeout` sonucu
+
+Normal `pytest` çalıştırmasına dahildir; ek bir ayar gerekmez.
+
+### Grup 3 Event Service taklidi
+
+`scripts/mock_event_service.py`, Event Service'in AI servisini nasıl çağıracağını gösterir.
+Servis çalışırken:
+
+```bash
+python scripts/mock_event_service.py --url http://127.0.0.1:8005 --timeout 5
+python scripts/mock_event_service.py --text "Bahar şenliği konseri"
+```
+
+AI servisi kapalıysa veya zaman aşımına uğrarsa betik çökmez; etkinliğin
+kategorisiz kaydedileceğini bildirir. Gerçek timeout değeri ve bu davranış
+Grup 3 ile kesinleştirilecektir (T19).
+
 ## Durum
 
 - Gerçek AI modeli (mDeBERTa) FastAPI servisine entegre edilmiştir.
@@ -248,6 +275,62 @@ curl -i http://127.0.0.1:8005/health
 
 Healthcheck: `curl -f http://localhost:${PORT:-8005}/health`, ayarlar
 `--interval=10s --timeout=3s --start-period=300s --retries=3`.
+
+Gerçek model ilk açılışta indirildiği için yavaş bağlantıda 300 sn'lik
+start-period aşılabilir; bu durumda container bir süre `unhealthy` görünür ve
+model yüklenip /health 200 döndüğünde kendiliğinden `healthy` olur. Bunu
+önlemek için aşağıdaki kalıcı model önbelleğini kullanın.
+
+### Docker Compose ve kalıcı model önbelleği
+
+```bash
+docker compose up -d --build
+docker inspect --format '{{.State.Health.Status}}' campushub-ai
+curl -i http://127.0.0.1:8005/health
+docker compose down        # volume ve model silinmez
+```
+
+Compose varsayılan olarak gerçek modeli (`CLASSIFIER_BACKEND=real`) açar ve
+Hugging Face önbelleğini `campushub-hf` volume'unda tutar. Model yalnızca ilk
+açılışta indirilir; sonraki açılışlar saniyeler sürer.
+
+### Çevrimdışı çalıştırma (T17)
+
+Model `campushub-hf` volume'una bir kez indirildikten sonra servis internet
+olmadan açılabilir:
+
+```bash
+docker run -d --name campushub-ai-offline --network none \
+  -e CLASSIFIER_BACKEND=real -e HF_HUB_OFFLINE=1 \
+  -v campushub-hf:/home/appuser campushub-ai-service
+docker exec campushub-ai-offline curl -s http://localhost:8005/health
+```
+
+Model daha önce yerelde (venv ile) indirildiyse, tekrar indirmek yerine
+Windows/macOS önbelleğinden volume'a kopyalanabilir:
+
+```bash
+docker run --rm --user root \
+  -v ~/.cache/huggingface/hub:/src:ro -v campushub-hf:/home/appuser \
+  campushub-ai-service sh -c "rm -rf /home/appuser/.cache/huggingface && mkdir -p /home/appuser/.cache/huggingface && cp -r /src /home/appuser/.cache/huggingface/hub && chown -R appuser:appuser /home/appuser/.cache"
+```
+
+Windows cmd'de `~/.cache/...` yerine `%USERPROFILE%\.cache\huggingface\hub`
+yazılır. `docker cp` ile Windows klasörüne kopyalama önerilmez: Hugging Face
+önbelleğindeki symlink'ler Windows'ta oluşturulamaz ve model bulunamaz.
+
+T17 doğrulaması (17 Kasım 2026): imajda yalnızca `torch 2.14.1+cpu` var
+(`nvidia`/CUDA paketi yok); `--network none` ile container saniyeler içinde
+`healthy` oldu ve `/ai/classify` gerçek model skorlarını döndürdü.
+
+## Karar Günlüğü
+
+| Tarih | Karar |
+|---|---|
+| 2026-10 | T26: Model `lifespan` içinde bloklayarak yüklenir; yükleme süresi Docker `start-period` ile tolere edilir. |
+| 2026-11 | `transformers==4.57.6` sabit tutulur; 5.x model uyumluluğu doğrulanmadan alınmaz. |
+| 2026-11 | Model kimliği ve revision (`8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c`) `app/models/classifier.py` içinde sabittir; ortam değişkeninden okunmaz. |
+| 2026-11 | Docker'da torch CPU sürümü kullanılır; model önbelleği `campushub-hf` volume'unda kalıcıdır. |
 
 ## Hata Yönetimi
 
