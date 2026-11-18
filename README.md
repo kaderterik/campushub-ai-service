@@ -235,9 +235,15 @@ durumuna göre bildirir (T06, T26).
   hata startup logunda görünür.
 - Model hazır değilse (`is_ready()` false) /health HTTP 503 döner;
   sınıflandırıcının `ModelUnavailableError` fırlattığı istekler (ör.
-  runtime inference hatası) HTTP 503 `MODEL_UNAVAILABLE` alır. Docker
-  healthcheck, Kubernetes readiness probe veya load balancer bu durumda
-  servise trafik yönlendirmez.
+  runtime inference hatası) HTTP 503 `MODEL_UNAVAILABLE` alır.
+- **Docker HEALTHCHECK trafiği kendisi kesmez**; yalnızca container'ın
+  sağlık durumunu (`starting` / `healthy` / `unhealthy`) bildirir. Container
+  `unhealthy` olsa bile port açık kalır ve gelen istekler servise ulaşır.
+  Trafiği bu duruma göre yönlendirmek, durumu okuyan katmanın işidir:
+  Docker Compose `depends_on: condition: service_healthy` ile bağımlı
+  servisi sağlıklı olana kadar başlatmaz; Kubernetes readiness probe veya
+  bir load balancer sağlıksız örneğe istek göndermez. İstemci (Grup 3) de
+  503 ve bağlantı hatalarını ayrıca ele almalıdır.
 - Hazır olma durumu sınıflandırıcının `is_ready()` metodu ile okunur
   (`app/contracts.py` içindeki `Classifier` arayüzü: `load()`,
   `is_ready()`, `classify() -> list[ClassificationResult]`).
@@ -298,6 +304,29 @@ Compose varsayılan olarak gerçek modeli (`CLASSIFIER_BACKEND=real`) açar ve
 Hugging Face önbelleğini `campushub-hf` volume'unda tutar. Model yalnızca ilk
 açılışta indirilir; sonraki açılışlar saniyeler sürer.
 
+### Hangi komut hangi modu açar?
+
+| Komut | Sınıflandırıcı | Ne zaman |
+|---|---|---|
+| `uvicorn app.main:app` (ortam değişkeni yok) | FakeClassifier | Geliştirme, hızlı deneme |
+| `docker run ... --env-file .env.example` | FakeClassifier (`.env.example` içinde `CLASSIFIER_BACKEND=fake`) | Model indirmeden Docker denemesi |
+| `docker run ... --env-file .env.example -e CLASSIFIER_BACKEND=real` | **Gerçek model** (`-e`, env-file'daki değeri ezer) | Docker ile gerçek model |
+| `docker compose up -d --wait` | **Gerçek model** (compose varsayılanı `real`) | **Demo ve Grup 3 entegrasyonu** |
+| `CLASSIFIER_BACKEND=fake docker compose up -d --wait` | FakeClassifier | Grup 3'ün model indirmeden geliştirme yapması |
+
+Windows cmd'de compose için: `set CLASSIFIER_BACKEND=fake` ardından `docker compose up -d --wait`.
+
+> **Dikkat:** Compose, proje klasöründe `.env` dosyası varsa onu otomatik
+> okur. `.env.example`, `.env` adıyla kopyalandıysa içindeki
+> `CLASSIFIER_BACKEND=fake` compose'u da fake moda alır. Demo öncesi
+> `docker compose config` çıktısında `CLASSIFIER_BACKEND: real` görünmelidir.
+
+Hangi modun açık olduğunu anlamak için `/ai/classify` yanıtına bakın:
+FakeClassifier her metne sabit `TECHNOLOGY 0.91` ve `CAREER 0.84` döndürür,
+gerçek model metne göre değişen küsuratlı skorlar döndürür.
+
+**Demo için kullanılacak komut:** `docker compose up -d --wait` (gerçek model).
+
 ### Çevrimdışı çalıştırma (T17)
 
 Model `campushub-hf` volume'una bir kez indirildikten sonra servis internet
@@ -327,6 +356,50 @@ T17 doğrulaması (17 Kasım 2026): imajda yalnızca `torch 2.14.1+cpu` var
 (`nvidia`/CUDA paketi yok); `--network none` ile container saniyeler içinde
 `healthy` oldu ve `/ai/classify` gerçek model skorlarını döndürdü.
 
+### Demo bilgisayarını internetsiz çalışmaya hazırlama
+
+İnternetsiz çalışma, modelin ve Docker imajının **önceden** demo
+bilgisayarında bulunmasına bağlıdır. Demodan önce, internet varken:
+
+**Yol A: Demo bilgisayarında bir kez internetle çalıştırmak (en kolay)**
+
+```bash
+docker compose up -d --build --wait   # imajı build eder, modeli campushub-hf volume'una indirir
+docker compose down                   # volume ve imaj kalır
+```
+
+**Yol B: Hazır imajı ve modeli başka bir bilgisayardan taşımak**
+
+Hazırlanan bilgisayarda (proje klasöründe):
+
+```bash
+docker save -o campushub-ai-service.tar campushub-ai-service
+docker run --rm --user root -v campushub-hf:/home/appuser -v "$PWD":/backup campushub-ai-service tar czf /backup/campushub-hf.tgz -C /home/appuser .cache/huggingface
+```
+
+`campushub-ai-service.tar` ve `campushub-hf.tgz` dosyalarını USB ile demo
+bilgisayarının proje klasörüne kopyalayın, sonra orada:
+
+```bash
+docker load -i campushub-ai-service.tar
+docker run --rm --user root -v campushub-hf:/home/appuser -v "$PWD":/backup campushub-ai-service sh -c "tar xzf /backup/campushub-hf.tgz -C /home/appuser && chown -R appuser:appuser /home/appuser/.cache"
+```
+
+Windows cmd'de `"$PWD"` yerine `"%cd%"` yazılır. Bu iki dosya Git'e eklenmez.
+
+**Demo günü (internet olmadan):**
+
+```bash
+# Windows cmd: set HF_HUB_OFFLINE=1
+HF_HUB_OFFLINE=1 docker compose up -d --wait
+docker compose ps                     # STATUS: healthy
+python scripts/mock_event_service.py
+```
+
+- `--build` **kullanılmaz**: build, taban imajı ve paketleri internetten çekmeye çalışır.
+- `HF_HUB_OFFLINE=1`, modelin Hugging Face'e hiç bağlanmadan yerel önbellekten yüklenmesini sağlar; ağ yavaş veya kısıtlıysa açılışın takılmasını önler.
+- Kontrol listesi: `docker images` içinde `campushub-ai-service` var, `docker volume ls` içinde `campushub-hf` var, `docker compose ps` çıktısı `healthy`.
+
 ## Karar Günlüğü
 
 | Tarih | Karar |
@@ -335,6 +408,7 @@ T17 doğrulaması (17 Kasım 2026): imajda yalnızca `torch 2.14.1+cpu` var
 | 2026-11 | `transformers==4.57.6` sabit tutulur; 5.x model uyumluluğu doğrulanmadan alınmaz. |
 | 2026-11 | Model kimliği ve revision (`8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c`) `app/models/classifier.py` içinde sabittir; ortam değişkeninden okunmaz. |
 | 2026-11 | Docker'da torch CPU sürümü kullanılır; model önbelleği `campushub-hf` volume'unda kalıcıdır. |
+| 2026-11 | Demo komutu `docker compose up -d --wait` (gerçek model). `.env.example` geliştirme için `fake` kalır. İnternetsiz demoda `HF_HUB_OFFLINE=1` kullanılır. |
 
 ## Hata Yönetimi
 

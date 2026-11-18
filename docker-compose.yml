@@ -1,7 +1,8 @@
 # CampusHub AI Service - yerel çalıştırma / Grup 3 entegrasyonu
 #
-#   docker compose up -d --build        # gerçek model (varsayılan)
-#   CLASSIFIER_BACKEND=fake docker compose up -d   # FakeClassifier
+#   docker compose up -d --build --wait            # gerçek model (varsayılan, demo komutu)
+#   CLASSIFIER_BACKEND=fake docker compose up -d   # FakeClassifier (model indirmeden)
+#   HF_HUB_OFFLINE=1 docker compose up -d --wait   # internetsiz demo (model volume'da olmalı)
 #
 # Model önbelleği campushub-hf volume'unda kalıcıdır; model yalnızca ilk
 # açılışta indirilir. Healthcheck Dockerfile'dan gelir.
@@ -15,6 +16,7 @@ services:
     environment:
       CLASSIFIER_BACKEND: ${CLASSIFIER_BACKEND:-real}
       APP_ENV: ${APP_ENV:-development}
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-0}
     volumes:
       - campushub-hf:/home/appuser
     restart: unless-stopped

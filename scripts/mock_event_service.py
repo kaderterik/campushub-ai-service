@@ -58,7 +58,11 @@ def classify_event(base_url: str, text: str, timeout: float = DEFAULT_TIMEOUT) -
 
     latency = _elapsed(started)
     if response.status_code == 200:
-        predictions = response.json()["predictions"]
+        try:
+            predictions = _parse_predictions(response.json())
+        except ValueError as exc:
+            # 200 geldi ama yanıt sözleşmeye uymuyor: çökmeden "error" dön.
+            return ClassifyOutcome(status="error", http_status=200, latency_ms=latency, detail=f"invalid response: {exc}")
         return ClassifyOutcome(
             status="ok",
             categories=[item["category"] for item in predictions],
@@ -69,6 +73,25 @@ def classify_event(base_url: str, text: str, timeout: float = DEFAULT_TIMEOUT) -
     if response.status_code == 503:
         return ClassifyOutcome(status="unavailable", http_status=503, latency_ms=latency, detail=response.text)
     return ClassifyOutcome(status="error", http_status=response.status_code, latency_ms=latency, detail=response.text)
+
+
+def _parse_predictions(body: object) -> list[dict]:
+    """Yanıtı docs/ai-classify-contract.md'ye göre doğrular; uymazsa ValueError."""
+    if not isinstance(body, dict) or "predictions" not in body:
+        raise ValueError("'predictions' field missing")
+    predictions = body["predictions"]
+    if not isinstance(predictions, list) or not predictions:
+        raise ValueError("'predictions' must be a non-empty list")
+    for item in predictions:
+        if not isinstance(item, dict):
+            raise ValueError("prediction must be an object")
+        category = item.get("category")
+        confidence = item.get("confidence")
+        if not isinstance(category, str) or not category:
+            raise ValueError("prediction 'category' must be a non-empty string")
+        if isinstance(confidence, bool) or not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
+            raise ValueError("prediction 'confidence' must be a number between 0 and 1")
+    return predictions
 
 
 def _elapsed(started: float) -> float:

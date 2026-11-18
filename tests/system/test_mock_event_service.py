@@ -7,6 +7,9 @@ T19 hazırlığı: AI servisi kapalıyken veya yanıt vermezken Event Service ta
 import socket
 import threading
 
+import httpx
+import pytest
+
 from scripts.mock_event_service import classify_event
 from tests.system.conftest import free_port
 
@@ -63,8 +66,6 @@ def test_client_handles_timeout():
 
 def test_connect_timeout_counts_as_unavailable(monkeypatch):
     # Windows'ta kapalı porta bağlanmak ConnectTimeout olarak görünebilir.
-    import httpx
-
     def raise_connect_timeout(*args, **kwargs):
         raise httpx.ConnectTimeout("connect timed out")
 
@@ -73,3 +74,29 @@ def test_connect_timeout_counts_as_unavailable(monkeypatch):
     outcome = classify_event("http://127.0.0.1:9", "Konser duyurusu", timeout=1)
 
     assert outcome.status == "unavailable"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        b'{"categories": ["SPORT"]}',  # predictions alanı yok
+        b'{"predictions": []}',  # boş liste
+        b'{"predictions": "SPORT"}',  # liste değil
+        b'{"predictions": [{"category": "SPORT"}]}',  # confidence yok
+        b'{"predictions": [{"category": "SPORT", "confidence": 1.7}]}',  # aralık dışı
+        b'[1, 2, 3]',  # nesne değil
+        b'<html>proxy error</html>',  # JSON değil
+    ],
+)
+def test_client_handles_malformed_200_response(monkeypatch, body):
+    def fake_post(url, **kwargs):
+        return httpx.Response(200, content=body, request=httpx.Request("POST", url))
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+
+    outcome = classify_event("http://ai-service:8005", "Spor turnuvası")
+
+    assert outcome.status == "error"
+    assert outcome.http_status == 200
+    assert outcome.categories == []
+    assert outcome.detail.startswith("invalid response")
