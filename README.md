@@ -428,12 +428,31 @@ Modelin kullanılamadığı durumlar `app.exceptions.ModelUnavailableError` ile 
 
 API tanımı [docs/ai-classify.openapi.yaml](docs/ai-classify.openapi.yaml)
 dosyasında sürümlenir.
+Dosya tam servis şemasıdır; `/ai/classify` ve `/health` yollarını içerir.
 
 Swagger arayüzü: http://127.0.0.1:8005/docs
 
 Çalışan servisin OpenAPI JSON adresi:
 http://127.0.0.1:8005/openapi.json
 
-API şemaları değiştiğinde YAML dosyası yeniden üretilmelidir.
-Grup 3 bu sözleşmedeki istek, predictions listesi ve hata
-yanıtlarını esas almalıdır.
+API şemaları değiştiğinde depo kökünden yeniden üretin:
+
+```bash
+python -m scripts.export_openapi
+```
+
+Windows'ta sanal ortam aktif değilse:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.export_openapi
+```
+
+Bu komut uygulama başlangıcını çalıştırmaz ve model ağırlıklarını indirmez.
+PyYAML bağımlılığı requirements.txt içinde sabitlenmiştir.
+
+Grup 3 için istek, predictions listesi ve hata kuralları
+[API sözleşmesinde](docs/ai-classify-contract.md) açıklanır.
+Ortak `campushub-integration` deposuna taşıma, Grup 3 kabulü ve gerçek Event Service
+testleri henüz tamamlandı sayılmaz. Erişim, ortak adres, gönderilecek metin,
+timeout ve kesinti davranışı [entegrasyon takibinde](docs/group3-integration.md)
+ayrı ayrı izlenir.
