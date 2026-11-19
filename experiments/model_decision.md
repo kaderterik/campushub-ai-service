@@ -205,3 +205,32 @@ Final test sonuçlarına bakılarak model, kategori açıklamaları veya 0.70 e�
 5. **Teslim:** Nihai rapor, testler, son commit/push ve PR.
 
 **Nihai T11 model kararı:** Sabit revision'lı **mDeBERTa**, `multi_label=True`, beş ana etiket için **0.70 eşik** ve eşik geçilmezse **OTHER fallback**. Eski tek kategorili sonuçlar yalnızca tarihsel model seçimi kanıtıdır.
+## 10. T14 — Gerçek Model CPU Performansı
+
+Güncel mDeBERTa sınıflandırıcısının CPU performansı,
+30 geliştirme kaydı üzerinde ölçülmüştür.
+
+- Model: MoritzLaurer/mDeBERTa-v3-base-mnli-xnli
+- Cihaz: Apple Silicon Mac, CPU
+- multi_label: True
+- Eşik değeri: 0.70
+- Ölçülen örnek sayısı: 30
+
+| Metrik | Sonuç |
+|---|---:|
+| Model yükleme süresi | 2,807 saniye |
+| Ortalama inference süresi | 562,14 ms |
+| P95 inference süresi | 643,97 ms |
+| Yükleme sonrasında ölçülen peak RAM | 559,08 MB |
+| Tüm işlem boyunca peak RAM | 741,78 MB |
+
+RAM değerleri modelin tek başına tüketimini değil,
+Python sürecinin ölçülen en yüksek bellek kullanımını
+ifade etmektedir. Sonuçlar kullanılan cihaz ve çalışma
+ortamına özgüdür.
+
+Ölçüm kodu: `experiments/benchmark_real_cpu.py`
+
+Sonuç dosyası: `experiments/results/benchmark_real_cpu.json`
+
+**Durum:** T14 CPU performans ölçümü tamamlandı.
