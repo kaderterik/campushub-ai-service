@@ -234,3 +234,51 @@ ortamına özgüdür.
 Sonuç dosyası: `experiments/results/benchmark_real_cpu.json`
 
 **Durum:** T14 CPU performans ölçümü tamamlandı.
+
+## 11. Model Lisansı ve Sınırlamalar
+
+### Model Lisansı
+
+Kullanılan model:
+`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`
+
+Hugging Face model kartında lisans MIT olarak belirtilmiştir.
+
+Model bağlantısı:
+https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli
+
+Proje kapsamında önceden eğitilmiş model kullanılmış,
+model yeniden eğitilmemiştir.
+
+Modelin dağıtımı sırasında geçerli lisans koşulları
+ve gerekli telif bildirimleri korunmalıdır.
+
+### Modelin Sınırlamaları
+
+- Model her etkinlik ve duyuruyu doğru sınıflandıramaz.
+- Birden fazla konu içeren metinlerde yanlış ek kategoriler seçilebilir.
+- 0.70 eşiğinin altında kalan doğru kategoriler kaçırılabilir.
+- OTHER, beş ana kategori eşiği geçmediğinde seçilen fallback sonucudur.
+- Model skorları kalibre edilmiş doğruluk olasılıkları değildir.
+- Özellikle CAREER, SOCIAL ve OTHER kategorilerinde
+  sınıflandırma hataları gözlenmiştir.
+- Performans kullanılan cihaz ve çalışma ortamına göre değişebilir.
+
+84 kayıtlık bağımsız final test sonuçları:
+
+- Micro-F1: %66,32
+- Macro-F1: %67,76
+- Exact Match: %55,95
+
+Final test sonuçlarına bakılarak model, kategori açıklamaları
+veya 0.70 eşik değeri değiştirilmemiştir.
+
+### Akademik Kaynak
+
+Laurer, M., van Atteveldt, W., Salleras Casas, A.,
+& Welbers, K. (2022).
+Less Annotating, More Classifying – Addressing the Data
+Scarcity Issue of Supervised Machine Learning with
+Deep Transfer Learning and BERT-NLI.
+
+https://osf.io/74b8k
