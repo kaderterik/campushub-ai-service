@@ -1,4 +1,8 @@
-# Grup 3 sınıflandırma API sözleşmesi (çoklu kategori taslağı)
+# Grup 3 sınıflandırma API sözleşmesi
+
+Güncelleme: 17 Kasım 2026. Bu belge AI servisinin mevcut davranışını açıklar.
+Grup 3'ün kabulü ve ortak ortama taşıma henüz belgelenmemiştir.
+Bekleyen kararlar [entegrasyon takip belgesinde](group3-integration.md) tutulur.
 
 POST /ai/classify
 Content-Type: application/json
@@ -51,10 +55,29 @@ Classifier.classify(text: str) -> list[ClassificationResult]
 
 ClassificationResult her kategori için category ve confidence taşır. Tek sonuç
 bile liste olarak dönmelidir. FakeClassifier bu yapıyı gösterir; gerçek tahmin
-veya eşik seçimi yapmaz. Gerçek modelin çoklu etiket çıkarımı, seçim eşikleri ve
-OTHER davranışı geliştirme kümesinde K1 ile belirlenmelidir. multi_label=True
-tek başına hangi etiketlerin seçileceği kararını çözmez. Önceki tek etiketli
-accuracy sonuçları çoklu etiket doğruluğu olarak sunulmamalıdır.
+veya eşik seçimi yapmaz.
 
-K3'ün PR #4'ündeki load()/is_ready() yaşam döngüsü eklemeleri ayrı tutuldu.
-Entegrasyonda bu metotlar korunarak classify dönüş tipi listeye uyarlanmalıdır.
+Gerçek MDeBERTaClassifier, CPU üzerinde sabit model revision ile çalışır.
+`multi_label=True` kullanılır; beş konu kategorisinde skoru `>= 0.70` olanlar
+seçilir. Hiçbiri eşiğe ulaşmazsa yalnızca OTHER döner. OTHER yanıtındaki
+confidence, modelin OTHER için ürettiği skordur; eşik kararında kullanılmaz.
+Gerçek model sonuçları skora göre azalan sıralanır; tüketici kategori alanlarını
+okumalı ve liste sırasına iş anlamı bağlamamalıdır.
+
+Classifier arayüzündeki `load()` ve `is_ready()` metotları hem gerçek modelde
+hem FakeClassifier'da uygulanmıştır. PR #10 ile health/yaşam döngüsü entegrasyonu
+ana dala alınmıştır. Model uygulama başlangıcında yüklenir; yükleme tamamlanmadan
+sunucu istek kabul etmez. Yükleme başarısızsa uygulama başlangıcı başarısız olur.
+
+## Sağlık kontrolü
+
+`GET /health`: model hazırsa HTTP 200 ile
+`{"service":"ai-service","status":"UP","version":"1.0.0"}` döner.
+Servis çalışırken model hazır değilse HTTP 503 ile
+`{"service":"ai-service","status":"DOWN","error":"MODEL_STARTING","version":"1.0.0"}` döner.
+Bu health yanıtı, `/ai/classify` endpoint'inin error/message hata biçiminden ayrıdır.
+Başlangıç yüklemesi sırasında bağlantı kurulamaması, bu bloklayıcı tasarımın parçasıdır.
+
+Tam servis OpenAPI çıktısı [ai-classify.openapi.yaml](ai-classify.openapi.yaml)
+dosyasında hem `/ai/classify` hem `/health` yollarını içerir.
+Önceki tek etiketli accuracy sonuçları çoklu etiket doğruluğu olarak sunulmamalıdır.
