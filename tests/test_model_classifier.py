@@ -131,3 +131,58 @@ def test_classification_requires_model_loading():
 
     with pytest.raises(ModelUnavailableError):
         classifier.classify("Yazılım etkinliği")
+
+def test_model_loading_failure(fake_hf, monkeypatch):
+    def broken_pipeline(*args, **kwargs):
+        raise RuntimeError("Model yuklenemedi")
+
+    monkeypatch.setattr(
+        sys.modules["transformers"],
+        "pipeline",
+        broken_pipeline,
+    )
+
+    classifier = MDeBERTaClassifier()
+
+    with pytest.raises(ModelUnavailableError):
+        classifier.load()
+
+    assert not classifier.is_ready()
+
+
+def test_inference_failure(fake_hf):
+    classifier = MDeBERTaClassifier()
+    classifier.load()
+
+    def broken_inference(*args, **kwargs):
+        raise RuntimeError("Tahmin hatasi")
+
+    classifier._pipeline = broken_inference
+
+    with pytest.raises(ModelUnavailableError):
+        classifier.classify("Yapay zeka etkinligi")
+
+
+def test_missing_category_scores(fake_hf):
+    classifier = MDeBERTaClassifier()
+    classifier.load()
+
+    def incomplete_inference(*args, **kwargs):
+        return {
+            "labels": [CATEGORY_DESCRIPTIONS["ART"]],
+            "scores": [0.95],
+        }
+
+    classifier._pipeline = incomplete_inference
+
+    with pytest.raises(ModelUnavailableError):
+        classifier.classify("Muzik atolyesi")
+
+
+@pytest.mark.parametrize("text", ["", "   ", None])
+def test_invalid_input_text(fake_hf, text):
+    classifier = MDeBERTaClassifier()
+    classifier.load()
+
+    with pytest.raises(ValueError):
+        classifier.classify(text)

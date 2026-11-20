@@ -134,32 +134,151 @@ Sabit model ve kategori açıklamalarıyla dört eşik denenmiştir:
 
 ## 8. T29 — 84 Kayıtlık Bağımsız Final Test
 
-**Final test dosyası:** `data/evaluation/CampusHub_421_FINAL_TEST_DUZELTILMIS_DOKUNMA.json`
+**Final test dosyası:** `data/evaluation/final_test_84.json`
 
-**Kayıt sayısı:** 84. Bu dosya, 337 geliştirme kaydıyla toplam **421 örneklik** veri setinin ayrı tutulan bölümüdür.
+**Sonuç dosyası:** `experiments/results/multilabel_final_metrics.json`
 
-**Final testten önce sabitlenen kararlar:**
+**Final test durumu:** TAMAMLANDI.
 
-- Model ID ve revision (2. bölüm)
-- Altı kategori ve açıklamaları (3. bölüm)
-- Hypothesis template: `Bu metin {} ile ilgilidir.`
+Toplam 421 kaydın 337'si geliştirme, 84'ü bağımsız final test için ayrılmıştır.
+
+Final testte önceden belirlenen model ve ayarlar değiştirilmeden kullanılmıştır:
+
+- Model: `MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`
+- Revision: `8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c`
 - `multi_label=True`
-- Beş ana kategoride `0.70` eşik
-- Hiçbiri geçmezse `OTHER` fallback
-- Değerlendirme metrikleri: Micro-F1 (ana); Macro-F1, Exact Match, en az bir doğru kategori (yardımcı)
+- Eşik değeri: `0.70`
+- Beş ana kategori eşik üzerinden seçilir.
+- Hiçbir ana kategori eşiği geçmezse `OTHER` döndürülür.
 
-**Önerilen asgari kabul hedefleri (proje içi, final veriye bakılmadan belirlenmiştir):** Micro-F1 **≥ %60** ve Exact Match **≥ %45**. Bunlar ödev yönergesinden alınmış zorunlu eşikler değil, mevcut geliştirme deneyine dayanarak konulmuş **öneri hedeflerdir**; ekip / ders sorumlusu gerekirse onaylamalıdır. Eşik sağlanmasa bile gerçek sonuç değiştirilmeden raporlanacaktır.
+### Final Test Sonuçları
 
-**Önemli kapsam değişikliği:** Eski T29 planı 18 örnekli holdout testiydi. Grup kararına göre bunun yerine 84 kayıtlık yeni final test uygulanacaktır. Ödev yönergesi özellikle 18 örnek istiyorsa kapsam değişikliği ders sorumlusuna bildirilmelidir.
+| Metrik | Sonuç |
+|---|---:|
+| Test edilen kayıt | 84 |
+| Precision | %64,95 |
+| Recall | %67,74 |
+| Micro-F1 | %66,32 |
+| Macro-F1 | %67,76 |
+| Exact Match | 47/84 — %55,95 |
+| Kısmen doğru | 14 |
+| Hiç doğru kategori bulunamayan | 23 |
+| En az bir doğru kategori bulunan | 61/84 — %72,62 |
 
-**Final test durumu:** **Henüz çalıştırılmadı.** Geliştirme sonuçlarıyla yapılan eşik seçimi tamamlandıktan sonra final set **bir kez** değerlendirilecek. Sonuçlar görülünce model/threshold/etiket açıklamaları final veriye göre ayarlanmayacak.
+**Kategori bazında F1:**
+
+| Kategori | F1 |
+|---|---:|
+| TECHNOLOGY | %75,00 |
+| SPORT | %90,00 |
+| ART | %88,89 |
+| CAREER | %53,57 |
+| SOCIAL | %46,15 |
+| OTHER | %52,94 |
+
+### Kabul Hedefleri
+
+Final testten önce belirlenen proje içi hedefler:
+
+- Micro-F1 ≥ %60
+- Exact Match ≥ %45
+
+Gerçek final sonuçları her iki hedefi de karşılamıştır.
+
+Bu eşikler dersin zorunlu kabul koşulları değil, proje içinde belirlenmiş hedeflerdir.
+
+### Değerlendirme
+
+Model özellikle SPORT ve ART kategorilerinde başarılı sonuçlar vermiştir. CAREER kategorisinde kaçırılan etiketler, SOCIAL ve OTHER kategorilerinde ise sınıflandırma hataları gözlenmiştir.
+
+Final test sonuçlarına bakılarak model, kategori açıklamaları veya 0.70 eşik değeri değiştirilmemiştir.
+
+**Sonuç:** T29 final değerlendirmesi tamamlanmış ve proje içi kabul hedefleri karşılanmıştır.
+
 
 ## 9. Sonraki Adımlar
 
 1. **T11:** Güncel model kararını, geliştirme sonuçlarını ve sabit ayarları belgeleyip commit/push yapmak.
-2. **T29:** 84 kayıtlık final testi, ayarları değiştirmeden bir kez çalıştırmak ve sonuçları raporlamak.
-3. **T12:** Gerçek `app/models/classifier.py` entegrasyonunu; `load()`, `is_ready()`, `classify()` ve K2'nin `predictions` sözleşmesiyle uyumlu biçimde tamamlamak.
+2. **T29 — TAMAMLANDI:** Sabit model ve 0.70 eşik değeriyle 84 kayıtlık bağımsız final test gerçekleştirildi. Micro-F1 %66,32 ve Exact Match %55,95 elde edildi. Her iki proje içi kabul hedefi karşılandı. Sonuçlar `experiments/results/multilabel_final_metrics.json` dosyasına kaydedildi.
+3. **T12 — TAMAMLANDI:** Gerçek mDeBERTa modeli `app/models/classifier.py` içine entegre edildi. Model CPU üzerinde başarıyla yüklendi ve `CLASSIFIER_BACKEND=real` ayarıyla FastAPI `/ai/classify` endpoint'i üzerinden gerçek tahmin alındı. 30 otomatik test başarılıdır. Hata senaryolarının ek testleri ayrı olarak tamamlanacaktır.
 4. **Entegrasyon:** K2 API ve K3 health/Docker akışını birlikte test etmek.
 5. **Teslim:** Nihai rapor, testler, son commit/push ve PR.
 
 **Nihai T11 model kararı:** Sabit revision'lı **mDeBERTa**, `multi_label=True`, beş ana etiket için **0.70 eşik** ve eşik geçilmezse **OTHER fallback**. Eski tek kategorili sonuçlar yalnızca tarihsel model seçimi kanıtıdır.
+## 10. T14 — Gerçek Model CPU Performansı
+
+Güncel mDeBERTa sınıflandırıcısının CPU performansı,
+30 geliştirme kaydı üzerinde ölçülmüştür.
+
+- Model: MoritzLaurer/mDeBERTa-v3-base-mnli-xnli
+- Cihaz: Apple Silicon Mac, CPU
+- multi_label: True
+- Eşik değeri: 0.70
+- Ölçülen örnek sayısı: 30
+
+| Metrik | Sonuç |
+|---|---:|
+| Model yükleme süresi | 2,807 saniye |
+| Ortalama inference süresi | 562,14 ms |
+| P95 inference süresi | 643,97 ms |
+| Yükleme sonrasında ölçülen peak RAM | 559,08 MB |
+| Tüm işlem boyunca peak RAM | 741,78 MB |
+
+RAM değerleri modelin tek başına tüketimini değil,
+Python sürecinin ölçülen en yüksek bellek kullanımını
+ifade etmektedir. Sonuçlar kullanılan cihaz ve çalışma
+ortamına özgüdür.
+
+Ölçüm kodu: `experiments/benchmark_real_cpu.py`
+
+Sonuç dosyası: `experiments/results/benchmark_real_cpu.json`
+
+**Durum:** T14 CPU performans ölçümü tamamlandı.
+
+## 11. Model Lisansı ve Sınırlamalar
+
+### Model Lisansı
+
+Kullanılan model:
+`MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`
+
+Hugging Face model kartında lisans MIT olarak belirtilmiştir.
+
+Model bağlantısı:
+https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli
+
+Proje kapsamında önceden eğitilmiş model kullanılmış,
+model yeniden eğitilmemiştir.
+
+Modelin dağıtımı sırasında geçerli lisans koşulları
+ve gerekli telif bildirimleri korunmalıdır.
+
+### Modelin Sınırlamaları
+
+- Model her etkinlik ve duyuruyu doğru sınıflandıramaz.
+- Birden fazla konu içeren metinlerde yanlış ek kategoriler seçilebilir.
+- 0.70 eşiğinin altında kalan doğru kategoriler kaçırılabilir.
+- OTHER, beş ana kategori eşiği geçmediğinde seçilen fallback sonucudur.
+- Model skorları kalibre edilmiş doğruluk olasılıkları değildir.
+- Özellikle CAREER, SOCIAL ve OTHER kategorilerinde
+  sınıflandırma hataları gözlenmiştir.
+- Performans kullanılan cihaz ve çalışma ortamına göre değişebilir.
+
+84 kayıtlık bağımsız final test sonuçları:
+
+- Micro-F1: %66,32
+- Macro-F1: %67,76
+- Exact Match: %55,95
+
+Final test sonuçlarına bakılarak model, kategori açıklamaları
+veya 0.70 eşik değeri değiştirilmemiştir.
+
+### Akademik Kaynak
+
+Laurer, M., van Atteveldt, W., Salleras Casas, A.,
+& Welbers, K. (2022).
+Less Annotating, More Classifying – Addressing the Data
+Scarcity Issue of Supervised Machine Learning with
+Deep Transfer Learning and BERT-NLI.
+
+https://osf.io/74b8k
