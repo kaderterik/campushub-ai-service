@@ -86,6 +86,12 @@ def test_connect_timeout_counts_as_unavailable(monkeypatch):
         b'{"predictions": [{"category": "SPORT", "confidence": 1.7}]}',  # aralık dışı
         b'[1, 2, 3]',  # nesne değil
         b'<html>proxy error</html>',  # JSON değil
+        b'{"predictions": [{"category": "MUSIC", "confidence": 0.9}]}',  # bilinmeyen kategori
+        b'{"predictions": [{"category": "technology", "confidence": 0.9}]}',  # küçük harf: bilinmeyen
+        b'{"predictions": [{"category": "SPORT", "confidence": 0.9}, {"category": "SPORT", "confidence": 0.8}]}',  # tekrar
+        b'{"predictions": [{"category": "OTHER", "confidence": 0.8}, {"category": "SPORT", "confidence": 0.75}]}',  # OTHER + başka
+        b'{"predictions": [{"category": "TECHNOLOGY", "confidence": 0.9}, {"category": "OTHER", "confidence": 0.7}]}',  # başka + OTHER
+        b'{"predictions": [{"category": "TECHNOLOGY", "confidence": 0.9}, {"category": "SPORT", "confidence": 0.9}, {"category": "ART", "confidence": 0.9}, {"category": "CAREER", "confidence": 0.9}, {"category": "SOCIAL", "confidence": 0.9}, {"category": "SOCIAL", "confidence": 0.9}]}',  # 5'ten fazla
     ],
 )
 def test_client_handles_malformed_200_response(monkeypatch, body):
@@ -100,3 +106,36 @@ def test_client_handles_malformed_200_response(monkeypatch, body):
     assert outcome.http_status == 200
     assert outcome.categories == []
     assert outcome.detail.startswith("invalid response")
+
+
+@pytest.mark.parametrize(
+    "body, expected",
+    [
+        (b'{"predictions": [{"category": "OTHER", "confidence": 0.76}]}', ["OTHER"]),
+        (b'{"predictions": [{"category": "CAREER", "confidence": 0.94}, {"category": "TECHNOLOGY", "confidence": 0.83}]}', ["CAREER", "TECHNOLOGY"]),
+        (
+            b'{"predictions": [{"category": "TECHNOLOGY", "confidence": 0.9}, {"category": "SPORT", "confidence": 0.8}, {"category": "ART", "confidence": 0.8}, {"category": "CAREER", "confidence": 0.7}, {"category": "SOCIAL", "confidence": 0.7}]}',
+            ["TECHNOLOGY", "SPORT", "ART", "CAREER", "SOCIAL"],
+        ),
+    ],
+)
+def test_client_accepts_valid_contract_responses(monkeypatch, body, expected):
+    def fake_post(url, **kwargs):
+        return httpx.Response(200, content=body, request=httpx.Request("POST", url))
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+
+    outcome = classify_event("http://ai-service:8005", "Etkinlik")
+
+    assert outcome.status == "ok"
+    assert outcome.categories == expected
+
+
+def test_client_category_set_matches_service_contract():
+    # İstemcinin kabul ettiği kategoriler servisin sözleşmesiyle aynı kalmalı.
+    from typing import get_args
+
+    from app.contracts import Category
+    from scripts.mock_event_service import VALID_CATEGORIES
+
+    assert VALID_CATEGORIES == set(get_args(Category))

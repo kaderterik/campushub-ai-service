@@ -21,6 +21,11 @@ import httpx
 DEFAULT_URL = "http://127.0.0.1:8005"
 DEFAULT_TIMEOUT = 5.0
 
+# docs/ai-classify-contract.md ile aynı kategori seti. Bu betik dış istemciyi
+# (Grup 3) taklit ettiği için app/ paketine bağımlı değildir.
+VALID_CATEGORIES = frozenset({"TECHNOLOGY", "SPORT", "ART", "CAREER", "SOCIAL", "OTHER"})
+MAX_PREDICTIONS = 5
+
 SAMPLE_EVENTS = [
     "Yazılım stajı başvuruları başladı, kariyer günlerine davetlisiniz.",
     "Kampüs futbol turnuvası için takım kayıtları açıldı.",
@@ -82,6 +87,9 @@ def _parse_predictions(body: object) -> list[dict]:
     predictions = body["predictions"]
     if not isinstance(predictions, list) or not predictions:
         raise ValueError("'predictions' must be a non-empty list")
+    if len(predictions) > MAX_PREDICTIONS:
+        raise ValueError(f"at most {MAX_PREDICTIONS} predictions are allowed")
+    seen: set[str] = set()
     for item in predictions:
         if not isinstance(item, dict):
             raise ValueError("prediction must be an object")
@@ -89,8 +97,15 @@ def _parse_predictions(body: object) -> list[dict]:
         confidence = item.get("confidence")
         if not isinstance(category, str) or not category:
             raise ValueError("prediction 'category' must be a non-empty string")
+        if category not in VALID_CATEGORIES:
+            raise ValueError(f"unknown category: {category!r}")
+        if category in seen:
+            raise ValueError(f"duplicate category: {category!r}")
+        seen.add(category)
         if isinstance(confidence, bool) or not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
             raise ValueError("prediction 'confidence' must be a number between 0 and 1")
+    if "OTHER" in seen and len(seen) > 1:
+        raise ValueError("OTHER must not be combined with other categories")
     return predictions
 
 
