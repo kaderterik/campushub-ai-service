@@ -1,9 +1,28 @@
 
+"""T10 - Tarihsel model karşılaştırma deneyi.
+
+Bu betik macOS/Linux ortamlarında resource, Windows'ta ise
+psutil kullanarak RAM ölçümü yapar.
+Windows için psutil kurulmalıdır; Windows üzerinde henüz test edilmemiştir.
+
+Bu deney eski tek kategorili sistemi (multi_label=False)
+ve 42 geliştirme örneğini kullanır.
+
+Güncel çok etiketli mDeBERTa modelinin CPU performansı için
+experiments/benchmark_real_cpu.py kullanılmalıdır.
+Bu yeni ölçümde model revision değeri sabitlenmiştir.
+
+Eski benchmark sonuçları güncel modelin performansı olarak
+sunulmamalıdır.
+"""
 import csv
 import json
 import math
 import platform
-import resource
+try:
+    import resource
+except ImportError:
+    resource = None
 import statistics
 import sys
 import time
@@ -33,13 +52,38 @@ model_id = MODELS[model_name]
 
 
 # 2. RAM ölçüm fonksiyonu
+
 def peak_ram_mb():
+    if platform.system() == "Windows":
+        try:
+            import psutil
+        except ImportError as exc:
+            raise RuntimeError(
+                "Windows RAM olcumu icin psutil kurulmalidir: "
+                "pip install psutil"
+            ) from exc
+
+        info = psutil.Process().memory_info()
+        peak = getattr(info, "peak_rss", None)
+
+        if peak is None:
+            peak = getattr(info, "peak_wset", None)
+
+        if peak is None:
+            raise RuntimeError("Windows peak RAM bilgisi alinamadi.")
+
+        return peak / (1024 * 1024)
+
+    if resource is None:
+        raise RuntimeError("Bu sistemde RAM olcumu desteklenmiyor.")
+
     value = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
     if platform.system() == "Darwin":
         return value / (1024 * 1024)
 
     return value / 1024
+
 
 
 # 3. Veri setini ve V5 açıklamalarını yükle
@@ -81,11 +125,21 @@ ram_before = peak_ram_mb()
 
 start_load = time.perf_counter()
 
+
+pipeline_kwargs = {}
+
+if model_name == "mdeberta":
+    pipeline_kwargs["revision"] = (
+        "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c"
+    )
+
 classifier = pipeline(
     "zero-shot-classification",
     model=model_id,
-    device="cpu"
+    device="cpu",
+    **pipeline_kwargs
 )
+
 
 loading_time = time.perf_counter() - start_load
 

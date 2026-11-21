@@ -1,0 +1,16 @@
+{
+  "model": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+  "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+  "device": "cpu",
+  "multi_label": true,
+  "threshold": 0.7,
+  "dataset": "development",
+  "sample_count": 30,
+  "loading_seconds": 2.807,
+  "average_inference_ms": 562.14,
+  "p95_inference_ms": 643.97,
+  "initial_process_peak_ram_mb": 19.44,
+  "after_load_process_peak_ram_mb": 559.08,
+  "overall_process_peak_ram_mb": 741.78,
+  "system": "macOS-26.6-arm64-arm-64bit"
+}
