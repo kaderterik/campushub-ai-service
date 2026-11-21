@@ -200,7 +200,7 @@ Final test sonuçlarına bakılarak model, kategori açıklamaları veya 0.70 e�
 
 1. **T11:** Güncel model kararını, geliştirme sonuçlarını ve sabit ayarları belgeleyip commit/push yapmak.
 2. **T29 — TAMAMLANDI:** Sabit model ve 0.70 eşik değeriyle 84 kayıtlık bağımsız final test gerçekleştirildi. Micro-F1 %66,32 ve Exact Match %55,95 elde edildi. Her iki proje içi kabul hedefi karşılandı. Sonuçlar `experiments/results/multilabel_final_metrics.json` dosyasına kaydedildi.
-3. **T12 — TAMAMLANDI:** Gerçek mDeBERTa modeli `app/models/classifier.py` içine entegre edildi. Model CPU üzerinde başarıyla yüklendi ve `CLASSIFIER_BACKEND=real` ayarıyla FastAPI `/ai/classify` endpoint'i üzerinden gerçek tahmin alındı. 30 otomatik test başarılıdır. Hata senaryolarının ek testleri ayrı olarak tamamlanacaktır.
+3. **T12 — TAMAMLANDI:** Gerçek mDeBERTa modeli `app/models/classifier.py` içine entegre edildi. Model CPU üzerinde başarıyla yüklendi ve `CLASSIFIER_BACKEND=real` ayarıyla FastAPI `/ai/classify` endpoint'i üzerinden gerçek tahmin alındı. Proje genelinde 69 otomatik test başarılıdır (1 Starlette/httpx uyarısı). Model yükleme, tahmin ve geçersiz giriş hata senaryolarının testleri tamamlanmıştır.
 4. **Entegrasyon:** K2 API ve K3 health/Docker akışını birlikte test etmek.
 5. **Teslim:** Nihai rapor, testler, son commit/push ve PR.
 

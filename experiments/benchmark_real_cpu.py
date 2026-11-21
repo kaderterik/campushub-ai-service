@@ -4,7 +4,10 @@
 import json
 import math
 import platform
-import resource
+try:
+    import resource
+except ImportError:
+    resource = None
 import statistics
 import sys
 import time
@@ -20,14 +23,41 @@ from app.models.classifier import (
 )
 
 
+
 def peak_ram_mb():
-    """Bu Python sürecinin gördüğü en yüksek RAM kullanımını MB döndürür."""
+    """Python sürecinin en yüksek RAM kullanımını MB cinsinden döndürür."""
+
+    if platform.system() == "Windows":
+        try:
+            import psutil
+        except ImportError as exc:
+            raise RuntimeError(
+                "Windows RAM olcumu icin psutil gereklidir."
+            ) from exc
+
+        info = psutil.Process().memory_info()
+
+        peak = getattr(info, "peak_wset", None)
+        if peak is None:
+            peak = getattr(info, "peak_rss", None)
+
+        if peak is None:
+            raise RuntimeError(
+                "Windows peak RAM bilgisi alinamadi."
+            )
+
+        return peak / (1024 * 1024)
+
+    if resource is None:
+        raise RuntimeError("RAM olcumu bu sistemde desteklenmiyor.")
+
     value = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
     if platform.system() == "Darwin":
         return value / (1024 * 1024)
 
     return value / 1024
+
 
 
 def main():
